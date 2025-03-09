@@ -52,7 +52,7 @@ logos = [
 
 # adapt this
 registration_link = "https://example.org"
-source_repo = "https://github.com/coderefinery/template-workshop-webpage"
+source_repo = "https://github.com/hz658832/RobotMeetGNSS"
 how_to_join_video = "https://youtu.be/QUAZELOioUY"
 
 # uncomment as soon as registration opens
