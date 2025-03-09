@@ -6,7 +6,7 @@ $navbar-nav-item-hover-color: #cc0099;
 $iconnav-item-color: #3366dd;
 $iconnav-item-hover-color: #cc0099;
 $global-primary-background: #3366cc;
-$global-secondary-background: #993366;
+$global-secondary-background: #3d5ea3; //#364f61;
 $base-code-color: #cc0099;
 $text-meta-color: #666666;
 $table-header-cell-color: #666666;
@@ -38,7 +38,18 @@ $heading-color: #404040;
 
 .markdown h1 {
     @extend .uk-h2;
+    font-size: 40px;
+    line-height:50px;
     color: $heading-color;
+    margin: 0 0 10px;
+}
+
+.markdown sh1 {
+    font-size: 20px;
+    line-height:50px;
+    color: $heading-color;
+    margin: 0 0 10px;
+    text-align: center;
 }
 
 .markdown h2 {
@@ -49,4 +60,5 @@ $heading-color: #404040;
 .markdown h3 {
     @extend .uk-h4;
     color: $heading-color;
+    margin: 0 0 0px;
 }

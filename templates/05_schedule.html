@@ -1,26 +1,27 @@
+
+
+<h2><b>Tentative Schedule</b></h2>
+
 <script>
   dayjs.extend(window.dayjs_plugin_utc)
 </script>
-
-<h2>Schedule</h2>
 
 <div class="uk-alert-danger" uk-alert>
   <a class="uk-alert-close" uk-close></a>
   <p>
     All times are displayed in the local timezone of your browser.
-    Detected timezone offset compared to UTC: {{ macros::timezone_offset(date='2023-03-20', time='09:00') }}
+    Detected timezone offset compared to UTC: {{ macros::timezone_offset(date='2025-10-19', time='16:00') }}
   </p>
 </div>
 
 <div class="uk-alert-info" uk-alert>
   <a class="uk-alert-close" uk-close></a>
   <p>
-    <b>Breaks</b>: 10 minutes every hour, between xx:50 and xx:10, but it is
-    difficult for us to indicate exactly when.
+    <b>Slides</b> of all keynotes will be made avilable after the workshop.
   </p>
 </div>
 
-<table class="uk-table uk-table-small uk-table-justify">
+<table class="uk-table uk-table-small uk-table-striped">
   <tbody>
     {% set data = load_data(path="content/schedule.yaml") %}
     {% for day in data.schedule %}
@@ -36,10 +37,12 @@
       {% for session in day.sessions %}
         <tr>
           <td class="uk-width-2-5">
-            {{ macros::local_date(date=day.date, time=session.ends) }},
+            {{ macros::local_date(date=day.date, time=session.starts) }},
             {{ macros::local_time(date=day.date, time=session.starts) }}
-            -
-            {{ macros::local_time(date=day.date, time=session.ends) }}
+            {% if session.ends %}
+              -
+              {{ macros::local_time(date=day.date, time=session.ends) }}
+            {% endif %}
           </td>
           <td class="uk-width-3-5">
             {% if session.url %}
@@ -48,13 +51,22 @@
               {{ session.title }}
             {% endif %}
             {% if session.subtitle %}
-              <div class="uk-text-small">
-                {{ session.subtitle | markdown(inline=true) | safe }}
-              </div>
+              {{ session.subtitle | markdown(inline=true) | safe }}
             {% endif %}
             {% if session.presenters %}
               <div class="uk-text-small">
-                Presenters: {{ session.presenters | markdown(inline=true) | safe }}
+                {% if session.presenterurl %}
+                  <a href="{{ session.presenterurl }}" target="_blank">{{ session.presenters | markdown(inline=true) | safe }}</a>
+                {% else %}
+                  <div class="uk-text-small">
+                    {{ session.presenters | markdown(inline=true) | safe }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if session.affiliation %}
+              <div class="uk-text-small">
+                {{ session.affiliation | markdown(inline=true) | safe }}
               </div>
             {% endif %}
           </td>
@@ -63,3 +75,5 @@
     {% endfor %}
   </tbody>
 </table>
+
+<br>

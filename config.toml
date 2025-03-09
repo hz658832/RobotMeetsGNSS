@@ -5,8 +5,8 @@
 base_url = "https://coderefinery.github.io/template-workshop-webpage/"
 
 # When adapting the title, do not forget to also adjust base_url above
-title = "1st Workshop on Robot Meets GNSS"
-description = "Free workshop on git, testing, documentation, and more in a workshop - for researchers and scientists."
+title = "1st Workshop on Robot Meets GNSS" 
+description = "Exploring Synergies and Challenges of Global Navigation Satellite Systems in Robotics."
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -26,15 +26,15 @@ external_links_target_blank = true
 [extra]
 
 navigation = [
-    { name = "About", target = "" },
-    { name = "List of exercises", target = "exercises/" },
-    { name = "Audience", target = "audience/" },
-    { name = "Certificates", target = "certificates/" },
-    { name = "How to join", target = "join/" },
-    { name = "Requirements", target = "requirements/" },
-    { name = "Q&A", target = "questions/" },
-    { name = "Code of conduct", target = "code-of-conduct/" },
-    { name = "Communication", target = "communication/" }
+    { name = "Home", target = "" },
+    { name = "Motivation and Goal", target = "objective/" },
+    #{ name = "Speakers and Keynotes", target = "audience/" },
+    #{ name = "Organizers", target = "certificates/" },
+    #{ name = "How to join", target = "join/" },
+    #{ name = "Requirements", target = "requirements/" },
+    #{ name = "Q&A", target = "questions/" },
+    #{ name = "Code of conduct", target = "code-of-conduct/" },
+    { name = "Contact", target = "communication/" }
 ]
 
 twitter_image = "https://raw.githubusercontent.com/coderefinery/coderefinery-artwork/main/socialshare/socialshare-workshop.png"
@@ -47,7 +47,7 @@ plausible = { src = "https://plausible.cs.aalto.fi/js/script.js", domain = "code
 # the image file(s) need to be placed in content/logos
 logos = [
 #   { alt_text = "CodeRefinery logo", target_url = "https://coderefinery.org/", image = "coderefinery.png" },
-    { alt_text = "CodeRefinery logo", target_url = "https://coderefinery.org/", image = "coderefinery.png" }
+    { alt_text = "CodeRefinery logo", target_url = "https://www.google.de/", image = "coderefinery.png" }
 ]
 
 # adapt this
