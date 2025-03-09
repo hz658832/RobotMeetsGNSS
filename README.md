@@ -1,27 +1,6 @@
-# CodeRefinery workshop webpage
+# Workshop on Robot Meets GNSS
 
-This repository is a template to set up webpages for CodeRefinery
-workshops.
-
-
-## Quick reference
-
-- (here collect all essential links for planning)
-
-
-## How to generate your workshop repository
-
-To use it, follow these instructions:
-- Click the green "Use this template" button.
-- Select owner of the new repository and repository name. The name should look like
-  `2019-10-16-workshop`. For in-person workshops we use
-  "year-month-date-place" (e.g. `2019-10-16-stockholm`).
-- Click "Create repository from template".
-- You will now be redirected to the new repository.
-- On "Settings" enable "GitHub Pages" from `gh-pages` as "Source".
-- Add the link to the generated pages on top right of the repository page at
-  "About" to make it easier to find.
-- Link the workshop from <https://coderefinery.org/workshops/upcoming/>.
+This repository is powered by the template for CodeRefinery workshops.
 
 
 ### How to customize this template after you have created the repository

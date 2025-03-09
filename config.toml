@@ -2,7 +2,7 @@
 
 # this variable has to be set but it is not used
 # inside the templates (end in '/')
-base_url = "https://coderefinery.github.io/template-workshop-webpage/"
+base_url = "https://hz658832.github.io/RobotMeetGNSS/"
 
 # When adapting the title, do not forget to also adjust base_url above
 title = "1st Workshop on Robot Meets GNSS" 
