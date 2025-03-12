@@ -1,81 +1,124 @@
 ---
 # all times must be input in UTC, be careful about daylight saving
 schedule:
-  - title: " "
+  - title: "Full-Day Workshop"
     date: "2025-10-19"
     sessions:
-      - starts: 12:30
-        ends: 12:50
+      - starts: 12:45
+        ends: 13:00
         title: Welcome and Opening Remarks
         #url: https://github.com/coderefinery/workshop-intro/blob/master/livestream.md
-        presenters: Prof. Weisong Wen
-        affiliation: Trustworthy AI and Autonomous Systems Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
-        presenterurl: https://polyu-taslab.github.io/
-      - starts: 12:50
-        ends: 13:20
-        title: Keynote 1 - tbd
-        #subtitle: "Why we want to track versions and how to go back in time to a working version: [Motivation](https://coderefinery.github.io/git-intro/motivation/), [Browsing](https://coderefinery.github.io/git-intro/browsing/), [Commiting](https://coderefinery.github.io/git-intro/commits/)"
-        #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Li-Ta Hsu
         affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
         presenterurl: https://www.polyu.edu.hk/aae/ipn-lab/us/index.html
-      - starts: 13:20
-        ends: 13:50
+      - starts: 13:00
+        ends: 13:30
+        title: Keynote 1 - tbd
+        #subtitle: "Why we want to track versions and how to go back in time to a working version: [Motivation](https://coderefinery.github.io/git-intro/motivation/), [Browsing](https://coderefinery.github.io/git-intro/browsing/), [Commiting](https://coderefinery.github.io/git-intro/commits/)"
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Prof. Weisong Wen
+        affiliation: Trustworthy AI and Autonomous Systems Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+        presenterurl: https://polyu-taslab.github.io/
+      - starts: 13:30
+        ends: 14:00
         title: Keynote 2 - tbd
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Taro Suzuki 
         affiliation: Waseda University, Japan
         presenterurl: http://www.taroz.net/
         #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
-      - starts: 13:50
-        ends: 14:20
+      - starts: 14:00
+        ends: 14:30
         title: Keynote 3 - tbd
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Fu Zhang
         affiliation: Mechatronics and Robotic Systems Laboratory<br>University of Hong Kong, Hong Kong
         presenterurl: https://mars.hku.hk/
         #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
-      - starts: 14:20
-        ends: 14:40
+      - starts: 14:30
+        ends: 15:00
         title: Coffee Break and Poster Session
-        #presenters: TBA
-        #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
-      - starts: 14:40
-        ends: 15:10
-        title: Keynote 4 - tbd
+      - starts: 15:00
+        ends: 15:30
+        title: Keynote 4 - Non-Gaussian State Estimation for GNSS, Ranging, and Beyond
         #url: https://coderefinery.github.io/git-intro/
         presenters: Dr. Tim Pfeifer
-        affiliation: Siemens AG 
+        affiliation: Siemens AG, Germany
         presenterurl: https://tipf.github.io/
-      - starts: 15:10
-        ends: 15:30
-        title: Panel discussion
+      - starts: 15:30
+        ends: 16:00
+        title: Keynote 5 - Integrity
         #url: https://coderefinery.github.io/git-intro/
         presenters: Dr. Mustermann
         affiliation: University of Mustermann 
-        #presenterurl: https://mars.hku.hk/
-      - starts: 15:30
-        ends: 16:00
-        title: Keynote 5 - tbd
-        #url: https://coderefinery.github.io/git-intro/
-        presenters: Prof. Xingxing Li
-        affiliation: Wuhan University, China
-        presenterurl: https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm
+        #presenterurl: https://tipf.github.io/
       - starts: 16:00
         ends: 16:30
-        title: Keynote 6 - tbd
+        title: Panel discussion - Robustness, integrity, and safety
         #url: https://coderefinery.github.io/git-intro/
         presenters: Dr. Mustermann
         affiliation: University of Mustermann 
         #presenterurl: https://mars.hku.hk/
       - starts: 16:30
-        ends: 16:35
+        ends: 17:30
+        title: Lunch
+        #url: https://coderefinery.github.io/git-intro/
+        #presenters: Prof. Xingxing Li
+        #affiliation: Wuhan University, China
+        #presenterurl: https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm
+      - starts: 17:30
+        ends: 18:00
+        title: Spotlight Talks
+        #url: https://coderefinery.github.io/git-intro/
+        #presenters: Prof. Xingxing Li
+        #affiliation: Wuhan University, China
+        #presenterurl: https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm
+      - starts: 18:00
+        ends: 18:30
+        title: Keynote 6 - tbd
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Mustermann
+        affiliation: University of Mustermann 
+        #presenterurl: https://mars.hku.hk/
+      - starts: 18:30
+        ends: 19:00
+        title: Keynote 7 - tbd
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Mustermann
+        affiliation: University of Mustermann 
+        #presenterurl: https://mars.hku.hk/
+      - starts: 19:00
+        ends: 19:20
+        title: Coffee Break and Poster Session
+      - starts: 19:20
+        ends: 19:50
+        title: Panel discussion 2
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Mustermann
+        affiliation: University of Mustermann 
+        #presenterurl: https://mars.hku.hk/
+      - starts: 19:50
+        ends: 20:20
+        title: Keynote 8 - tbd
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Mustermann
+        affiliation: University of Mustermann 
+        #presenterurl: https://mars.hku.hk/
+      - starts: 20:20
+        ends: 20:50
+        title: Keynote 9 - tbd
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Mustermann
+        affiliation: University of Mustermann 
+        #presenterurl: https://mars.hku.hk/
+      - starts: 20:50
+        ends: 21:00
         title: Closing Remark
         #url: https://github.com/coderefinery/workshop-intro/blob/master/livestream.md
-        presenters: Prof. Weisong Wen
-        affiliation: Trustworthy AI and Autonomous Systems Laboratory<br>The Hong Kong Polytechnic University
-        presenterurl: https://polyu-taslab.github.io/
-      - starts: 16:35
-        title: Launch
+        presenters: Prof. Li-Ta Hsu
+        affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+        presenterurl: https://www.polyu.edu.hk/aae/ipn-lab/us/index.html
+      - starts: 21:00
+        title: Dinner
         
  

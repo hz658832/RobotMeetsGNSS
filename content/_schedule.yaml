@@ -1,0 +1,81 @@
+---
+# all times must be input in UTC, be careful about daylight saving
+schedule:
+  - title: " "
+    date: "2025-10-19"
+    sessions:
+      - starts: 12:30
+        ends: 12:50
+        title: Welcome and Opening Remarks
+        #url: https://github.com/coderefinery/workshop-intro/blob/master/livestream.md
+        presenters: Prof. Weisong Wen
+        affiliation: Trustworthy AI and Autonomous Systems Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+        presenterurl: https://polyu-taslab.github.io/
+      - starts: 12:50
+        ends: 13:20
+        title: Keynote 1 - tbd
+        #subtitle: "Why we want to track versions and how to go back in time to a working version: [Motivation](https://coderefinery.github.io/git-intro/motivation/), [Browsing](https://coderefinery.github.io/git-intro/browsing/), [Commiting](https://coderefinery.github.io/git-intro/commits/)"
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Prof. Li-Ta Hsu
+        affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+        presenterurl: https://www.polyu.edu.hk/aae/ipn-lab/us/index.html
+      - starts: 13:20
+        ends: 13:50
+        title: Keynote 2 - tbd
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Prof. Taro Suzuki 
+        affiliation: Waseda University, Japan
+        presenterurl: http://www.taroz.net/
+        #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
+      - starts: 13:50
+        ends: 14:20
+        title: Keynote 3 - tbd
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Prof. Fu Zhang
+        affiliation: Mechatronics and Robotic Systems Laboratory<br>University of Hong Kong, Hong Kong
+        presenterurl: https://mars.hku.hk/
+        #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
+      - starts: 14:20
+        ends: 14:40
+        title: Coffee Break and Poster Session
+        #presenters: TBA
+        #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
+      - starts: 14:40
+        ends: 15:10
+        title: Keynote 4 - tbd
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Tim Pfeifer
+        affiliation: Siemens AG 
+        presenterurl: https://tipf.github.io/
+      - starts: 15:10
+        ends: 15:30
+        title: Panel discussion
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Mustermann
+        affiliation: University of Mustermann 
+        #presenterurl: https://mars.hku.hk/
+      - starts: 15:30
+        ends: 16:00
+        title: Keynote 5 - tbd
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Prof. Xingxing Li
+        affiliation: Wuhan University, China
+        presenterurl: https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm
+      - starts: 16:00
+        ends: 16:30
+        title: Keynote 6 - tbd
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Mustermann
+        affiliation: University of Mustermann 
+        #presenterurl: https://mars.hku.hk/
+      - starts: 16:30
+        ends: 16:35
+        title: Closing Remark
+        #url: https://github.com/coderefinery/workshop-intro/blob/master/livestream.md
+        presenters: Prof. Weisong Wen
+        affiliation: Trustworthy AI and Autonomous Systems Laboratory<br>The Hong Kong Polytechnic University
+        presenterurl: https://polyu-taslab.github.io/
+      - starts: 16:35
+        title: Launch
+        
+ 
