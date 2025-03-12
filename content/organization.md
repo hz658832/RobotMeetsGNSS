@@ -2,8 +2,13 @@
 title = "Organization"
 +++
 
-## Call for Abstracts and Posters
+## Workshop Format
+- Full-day workshop
+- Hybrid event
 
+
+## Call for Abstracts and Posters
+To be announced.
 
 ## Online Q&A and Polling
 

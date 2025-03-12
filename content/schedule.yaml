@@ -1,7 +1,7 @@
 ---
 # all times must be input in UTC, be careful about daylight saving
 schedule:
-  - title: "Full-Day Workshop"
+  - title: "Morning Session"
     date: "2025-10-19"
     sessions:
       - starts: 12:45
@@ -24,7 +24,7 @@ schedule:
         title: Keynote 2 - tbd
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Taro Suzuki 
-        affiliation: Waseda University, Japan
+        affiliation: Chiba Institute of Technology, Japan
         presenterurl: http://www.taroz.net/
         #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
       - starts: 14:00
@@ -59,6 +59,9 @@ schedule:
         presenters: Dr. Mustermann
         affiliation: University of Mustermann 
         #presenterurl: https://mars.hku.hk/
+  - title: ""
+    date: "2025-10-19"
+    sessions:
       - starts: 16:30
         ends: 17:30
         title: Lunch
@@ -66,6 +69,9 @@ schedule:
         #presenters: Prof. Xingxing Li
         #affiliation: Wuhan University, China
         #presenterurl: https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm
+  - title: "Afternoon Session"
+    date: "2025-10-19"
+    sessions:
       - starts: 17:30
         ends: 18:00
         title: Spotlight Talks
@@ -77,16 +83,16 @@ schedule:
         ends: 18:30
         title: Keynote 6 - tbd
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Dr. Mustermann
-        affiliation: University of Mustermann 
-        #presenterurl: https://mars.hku.hk/
+        presenters: Prof. Xingxing Li
+        affiliation: Wuhan University, China
+        presenterurl: https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm
       - starts: 18:30
         ends: 19:00
         title: Keynote 7 - tbd
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Dr. Mustermann
-        affiliation: University of Mustermann 
-        #presenterurl: https://mars.hku.hk/
+        presenters: Dr. Shaojun Feng
+        affiliation: Imperiall College London, UK
+        presenterurl: https://profiles.imperial.ac.uk/s.feng/about
       - starts: 19:00
         ends: 19:20
         title: Coffee Break and Poster Session
@@ -101,16 +107,16 @@ schedule:
         ends: 20:20
         title: Keynote 8 - tbd
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Dr. Mustermann
-        affiliation: University of Mustermann 
-        #presenterurl: https://mars.hku.hk/
+        presenters: Prof. Mingquan Lu
+        affiliation: Tsinghua University, China
+        presenterurl: http://web.ee.tsinghua.edu.cn/lumingquan/en/index.htm
       - starts: 20:20
         ends: 20:50
         title: Keynote 9 - tbd
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Dr. Mustermann
-        affiliation: University of Mustermann 
-        #presenterurl: https://mars.hku.hk/
+        presenters: Prof. Ling Pei
+        affiliation: Shanghai Jiao Tong University
+        presenterurl: https://nls.sjtu.edu.cn/web/base/personal-info/5e50b16a6b5cc99eeca74884?index=2&child=1
       - starts: 20:50
         ends: 21:00
         title: Closing Remark
@@ -118,6 +124,9 @@ schedule:
         presenters: Prof. Li-Ta Hsu
         affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
         presenterurl: https://www.polyu.edu.hk/aae/ipn-lab/us/index.html
+  - title: ""
+    date: "2025-10-19"
+    sessions:
       - starts: 21:00
         title: Dinner
         

@@ -1,5 +1,13 @@
 <h2><b>Organizers</h2>
 {% set image1 = resize_image(path="people/person-dummy.jpg", width=1200, op="fit_width") %}
+{% set img_weisong = resize_image(path="people/weisong.png", width=709, op="fit_width") %}
+{% set img_haoming = resize_image(path="people/o_haoming.png", width=709, op="fit_width") %}
+{% set img_darren = resize_image(path="people/o_darren.png", width=709, op="fit_width") %}
+{% set img_xikun = resize_image(path="people/o_xikun.png", width=709, op="fit_width") %}
+{% set img_lita = resize_image(path="people/o_lita.png", width=709, op="fit_width") %}
+{% set img_wang = resize_image(path="people/o_prof_wang.png", width=709, op="fit_width") %}
+{% set img_xingxing = resize_image(path="people/xingxing.png", width=709, op="fit_width") %}
+{% set img_taro = resize_image(path="people/taro.png", width=709, op="fit_width") %}
 <table class="uk-table uk-table-small uk-table-justify">
 			<thead>
 		<tr>
@@ -16,55 +24,88 @@
 	<tbody>
 		<tr>
 	    	<td>
-	    		<img class="uk-preserve-width uk-border-rounded" src="{{ image1.url }}" width="100" height="100" alt="">
+	    		<img class="uk-preserve-width uk-border-rounded" src="{{ img_haoming.url }}" width="100" height="100" alt="">
 	    	</td>
+	    	<td class="uk-text-top uk-table-expand">
+        	    <span class="uk-text-middle">Haoming Zhang</span>
+        	    <br>
+        	    <span class="uk-text-middle uk-text-light uk-text-small">RWTH Aachen University, Germany</span>
+        	    <br>
+        	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://hz658832.github.io/home/" target="_blank">Website</a></span>
+        	</td>
 
-	    	<td class="uk-text-top">
-	    	    <span class="uk-text-middle">Lorem ipsum.</span>
-	    	</td>
-
-	    	<td><img class="uk-preserve-width uk-border-rounded" src="{{ image1.url }}" width="100" height="100" alt=""></td>
-	    	<td class="uk-text-top">
-	    	    <span class="uk-text-middle">Lorem ipsum.</span>
-	    	</td>
+	    	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_darren.url }}" width="100" height="100" alt=""></td>
+	    	<td class="uk-text-top uk-table-expand">
+        	    <span class="uk-text-middle">Feng (Darren) Huang</span>
+        	    <br>
+        	    <span class="uk-text-middle uk-text-light uk-text-small">Hong Kong Polytechnic University, Hong Kong</span>
+        	    <br>
+        	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://darrenwong.github.io/" target="_blank">Website</a></span>
+        	</td>
 
 	    	<td>
-	    		<img class="uk-preserve-width uk-border-rounded" src="{{ image1.url }}" width="100" height="100" alt="">
+	    		<img class="uk-preserve-width uk-border-rounded" src="{{ img_xikun.url }}" width="100" height="100" alt="">
 	    	</td>
-
-	    	<td class="uk-text-top">
-	    	    <span class="uk-text-middle">Lorem ipsum.</span>
+			<td class="uk-text-top uk-table-expand">
+        	    <span class="uk-text-middle">Xikun Liu</span>
+        	    <br>
+        	    <span class="uk-text-middle uk-text-light uk-text-small">Hong Kong Polytechnic University, Hong Kong</span>
+        	    <br>
+        	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://xikunliu-huskit.github.io/" target="_blank">Website</a></span>
+        	</td>
+        	<td>
+	    		<img class="uk-preserve-width uk-border-rounded" src="{{ img_lita.url }}" width="100" height="100" alt="">
 	    	</td>
-	    	<td>
-	    		<img class="uk-preserve-width uk-border-rounded" src="{{ image1.url }}" width="100" height="100" alt="">
-	    	</td>
-	    	<td class="uk-text-top">
-	    	    <span class="uk-text-middle">Lorem ipsum.</span>
-	    	</td>
+	    	<td class="uk-text-top uk-table-expand">
+        	    <span class="uk-text-middle">Prof. Li-Ta Hsu</span>
+        	    <br>
+        	    <span class="uk-text-middle uk-text-light uk-text-small">IPN-Lab, Hong Kong Polytechnic University, Hong Kong</span>
+        	    <br>
+        	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://www.polyu.edu.hk/aae/ipn-lab/us" target="_blank">Website</a></span>
+        	</td>
 
 		</tr>
 
 		<tr>
-	    	<td><img class="uk-preserve-width uk-border-rounded" src="{{ image1.url }}" width="100" height="100" alt=""></td>
-	    	<td class="uk-text-top">
-	    	    <span class="uk-text-middle">Lorem ipsum.</span>
+	    	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_weisong.url }}" width="100" height="100" alt=""></td>
+	    	<td class="uk-text-top uk-table-expand">
+        	    <span class="uk-text-middle">Prof. Weisong Wen</span>
+        	    <br>
+        	    <span class="uk-text-middle uk-text-light uk-text-small">TAS Lab, Hong Kong Polytechnic University, Hong Kong</span>
+        	    <br>
+        	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://polyu-taslab.github.io/team/" target="_blank">Website</a></span>
+        	</td>
+
+	    	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_taro.url }}" width="100" height="100" alt=""></td>
+	    	<td class="uk-text-top uk-table-expand">
+	    	    <span class="uk-text-middle">Dr. Taro Suzuki</span>
+	    	    <br>
+	    	    <span class="uk-text-middle uk-text-light uk-text-small">Chiba Institute of Technology, Japan</span>
+	    	    <br>
+	    	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="http://www.taroz.net/" target="_blank">Website</a></span>
 	    	</td>
-	    	<td><img class="uk-preserve-width uk-border-rounded" src="{{ image1.url }}" width="100" height="100" alt=""></td>
-	    	<td class="uk-text-top">
-	    	    <span class="uk-text-middle">Lorem ipsum.</span>
-	    	</td>
+
 	    	<td>
-	    		<img class="uk-preserve-width uk-border-rounded" src="{{ image1.url }}" width="100" height="100" alt="">
+	    		<img class="uk-preserve-width uk-border-rounded" src="{{ img_wang.url }}" width="100" height="100" alt="">
 	    	</td>
-	    	<td class="uk-text-top">
-	    	    <span class="uk-text-middle">Lorem ipsum.</span>
+	    	<td class="uk-text-top uk-table-expand">
+	    	    <span class="uk-text-middle">Prof. Jinling Wang</span>
+	    	    <br>
+	    	    <span class="uk-text-middle uk-text-light uk-text-small">University of New South Wales Sydney, Australia</span>
+	    	    <br>
+	    	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://www.unsw.edu.au/staff/jinling-wang" target="_blank">Website</a></span>
 	    	</td>
+
 	    	<td>
-	    		<img class="uk-preserve-width uk-border-rounded" src="{{ image1.url }}" width="100" height="100" alt="">
+	    		<img class="uk-preserve-width uk-border-rounded" src="{{ img_xingxing.url }}" width="100" height="100" alt="">
 	    	</td>
-	    	<td class="uk-text-top">
-	    	    <span class="uk-text-middle">Lorem ipsum.</span>
-	    	</td>
+	    	<td class="uk-text-top uk-table-expand">
+        	    <span class="uk-text-middle">Prof. Xingxing Li</span>
+        	    <br>
+        	    <span class="uk-text-middle uk-text-light uk-text-small">Wuhan University, China</span>
+        	    <br>
+        	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm" target="_blank">Website</a></span>
+        	</td>
 	    	
 		</tr>
 	</tbody>
