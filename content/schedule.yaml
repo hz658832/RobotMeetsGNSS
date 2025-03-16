@@ -13,14 +13,14 @@ schedule:
         presenterurl: https://www.polyu.edu.hk/aae/ipn-lab/us/index.html
       - starts: 19:50
         ends: 20:20
-        title: BeiDou Alone Is Not Enough<br>Space, Air and Ground Cooperative PNT Architecture and Key Technologies for Low Altitude Economy
+        title: 'BeiDou Alone Is Not Enough: Space, Air and Ground Cooperative PNT Architecture and Key Technologies for Low Altitude Economy'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Mingquan Lu
         affiliation: Tsinghua University, China
         presenterurl: http://web.ee.tsinghua.edu.cn/lumingquan/en/index.htm
       - starts: 01:30
         ends: 02:00
-        title: Connecting GNSS and Robotics<br>Toward Tightly Coupled Sensor Integration
+        title: 'Connecting GNSS and Robotics:Toward Tightly Coupled Sensor Integration'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Taro Suzuki 
         affiliation: Chiba Institute of Technology, Japan
@@ -38,7 +38,7 @@ schedule:
         title: Coffee Break and Poster Session
       - starts: 03:00
         ends: 03:30
-        title: Advancing SLAM into new era<br>accuracy, robustness, and efficiency
+        title: 'Advancing SLAM into new era:accuracy, robustness, and efficiency'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Dr. Jiarong Lin (Prof. Dr. Fu Zhang)
         affiliation: Mechatronics and Robotic Systems Laboratory<br>University of Hong Kong, Hong Kong
@@ -105,7 +105,7 @@ schedule:
         #presenterurl: https://mars.hku.hk/
       - starts: 08:00
         ends: 08:50
-        title: Panel Discussion - Diffraction of Common GNSS-Inspired Problems in Robotics<br>system, integrity, and transferability to other ranging sources
+        title: 'Panel Discussion - Diffraction of Common GNSS-Inspired Problems in Robotics:system, integrity, and transferability to other ranging sources'
         #url: https://coderefinery.github.io/git-intro/
         #presenters: Dr. Mustermann
         #affiliation: University of Mustermann 
