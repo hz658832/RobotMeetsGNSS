@@ -55,6 +55,7 @@ $heading-color: #404040;
 .markdown h2 {
     @extend .uk-h3;
     color: $heading-color;
+    margin: 0 0 15px;
 }
 
 .markdown h3 {

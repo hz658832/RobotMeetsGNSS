@@ -8,8 +8,8 @@ schedule:
         ends: 01:00
         title: Welcome and Opening Remarks
         #url: https://github.com/coderefinery/workshop-intro/blob/master/livestream.md
-        presenters: Prof. Li-Ta Hsu
-        affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+        presenters: Prof. Dr. Li-Ta Hsu
+        #affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
         presenterurl: https://www.polyu.edu.hk/aae/ipn-lab/us/index.html
       - starts: 01:00
         ends: 01:30
@@ -20,9 +20,9 @@ schedule:
         presenterurl: http://web.ee.tsinghua.edu.cn/lumingquan/en/index.htm
       - starts: 01:30
         ends: 02:00
-        title: 'Connecting GNSS and Robotics:Toward Tightly Coupled Sensor Integration'
+        title: 'Connecting GNSS and Robotics - Toward Tightly Coupled Sensor Integration'
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Prof. Taro Suzuki 
+        presenters: Dr. Taro Suzuki 
         affiliation: Chiba Institute of Technology, Japan
         presenterurl: http://www.taroz.net/
         #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
@@ -30,7 +30,7 @@ schedule:
         ends: 02:30
         title: Robotic research using Advanced GNSS technologies
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Prof. Xingxing Li
+        presenters: Prof. Dr. Xingxing Li
         affiliation: Wuhan University, China
         presenterurl: https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm
       - starts: 02:30
@@ -38,9 +38,9 @@ schedule:
         title: Coffee Break and Poster Session
       - starts: 03:00
         ends: 03:30
-        title: 'Advancing SLAM into new era:accuracy, robustness, and efficiency'
+        title: 'Advancing SLAM into new era - accuracy, robustness, and efficiency'
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Dr. Jiarong Lin (Prof. Dr. Fu Zhang)
+        presenters: Prof. Dr. Fu Zhang (Dr. Jiarong Lin)
         affiliation: Mechatronics and Robotic Systems Laboratory<br>University of Hong Kong, Hong Kong
         presenterurl: https://mars.hku.hk/
         #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
@@ -48,14 +48,14 @@ schedule:
         ends: 04:00
         title: Empower robotic research using GNSS services
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Dr. Shaojun Feng
-        affiliation: Imperiall College London, UK
+        presenters: Prof. Dr. Shaojun Feng
+        affiliation: Qianxun Spatial Inteligence Inc. China, <br>Imperiall College London, UK
         presenterurl: https://profiles.imperial.ac.uk/s.feng/about
       - starts: 04:00
         ends: 04:30
         title: Brain-inspired navigation
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Prof. Ling Pei
+        presenters: Prof. Dr. Ling Pei
         affiliation: Shanghai Jiao Tong University
         presenterurl: https://nls.sjtu.edu.cn/web/base/personal-info/5e50b16a6b5cc99eeca74884?index=2&child=1
   - title: ""
@@ -76,7 +76,7 @@ schedule:
         title: Safety-quantifiable Joint Positioning and Control for Factor Graph
         #subtitle: "Why we want to track versions and how to go back in time to a working version: [Motivation](https://coderefinery.github.io/git-intro/motivation/), [Browsing](https://coderefinery.github.io/git-intro/browsing/), [Commiting](https://coderefinery.github.io/git-intro/commits/)"
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Prof. Weisong Wen
+        presenters: Prof. Dr. Weisong Wen
         affiliation: Trustworthy AI and Autonomous Systems Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
         presenterurl: https://polyu-taslab.github.io/
       - starts: 06:00
@@ -105,7 +105,8 @@ schedule:
         #presenterurl: https://mars.hku.hk/
       - starts: 08:00
         ends: 08:50
-        title: 'Panel Discussion - Diffraction of Common GNSS-Inspired Problems in Robotics:system, integrity, and transferability to other ranging sources'
+        title: 'Panel Discussion:'
+        subtitle: 'Diffraction of Common GNSS-Inspired Problems in Robotics: system integrity, and transferability to other ranging sources'
         #url: https://coderefinery.github.io/git-intro/
         #presenters: Dr. Mustermann
         #affiliation: University of Mustermann 
@@ -114,8 +115,8 @@ schedule:
         ends: 09:00
         title: Closing Remark
         #url: https://github.com/coderefinery/workshop-intro/blob/master/livestream.md
-        presenters: Prof. Li-Ta Hsu
-        affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+        presenters: Prof. Dr. Li-Ta Hsu
+        #affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
         presenterurl: https://www.polyu.edu.hk/aae/ipn-lab/us/index.html
   - title: ""
     date: "2025-10-19"
