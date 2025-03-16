@@ -11,8 +11,8 @@ schedule:
         presenters: Prof. Li-Ta Hsu
         affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
         presenterurl: https://www.polyu.edu.hk/aae/ipn-lab/us/index.html
-      - starts: 19:50
-        ends: 20:20
+      - starts: 01:00
+        ends: 01:30
         title: 'BeiDou Alone Is Not Enough: Space, Air and Ground Cooperative PNT Architecture and Key Technologies for Low Altitude Economy'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Mingquan Lu
