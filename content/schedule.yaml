@@ -4,8 +4,8 @@ schedule:
   - title: "Morning Session"
     date: "2025-10-19"
     sessions:
-      - starts: 12:45
-        ends: 13:00
+      - starts: 00:45
+        ends: 01:00
         title: Welcome and Opening Remarks
         #url: https://github.com/coderefinery/workshop-intro/blob/master/livestream.md
         presenters: Prof. Li-Ta Hsu
