@@ -5,7 +5,7 @@
 {% block content %}
   {% set image = resize_image(path="header_tighter.png", width=1200, op="fit_width") %}
   <div class="uk-height-medium uk-flex  uk-flex-bottom uk-flex-right uk-background-cover uk-light " data-src="{{ image.url }}" uk-img>
-    <div class="uk-width-auto">
+    <div class="uk-width-auto@m">
       <div class="uk-grid-small uk-child-width-auto uk-margin" uk-grid uk-countdown="date: 2025-10-19T12:45:00+00:00">
           <div>
               <div class="uk-countdown-number uk-countdown-days uk-text-xlarge"></div>
