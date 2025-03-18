@@ -15,7 +15,7 @@ schedule:
         ends: 01:30
         title: 'BeiDou Alone Is Not Enough: Space, Air and Ground Cooperative PNT Architecture and Key Technologies for Low Altitude Economy'
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Prof. Mingquan Lu
+        presenters: Prof. Dr. Mingquan Lu
         affiliation: Tsinghua University, China
         presenterurl: http://web.ee.tsinghua.edu.cn/lumingquan/en/index.htm
       - starts: 01:30
@@ -38,11 +38,11 @@ schedule:
         title: Coffee Break and Poster Session
       - starts: 03:00
         ends: 03:30
-        title: 'Advancing SLAM into new era - accuracy, robustness, and efficiency'
+        title: 'Toward Robust, Real-time, Radiance Map Reconstruction with Multi-sensor Fusion in GNSS-denied Scenarios'
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Prof. Dr. Fu Zhang (Dr. Jiarong Lin)
+        presenters: Dr. Jiarong Lin (Prof. Dr. Fu Zhang)
         affiliation: Mechatronics and Robotic Systems Laboratory<br>University of Hong Kong, Hong Kong
-        presenterurl: https://mars.hku.hk/
+        presenterurl: https://jiaronglin.com/
         #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
       - starts: 03:30
         ends: 04:00
