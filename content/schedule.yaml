@@ -106,7 +106,7 @@ schedule:
       - starts: 08:00
         ends: 08:50
         title: 'Panel Discussion:'
-        subtitle: 'Diffraction of Common GNSS-Inspired Problems in Robotics: system integrity, and transferability to other ranging sources'
+        subtitle: 'Diffraction of Common GNSS-Inspired Problems in Robotics: system, integrity, and transferability to other ranging sources'
         #url: https://coderefinery.github.io/git-intro/
         #presenters: Dr. Mustermann
         #affiliation: University of Mustermann 
