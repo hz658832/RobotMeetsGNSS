@@ -8,7 +8,7 @@ title = "Content"
 As the first workshop dedicated to exploring synergies and identifying challenges in robotic research enhanced by GNSS and ranging sensors, we follow two leading research directions: robotics-focused and GNSS-focused approaches. In this context, four key topics, as illustrated in Figure 2, which bridge robotics and GNSS research are highlighted and explored through expert talks from academia and industry:
 
 
-| ![](content.png) | 
+| ![](content.png){} | 
 |:--:| 
 | *Figure 2: Overview of the workshop content, structured around robotics-focused and GNSS-focused directions. Four synergy research topics are explored through expert keynotes and talks.* |
 
