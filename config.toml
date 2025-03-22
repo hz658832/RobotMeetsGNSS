@@ -37,7 +37,7 @@ navigation = [
     #{ name = "Contact", target = "communication/" }
 ]
 
-twitter_image = "https://raw.githubusercontent.com/coderefinery/coderefinery-artwork/main/socialshare/socialshare-workshop.png"
+twitter_image = "https://github.com/hz658832/RobotMeetGNSS/blob/main/content/header_wide.png"
 
 # plausible.io analytics
 plausible = { src = "https://plausible.cs.aalto.fi/js/script.js", domain = "coderefinery.github.io", github_ref = "refs/heads/main" }
@@ -47,7 +47,7 @@ plausible = { src = "https://plausible.cs.aalto.fi/js/script.js", domain = "code
 # the image file(s) need to be placed in content/logos
 logos = [
 #   { alt_text = "CodeRefinery logo", target_url = "https://coderefinery.org/", image = "coderefinery.png" },
-    { alt_text = "CodeRefinery logo", target_url = "https://www.google.de/", image = "coderefinery.png" }
+    { alt_text = "RobotMeetsGNSS logo", target_url = "https://robotmeetsgnss.com/", image = "header_tighter_icon.png" }
 ]
 
 # adapt this
