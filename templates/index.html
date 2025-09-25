@@ -40,18 +40,41 @@
 
   <p></p>
  
-<div class="uk-section uk-section-muted uk-padding uk-border-rounded uk-text-center" 
-     uk-scrollspy="cls: uk-animation-slide-bottom-small; repeat: false">
+<!-- Make sure this is in your <head> -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <h1 class="uk-heading-large uk-margin-remove uk-text-center" style="font-weight: 800; white-space: nowrap;">
-    {{ config.title }}
-  </h1>
+<style>
+  /* Fluid, responsive typography */
+  .hero-title {
+    font-weight: 800;
+    font-size: clamp(28px, 6vw, 56px); /* scales from phones to desktops */
+    line-height: 1.1;
+    margin: 0;
+  }
+  .hero-subtitle {
+    font-weight: 400;
+    font-size: clamp(16px, 3.2vw, 22px);
+    line-height: 1.35;
+    margin-top: .5rem;
+  }
+</style>
 
-  <h3 class="uk-text-lead uk-margin-small-top uk-text-muted" style="font-weight: 400; white-space: nowrap;">
-    Exploring Synergies and Challenges of Radio-based Ranging Technologies in Robotics
-  </h3>
+<div class="uk-section uk-section-muted uk-border-rounded">
+  <div class="uk-container uk-text-center" 
+       uk-scrollspy="cls: uk-animation-slide-bottom-small; repeat: false">
 
+    <!-- Remove nowrap so it can wrap on small screens -->
+    <h1 class="hero-title uk-text-break">
+      {{ config.title }}
+    </h1>
+
+    <h3 class="hero-subtitle uk-text-lead uk-text-muted uk-text-break">
+      Exploring Synergies and Challenges of Radio-based Ranging Technologies in Robotics
+    </h3>
+
+  </div>
 </div>
+
 
 <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light uk-margin-medium-top uk-border-rounded" 
      uk-scrollspy="cls: uk-animation-fade; delay: 300">
@@ -80,10 +103,10 @@
   </div-->
 
   <div class="uk-grid-divider uk-child-width-expand@s" uk-grid uk-scrollspy="cls: uk-animation-fade; delay: 300">
-    <div class="uk-width-4-7@m">
+    <div class="uk-width-3-5@m">
       {% include "05_schedule.html" %}
     </div>
-    <div class="uk-width-3-7@m" >
+    <div class="uk-width-2-5@m" >
       {% include "06_organization.html" %}
     </div>
   </div>
