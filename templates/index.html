@@ -78,10 +78,16 @@
 
 <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light uk-margin-medium-top uk-border-rounded" 
      uk-scrollspy="cls: uk-animation-fade; delay: 300">
-  <div uk-grid>
-    <div class="uk-width-expand@m">
+  <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid uk-height-match="target: > div">
+
+    <div>
       {% include "news.html" %}
     </div>
+
+    <div>
+      {% include "important_dates.html" %}
+    </div>
+
   </div>
 </div>
 

@@ -1,6 +1,0 @@
-+++
-+++
-
-### <b> Important links             
-
-- ...
