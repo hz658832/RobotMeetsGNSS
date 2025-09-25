@@ -3,38 +3,46 @@
 {% extends "base.html" %}
 
 {% block content %}
-  {% set image = resize_image(path="header_tighter.png", width=1200, op="fit_width") %}
-  <div class="uk-height-medium uk-flex  uk-flex-bottom uk-flex-right uk-background-cover uk-light " data-src="{{ image.url }}" uk-img>
-    <div class="uk-width-auto@m">
-      <div class="uk-grid-small uk-child-width-auto uk-margin" uk-grid uk-countdown="date: 2025-10-19T12:45:00+00:00">
-          <div>
-              <div class="uk-countdown-number uk-countdown-days uk-text-xlarge"></div>
-              <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
-          </div>
-          <div class="uk-countdown-separator">:</div>
-          <div>
-              <div class="uk-countdown-number uk-countdown-hours"></div>
-              <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
-          </div>
-          <div class="uk-countdown-separator">:</div>
-          <div>
-              <div class="uk-countdown-number uk-countdown-minutes"></div>
-              <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
-          </div>
-          <div class="uk-countdown-separator">:</div>
-          <div>
-              <div class="uk-countdown-number uk-countdown-seconds"></div>
-              <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
-          </div>
+  {% set image = resize_image(path="header_tighter.png", width=2000, op="fit_width") %}
+<div class="uk-flex uk-flex-bottom uk-flex-right uk-light uk-background-norepeat"
+     style="background-image:url('{{ image.url }}');
+            background-size: contain;
+            background-position: center;
+            aspect-ratio: 14 / 5;">
+  
+  <div class="uk-width-auto@m uk-padding-small">
+    <div class="uk-grid-small uk-child-width-auto uk-margin" uk-grid
+         uk-countdown="date: 2026-06-01T12:45:00+00:00">
+
+      <div>
+        <div class="uk-countdown-number uk-countdown-days uk-text-xlarge"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
+      </div>
+      <div class="uk-countdown-separator">:</div>
+      <div>
+        <div class="uk-countdown-number uk-countdown-hours"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
+      </div>
+      <div class="uk-countdown-separator">:</div>
+      <div>
+        <div class="uk-countdown-number uk-countdown-minutes"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
+      </div>
+      <div class="uk-countdown-separator">:</div>
+      <div>
+        <div class="uk-countdown-number uk-countdown-seconds"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
       </div>
     </div>
-
   </div>
+</div>
+
+
   <p></p>
   <div class="uk-margin-bottom" uk-grid>
     <div class="uk-width-expand@m">
       <h1><b>{{ config.title }}</h1>
-      <h3 class="uk-align-right">Exploring Synergies and Challenges of Global Navigation Satellite Systems in Robotics</h3>
+      <h3 class="uk-align-right">Exploring Synergies and Challenges of Radio-based Ranging Technologies in Robotics</h3>
     </div>
   </div>
   <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light uk-margin-medium-bottom">
@@ -42,18 +50,15 @@
       <div class="uk-width-expand@m">
         {% include "news.html" %}
       </div>
-      <!--div class="uk-width-expand@m">
-        {% include "links.html" %}
-      </div-->
     </div>
   </div>
 
 
-  <div class="uk-width-1-1@m">
+  <div class="uk-width-1-1@s">
       {% include "01_scope.html" %}
   </div>
   <hr class="uk-divider-icon">
-  <div class="uk-width-1-1@m">
+  <div class="uk-width-1-1@s">
     {% include "02_speakers.html" %}
   </div>
 
@@ -64,10 +69,10 @@
   </div-->
 
   <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
-    <div class="uk-width-3-5@m">
+    <div class="uk-width-4-7@m">
       {% include "05_schedule.html" %}
     </div>
-    <div class="uk-width-2-5@m">
+    <div class="uk-width-3-7@m">
       {% include "06_organization.html" %}
     </div>
   </div>

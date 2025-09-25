@@ -1,151 +1,216 @@
-<h2><b>Invited Speakers</h2>
+<h2 class="uk-heading-line"><span><b>Invited Speakers</span></h2>
 <p>Speakers are listed in the order of their scheduled presentations.</p>
 {% set image1 = resize_image(path="people/person-dummy.jpg", width=709, op="fit_width") %}
 {% set img_weisong = resize_image(path="people/weisong.png", width=709, op="fit_width") %}
 {% set img_taro = resize_image(path="people/taro.png", width=709, op="fit_width") %}
-{% set img_zhang = resize_image(path="people/s_prof_fu_zhang.png", width=709, op="fit_width") %}
-{% set img_jiarong = resize_image(path="people/s_jiarong.png", width=709, op="fit_width") %}
-{% set img_xingxing = resize_image(path="people/xingxing.png", width=709, op="fit_width") %}
 {% set img_tim = resize_image(path="people/s_tim.png", width=709, op="fit_width") %}
-{% set img_lu = resize_image(path="people/s_prof_lu.png", width=709, op="fit_width") %}
-{% set img_pei = resize_image(path="people/s_ling_pei.png", width=709, op="fit_width") %}
-{% set img_feng = resize_image(path="people/s_prof_feng.png", width=709, op="fit_width") %}
 {% set img_matthew = resize_image(path="people/s_matthew.png", width=709, op="fit_width") %}
-<div class="uk-overflow-auto">
-	<div class="uk-grid uk-child-width-expand@s" uk-grid>
-	    <div class="uk-width-1-3@m">
-			<table class="uk-table uk-table-small uk-table-justify uk-table-striped">
-       	 		<thead>
-	            	<tr>
-	                	<th class="uk-table-shrink"></th>
-	                	<th class="uk-table-shrink"></th>
-	            	</tr>
-	        	</thead>
-	        	<tbody>
-	        		<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_lu.url }}" width="150" height="100" alt=""></td>
-	                	<td class="uk-text-top uk-table-expand">
-	                	    <span class="uk-text-middle">Prof. Dr. Mingquan Lu</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small">Tsinghua University,<br>China</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="http://web.ee.tsinghua.edu.cn/lumingquan/en/index.htm " target="_blank">Website</a></span>
-	                	</td>
-	            	</tr>
+{% set img_nguyen = resize_image(path="people/s_nguyen.jpg", width=709, op="fit_width") %}
+{% set img_stephan = resize_image(path="people/s_stephan.jpeg", width=709, op="fit_width") %}
+<style>
+  /* Fancy numbering — auto-increment across all speaker cards */
+  .speaker-list { counter-reset: speaker; }
+  .speaker-card { position: relative; counter-increment: speaker; overflow: hidden; }
 
-	            	<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_jiarong.url }}" width="150" height="100" alt=""></td>
-	                	<td class="uk-text-top uk-table-expand">
-	                	    <span class="uk-text-middle">Dr. Jiarong Lin<br>(Prof. Dr. Fu Zhang)</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small">MARS Lab,<br>University of Hong Kong,<br>Hong Kong</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://mars.hku.hk/people.html" target="_blank">Website</a></span>
-	                	</td>
-	            	</tr>
+  /* Card chrome: gradient hairline + soft shadow */
+  .speaker-card {
+    border-radius: 14px;
+    background:
+      linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(135deg, rgba(30,135,240,.5), rgba(111,66,193,.5)) border-box;
+    border: 1px solid transparent;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  }
 
-	            	<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_tim.url }}" width="150" height="100" alt=""></td>
-	                	<td class="uk-text-top uk-table-expand">
-	                	    <span class="uk-text-middle">Dr.-Ing. Tim Pfeifer</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small">Siemens AG,<br>Germany</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://tipf.github.io/" target="_blank">Website</a></span>
-	                	</td>
-	            	</tr>
-	         
-	        	</tbody>
-    		</table>	
-	    </div>
+  /* Avatar sizing */
+  .speaker-avatar {
+    width: 120px; height: 120px; object-fit: cover;
+  }
 
-	    <div class="uk-width-1-3@m">
-			<table class="uk-table uk-table-small uk-table-justify uk-table-striped">
-       	 		<thead>
-	            	<tr>
-	                	<th class="uk-table-shrink"></th>
-	                	<th class="uk-table-shrink"></th>
-	            	</tr>
-	        	</thead>
-	        	<tbody>
-	        		<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_pei.url }}" width="150" height="100" alt=""></td>
-	                	<td class="uk-text-top uk-table-expand">
-	                	    <span class="uk-text-middle">Prof. Dr. Ling Pei</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small">Shanghai Jiao Tong University,<br>China</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://nls.sjtu.edu.cn/web/base/personal-info/5e50b16a6b5cc99eeca74884?index=2&child=1" target="_blank">Website</a></span>
-	                	</td>
-	            	</tr>
+  /* Chips for affiliation lines (optional) */
+  .chip {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    background: rgba(30,135,240,.08);
+    border: 1px solid rgba(30,135,240,.15);
+    margin-right: 6px; margin-top: 6px;
+    white-space: nowrap;
+  }
 
-	            	<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_xingxing.url }}" width="150" height="100" alt=""></td>
-	                	<td class="uk-text-top uk-table-expand">
-	                	    <span class="uk-text-middle">Prof. Dr. Xingxing Li</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small">Wuhan University,<br>China</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm" target="_blank">Website</a></span>
-	                	</td>
-	            	</tr>
+  /* Tighten headings */
+  .speaker-card h4 { margin: 0; }
+  .speaker-meta { margin-top: 4px; }
+  .speaker-card {
+	  min-height: 230px;   /* all cards at least 280px tall */
+	  display: flex;       /* ensures content aligns properly */
+	  flex-direction: column;
+	  justify-content: space-between; /* keeps spacing nice */
+	}
+</style>
 
-	            	<tr>
-	                	<td>
-	                		<img class="uk-preserve-width uk-border-rounded" src="{{ img_weisong.url }}" width="150" height="100" alt="">
-	                	</td>
-	                	<td class="uk-text-top uk-table-expand">
-	                	    <span class="uk-text-middle">Prof. Dr. Weisong Wen</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small">TAS Lab,<br>Hong Kong Polytechnic University,<br>Hong Kong</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://polyu-taslab.github.io/team/" target="_blank">Website</a></span>
-	                	</td>
+<div class="uk-container uk-margin-medium speaker-list">
 
-	            	</tr>
-	        	</tbody>
-    		</table>	
-	    </div>
+  <!-- Session 1 -->
+  <h3 class="uk-heading-line"><span>Session 1: Ranging-Enabled Robotic Research</span></h3>
+  <div class="uk-grid-medium uk-child-width-1-1 uk-child-width-1-2@s" uk-grid
+       uk-scrollspy="cls: uk-animation-slide-bottom-small; target: .speaker-card; delay: 80">
 
-	    <div class="uk-width-1-3@m">
-			<table class="uk-table uk-table-small uk-table-justify uk-table-striped">
-       	 		<thead>
-	            	<tr>
-	                	<th class="uk-table-shrink"></th>
-	                	<th class="uk-table-shrink"></th>
-	            	</tr>
-	        	</thead>
-	        	<tbody>
-	        		<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_taro.url }}" width="150" height="100" alt=""></td>
-	                	<td class="uk-text-top uk-table-expand">
-	                	    <span class="uk-text-middle">Dr. Taro Suzuki</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small">Chiba Institute of Technology,<br>Japan</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="http://www.taroz.net/" target="_blank">Website</a></span>
-	                	</td>
-	            	</tr>
+    <!-- Taro -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="{{ img_taro.url }}" alt="Taro Suzuki, PhD">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Dr. Taro Suzuki</h4>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+		      <p class="uk-margin-remove uk-text-default">Principal Research Scientist<br>Chiba Institute of Technology<br>Japan</p>
+		      <p class="uk-margin-remove-top uk-text-default">
+		        <a href="http://www.taroz.net/" target="_blank" rel="noopener">Personal site</a>
+		      </p>
+		    </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	            	<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_feng.url }}" width="150" height="100" alt=""></td>
-	                	<td class="uk-text-top uk-table-expand">
-	                	    <span class="uk-text-middle">Prof. Dr.<br>Shaojun Feng</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small">Qianxun Spatial Intelligence Inc., China, <br>Imperiall College London, UK</span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://profiles.imperial.ac.uk/s.feng/about " target="_blank">Website</a></span>
-	                	</td>
-	            	</tr>
+    <!-- Nguyen -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="{{ img_nguyen.url }}" alt="Thien-Minh Nguyen">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Thien-Minh Nguyen, PhD</h4>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+		      <p class="uk-margin-remove uk-text-default">Research Assistant Professor<br>Nanyang Technological University<br>Singapore</p>
+		      <p class="uk-margin-remove-top uk-text-default">
+		        <a href="https://brytsknguyen.github.io/" target="_blank" rel="noopener">Personal site</a>
+		      </p>
+		    </div>
+          </div>
+        </div>
+       </div>
+      </div>
 
-	            	<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ image1.url }}" width="190" height="100" alt=""></td>
-	                	<td class="uk-text-top">
-	                	    <span class="uk-text-middle">Lorem ipsum.</span>
-	                	</td>
-	            	</tr>          	
-	        	</tbody>
-    		</table>	
-	    </div>
-	</div>
+    <!-- Lorem -->
+    <!--div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="{{ image1.url }}" alt="Speaker">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Lorem ipsum.</h4>
+          </div>
+        </div>
+      </div>
+    </div-->
+
+    <!-- Stephan Weiss -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="{{ img_stephan.url }}" alt="Prof. Dr. Stephan Weiss">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Prof. Dr. Stephan Weiss</h4>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+		      <p class="uk-margin-remove uk-text-default">Full Professor<br>University of Klagenfurt<br>Austria</p>
+		      <p class="uk-margin-remove-top uk-text-default">
+		        <a href="https://www.aau.at/en/team/weiss-stephan-michael/" target="_blank" rel="noopener">Personal site</a>
+		      </p>
+		    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Session 2 -->
+  <h3 class="uk-heading-line uk-margin-large-top"><span>Session 2: Robustness, Integrity, and Safety</span></h3>
+  <div class="uk-grid-medium uk-child-width-1-1 uk-child-width-1-2@s" uk-grid
+       uk-scrollspy="cls: uk-animation-slide-bottom-small; target: .speaker-card; delay: 80">
+
+    <!-- Spenko -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="{{ img_matthew.url }}" alt="Prof. Matthew Spenko">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Prof. Matthew Spenko, PhD</h4>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+		      <p class="uk-margin-remove uk-text-default">Professor<br>Illinois Tech<br>United States</p>
+		      <p class="uk-margin-remove-top uk-text-default">
+		        <a href="https://www.iit.edu/directory/people/matthew-spenko" target="_blank" rel="noopener">Personal site</a>
+		      </p>
+		    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pfeifer -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="{{ img_tim.url }}" alt="Dr. Tim Pfeifer">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Dr. Tim Pfeifer</h4>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+		      <p class="uk-margin-remove uk-text-default">Siemens AG<br>Germany</p>
+		      <p class="uk-margin-remove-top uk-text-default">
+		        <a href="https://tipf.github.io/" target="_blank" rel="noopener">Personal site</a>
+		      </p>
+		    </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Weisong (single centered) -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="{{ img_weisong.url }}" alt="Prof. Dr. Weisong Wen">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Prof. Weisong Wen, PhD</h4>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+		      <p class="uk-margin-remove uk-text-default">Assistant Professor<br>Hong Kong Polytechnic University<br>Hong Kong</p>
+		      <p class="uk-margin-remove-top uk-text-default">
+		        <a href="https://polyu-taslab.github.io/team/" target="_blank" rel="noopener">Personal site</a>
+		      </p>
+		    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>

@@ -5,135 +5,222 @@
 {% set img_darren = resize_image(path="people/o_darren.png", width=709, op="fit_width") %}
 {% set img_xikun = resize_image(path="people/o_xikun.png", width=709, op="fit_width") %}
 {% set img_lita = resize_image(path="people/o_lita.png", width=709, op="fit_width") %}
-{% set img_wang = resize_image(path="people/o_prof_wang.png", width=709, op="fit_width") %}
-{% set img_xingxing = resize_image(path="people/xingxing.png", width=709, op="fit_width") %}
 {% set img_taro = resize_image(path="people/taro.png", width=709, op="fit_width") %}
 {% set img_daniel = resize_image(path="people/o_daniel.png", width=709, op="fit_width") %}
 {% set img_yibin = resize_image(path="people/o_yibin.png", width=709, op="fit_width") %}
-<div class="uk-overflow-auto">
-	<div class="uk-grid uk-child-width-expand@s" uk-grid>
-	    <div class="uk-width-1-3@m">
-			<table class="uk-table uk-table-small uk-table-justify uk-table-striped">
-       	 		<thead>
-	            	<tr>
-	                	<th class="uk-table-shrink"></th>
-	                	<th class="uk-table-shrink"></th>
-	            	</tr>
-	        	</thead>
-	        	<tbody>
-	        		<tr>
-	                	<td>
-				    		<img class="uk-preserve-width uk-border-rounded" src="{{ img_haoming.url }}" width="100" height="100" alt="">
-				    	</td>
-				    	<td class="uk-text-top uk-table-expand">
-			        	    <span class="uk-text-middle"><a href="https://hz658832.github.io/" target="_blank">Haoming Zhang</a></span>
-			        	    <br>
-			        	    <span class="uk-text-middle uk-text-light uk-text-small">RWTH Aachen University,<br>Germany</span>
-			        	</td>
-	            	</tr>
+{% set img_johannes = resize_image(path="people/o_johannes.webp", width=709, op="fit_width") %}
+{% set img_shenghai = resize_image(path="people/o_shenghai.png", width=709, op="fit_width") %}
 
-	            	<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_yibin.url }}" width="100" height="100" alt=""></td>
-				    	<td class="uk-text-top uk-table-expand">
-			        	    <span class="uk-text-middle"><a href="https://yibinwu.github.io/" target="_blank">Yibin Wu</a></span>
-			        	    <br>
-			        	    <span class="uk-text-middle uk-text-light uk-text-small">Institute of Geodesy and Geoinformation,<br>University of Bonn,<br> Germany</span>
-			        	</td>
-	            	</tr>
+<style>
+  .organizer-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
 
-	            	<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_weisong.url }}" width="100" height="100" alt=""></td>
-				    	<td class="uk-text-top uk-table-expand">
-			        	    <span class="uk-text-middle"><a href="https://polyu-taslab.github.io/team/" target="_blank">Prof. Dr. Weisong Wen</a></span>
-			        	    <br>
-			        	    <span class="uk-text-middle uk-text-light uk-text-small">TAS Lab,<br>The Hong Kong Polytechnic University,<br>Hong Kong</span>
-			        	</td>
-	            	</tr>
-	         
-	        	</tbody>
-    		</table>	
-	    </div>
+.organizer-card {
+  border-radius: 10px;
+  background:
+      linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(135deg, rgba(30,135,240,.5), rgba(111,66,193,.5)) border-box;
+	border: 1px solid transparent;
+	box-shadow: 0 10px 10px rgba(0,0,0,.06);
+}
+.organizer-card img {
+  transition: transform 0.25s ease;
+}
+.organizer-card:hover img {
+  transform: scale(1.05);
+}
+.organizer-card {
+	  min-height: 150px;   /* all cards at least 280px tall */
+	  display: flex;       /* ensures content aligns properly */
+	  flex-direction: column;
+	  justify-content: space-between; /* keeps spacing nice */
+	}
+.organizer-name {
+  font-weight: 700;   /* bold */
+  color: #1e87f0;     /* keep default text color */
+  text-decoration: none;
+}
+.organizer-name:hover {
+  color: #1e87f0;     /* UIKit blue on hover */
+}
+</style>
 
-	    <div class="uk-width-1-3@m">
-			<table class="uk-table uk-table-small uk-table-justify uk-table-striped">
-       	 		<thead>
-	            	<tr>
-	                	<th class="uk-table-shrink"></th>
-	                	<th class="uk-table-shrink"></th>
-	            	</tr>
-	        	</thead>
-	        	<tbody>
-	        		<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_darren.url }}" width="100" height="100" alt=""></td>
-				    	<td class="uk-text-top uk-table-expand">
-			        	    <span class="uk-text-middle"><a href="https://darrenwong.github.io/" target="_blank">Feng (Darren) Huang</a></span>
-			        	    <br>
-			        	    <span class="uk-text-middle uk-text-light uk-text-small">The Hong Kong Polytechnic University,<br>Hong Kong</span>
-			        	</td>
-	            	</tr>
+<div class="uk-container">
 
-	            	<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_taro.url }}" width="100" height="100" alt=""></td>
-				    	<td class="uk-text-top uk-table-expand">
-				    	    <span class="uk-text-middle"><a href="http://www.taroz.net/" target="_blank">Dr. Taro Suzuki</a></span>
-				    	    <br>
-				    	    <span class="uk-text-middle uk-text-light uk-text-small">Chiba Institute of Technology,<br>Japan</span>
-				    	</td>
-	            	</tr>
+<div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
 
-	            	<tr>
-	                	<td>
-				    		<img class="uk-preserve-width uk-border-rounded" src="{{ img_wang.url }}" width="100" height="100" alt="">
-				    	</td>
-				    	<td class="uk-text-top uk-table-expand">
-				    	    <span class="uk-text-middle"><a href="https://www.unsw.edu.au/staff/jinling-wang" target="_blank">Prof. Dr. Jinling Wang</a></span>
-				    	    <br>
-				    	    <span class="uk-text-middle uk-text-light uk-text-small">University of New South Wales Sydney,<br>Australia</span>
-				    	</td>
-	            	</tr>
-	        	</tbody>
-    		</table>	
-	    </div>
+  <!-- Organizer 1 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="{{ img_haoming.url }}" alt="Dr.-Ing. Haoming Zhang">
+        </div>
+        <div class="uk-width-expand ">
+          <h5 class="uk-margin-remove"><a href="https://hz658832.github.io/" target="_blank" class="organizer-name">Dr.-Ing. Haoming Zhang</a></h5>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Postdoctoral Researcher<br>LSY Lab<br>Technical University of Munich<br>Germany
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	    <div class="uk-width-1-3@m">
-			<table class="uk-table uk-table-small uk-table-justify uk-table-striped">
-       	 		<thead>
-	            	<tr>
-	                	<th class="uk-table-shrink"></th>
-	                	<th class="uk-table-shrink"></th>
-	            	</tr>
-	        	</thead>
-	        	<tbody>
-	        		<tr>
-	                	<td>
-				    		<img class="uk-preserve-width uk-border-rounded" src="{{ img_xikun.url }}" width="100" height="100" alt="">
-				    	</td>
-						<td class="uk-text-top uk-table-expand">
-			        	    <span class="uk-text-middle"><a href="https://xikunliu-huskit.github.io/" target="_blank">Xikun Liu</a></span>
-			        	    <br>
-			        	    <span class="uk-text-middle uk-text-light uk-text-small">TAS Lab,<br>The Hong Kong Polytechnic University,<br>Hong Kong</span>
-			        	</td>
-	            	</tr>
+  <!-- Organizer 2 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="{{ img_darren.url }}" alt="Dr. Feng (Darren) Huang">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://darrenwong.github.io/" target="_blank" class="organizer-name">Dr. Feng (Darren) Huang</a></h5>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Postdoctoral Researcher<br>TAS Lab<br>The Hong Kong Polytechnic University<br>Hong Kong
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	            	<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_daniel.url }}" width="100" height="100" alt=""></td>
-	                	<td class="uk-text-top uk-table-expand">
-	                	    <span class="uk-text-middle"><a href="https://www.dlr.de/en/kn" target="_blank">Dr. Daniel Medina</a></span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small">Institute of Communications and Navigation,<br>German Aerospace Center (DLR),<br>Germany</span>
-	                	</td>
-	            	</tr>
+  <!-- Organizer 3 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="{{ img_yibin.url }}" alt="Yibin Wu">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://yibinwu.github.io/" target="_blank" class="organizer-name">Yibin Wu</a></h5>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            PhD Student<br>Institute of Geodesy and Geoinformation<br>University of Bonn, Germany
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	            	<tr>
-	                	<td><img class="uk-preserve-width uk-border-rounded" src="{{ img_lita.url }}" width="100" height="100" alt=""></td>
-	                	<td class="uk-text-top">
-	                		<span class="uk-text-middle"><a href="https://www.polyu.edu.hk/aae/ipn-lab/us/index.html" target="_blank">Prof. Dr. Li-Ta Hsu</a></span>
-	                	    <br>
-	                	    <span class="uk-text-middle uk-text-light uk-text-small">IPN Lab,<br>The Hong Kong Polytechnic University,<br>Hong Kong</span>
-	                	</td>
-	            	</tr>          	
-	        	</tbody>
-    		</table>	
-	    </div>
-	</div>
+  <!-- Organizer 4 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="{{ img_xikun.url }}" alt="Xikun Liu">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://xikunliu-huskit.github.io/" target="_blank" class="organizer-name">Xikun Liu</a></h5>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            PhD Student<br>TAS Lab<br>The Hong Kong Polytechnic University<br>Hong Kong
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizer 5 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="{{ img_shenghai.url }}" alt="Dr. Shenghai Yuan">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://snakehaihai.github.io//" target="_blank" class="organizer-name">Dr. Shenghai Yuan</a></h5>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Senior Research Fellow<br>Nanyang Technological University<br>Singabore
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizer 6 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="{{ img_daniel.url }}" alt="Dr. Daniel Medina">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://www.dlr.de/en/kn" target="_blank" class="organizer-name">Dr. Daniel Medina</a></h5>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            R&D Engineer<br>Institute of Communications and Navigation<br>German Aerospace Center (DLR)<br>Germany
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+		<!-- Organizer 7 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="{{ img_taro.url }}" alt="Dr. Taro Suzuki">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="http://www.taroz.net/" target="_blank" class="organizer-name">Dr. Taro Suzuki</a></h5>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Principal Research Scientist<br>Chiba Institute of Technology<br>Japan
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizer 8 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="{{ img_weisong.url }}" alt="Prof. Dr. Weisong Wen">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://polyu-taslab.github.io/team/" target="_blank" class="organizer-name">Prof. Dr. Weisong Wen</a></h5>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Assistant Professor<br>TAS Lab<br>The Hong Kong Polytechnic University<br>Hong Kong
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	  <!-- Organizer 9 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="{{ img_johannes.url }}" alt="Prof. Dr.-Ing. Johannes Betz">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://www.professoren.tum.de/betz-johannes" target="_blank" class="organizer-name">Prof. Dr.-Ing. Johannes Betz</a></h5>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Full Professor<br>AVS Lab<br>Technical University of Munich<br>Germany
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Organizer 10 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="{{ img_lita.url }}" alt="Prof. Dr. Li-Ta Hsu">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://www.polyu.edu.hk/aae/ipn-lab/us/index.html" target="_blank" class="organizer-name">Prof. Dr. Li-Ta Hsu</a></h5>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Full Professor<br>IPN Lab<br>The Hong Kong Polytechnic University<br>Hong Kong
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 </div>

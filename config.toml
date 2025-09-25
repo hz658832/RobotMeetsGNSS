@@ -5,8 +5,8 @@
 base_url = "https://robotmeetsgnss.com"
 
 # When adapting the title, do not forget to also adjust base_url above
-title = "1st Workshop on Robot Meets GNSS" 
-description = "Exploring Synergies and Challenges of Global Navigation Satellite Systems in Robotics."
+title = "Workshop on Robot Meets GNSS and Ranging for Seamless Autonomy" 
+description = "Exploring Synergies and Challenges of Radio-based Ranging Technologies in Robotics"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true

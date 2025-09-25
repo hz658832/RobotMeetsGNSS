@@ -6,7 +6,7 @@ $navbar-nav-item-hover-color: #cc0099;
 $iconnav-item-color: #3366dd;
 $iconnav-item-hover-color: #cc0099;
 $global-primary-background: #3d5ea3;
-$global-secondary-background: #3d5ea3; //#364f61;
+$global-secondary-background: #5F92B6; //#364f61;
 $base-code-color: #cc0099;
 $text-meta-color: #666666;
 $table-header-cell-color: #666666;
@@ -38,7 +38,7 @@ $heading-color: #404040;
 
 .markdown h1 {
     @extend .uk-h2;
-    font-size: 40px;
+    font-size: 36px;
     line-height:50px;
     color: $heading-color;
     margin: 0 0 10px;
@@ -62,4 +62,18 @@ $heading-color: #404040;
     @extend .uk-h4;
     color: $heading-color;
     margin: 0 0 0px;
+}
+
+.uk-text-custom {
+  font-size: 1.1rem;  /* between medium (1rem) and large (1.25rem) */
+  line-height: 1.6;   /* improve readability for longer paragraphs */
+}
+
+
+.uk-width-3-7\@m {
+  width: 42.8571%; /* 3/7 */
+}
+
+.uk-width-4-7\@m {
+  width: 57.1429%; /* 4/7 */
 }

@@ -1,127 +1,119 @@
 ---
 # all times must be input in UTC, be careful about daylight saving
 schedule:
-  - title: "Morning Session"
-    date: "2025-10-19"
+  - title: ""
+    date: "2026-06-01"
     sessions:
-      - starts: 00:45
-        ends: 01:00
+      - starts: 06:45
+        ends: 07:00
         title: Welcome and Opening Remarks
         #url: https://github.com/coderefinery/workshop-intro/blob/master/livestream.md
         presenters: Prof. Dr. Li-Ta Hsu
-        #affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+        affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
         presenterurl: https://www.polyu.edu.hk/aae/ipn-lab/us/index.html
-      - starts: 01:00
-        ends: 01:30
-        title: 'BeiDou Alone Is Not Enough: Space, Air and Ground Cooperative PNT Architecture and Key Technologies for Low Altitude Economy'
+  - title: "Session I: Ranging-Enabled Robotic Research"
+    date: "2026-06-01"
+    sessions:   
+      - starts: 07:00
+        ends: 07:30
+        title: 'Connecting GNSS and Robotics: Toward Tightly Coupled Sensor Integration'
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Prof. Dr. Mingquan Lu
-        affiliation: Tsinghua University, China
-        presenterurl: http://web.ee.tsinghua.edu.cn/lumingquan/en/index.htm
-      - starts: 01:30
-        ends: 02:00
-        title: 'Connecting GNSS and Robotics - Toward Tightly Coupled Sensor Integration'
-        #url: https://coderefinery.github.io/git-intro/
-        presenters: Dr. Taro Suzuki 
+        presenters: Taro Suzuki, PhD
         affiliation: Chiba Institute of Technology, Japan
         presenterurl: http://www.taroz.net/
-        #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
-      - starts: 02:00
-        ends: 02:30
-        title: Robotic research using Advanced GNSS technologies
+      - starts: 07:30
+        ends: 08:00
+        title: 'Connecting GNSS and Robotics - Toward Tightly Coupled Sensor Integration'
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Prof. Dr. Xingxing Li
-        affiliation: Wuhan University, China
-        presenterurl: https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm
-      - starts: 02:30
-        ends: 03:00
+        presenters: Thien-Minh Nguyen, PhD
+        affiliation: Nanyang Technological University, Singapore
+        presenterurl: https://brytsknguyen.github.io/
+        #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
+      - starts: 08:00
+        ends: 08:30
+        title: 'Spotlight Talks #1 (5min/pers)'
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Five emerging authors
+        #affiliation: '-'
+        #presenterurl: https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm
+      - starts: 08:30
+        ends: 09:00
         title: Coffee Break and Poster Session
-      - starts: 03:00
-        ends: 03:30
-        title: 'Toward Robust, Real-time, Radiance Map Reconstruction with Multi-sensor Fusion in GNSS-denied Scenarios'
+      - starts: 09:00
+        ends: 09:30
+        title: 'Keynote Presentation'
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Dr. Jiarong Lin (Prof. Dr. Fu Zhang)
-        affiliation: Mechatronics and Robotic Systems Laboratory<br>University of Hong Kong, Hong Kong
-        presenterurl: https://jiaronglin.com/
+        presenters: Keynote Speaker (tbd.)
+        affiliation: (tbd.)
+        #presenterurl: https://profiles.imperial.ac.uk/s.feng/about
+      - starts: 09:30
+        ends: 10:00
+        title: 'Equivariant Estimators: Using Symmetries to Cope with Challenging Ranging Observations'
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Prof. Dr. Stephan Weiss
+        affiliation: University of Klagenfurt, Austria
+        presenterurl: https://www.aau.at/en/team/weiss-stephan-michael/
         #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
-      - starts: 03:30
-        ends: 04:00
-        title: Empower robotic research using GNSS services
+      - starts: 10:00
+        ends: 10:30
+        title: 'Spotlight Talks #2 (5min/pers)'
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Prof. Dr. Shaojun Feng
-        affiliation: Qianxun Spatial Inteligence Inc. China, <br>Imperiall College London, UK
-        presenterurl: https://profiles.imperial.ac.uk/s.feng/about
-      - starts: 04:00
-        ends: 04:30
-        title: Brain-inspired navigation
-        #url: https://coderefinery.github.io/git-intro/
-        presenters: Prof. Dr. Ling Pei
-        affiliation: Shanghai Jiao Tong University
-        presenterurl: https://nls.sjtu.edu.cn/web/base/personal-info/5e50b16a6b5cc99eeca74884?index=2&child=1
+        presenters: Five emerging authors
+        #affiliation: '-'
+        #presenterurl: https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm
   - title: ""
-    date: "2025-10-19"
+    date: "2026-06-01"
     sessions:
-      - starts: 04:30
-        ends: 05:30
-        title: Lunch
-        #url: https://coderefinery.github.io/git-intro/
-        #presenters: Prof. Xingxing Li
-        #affiliation: Wuhan University, China
-        #presenterurl: https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm    
-  - title: "Afternoon Session"
-    date: "2025-10-19"
+      - starts: 10:30
+        ends: 11:30
+        title: Lunch   
+  - title: "Session II: Robustness, Integrity, and Safety"
+    date: "2026-06-01"
     sessions: 
-      - starts: 05:30
-        ends: 06:00
+      - starts: 11:30
+        ends: 12:00
+        title: Multisensor Integrity
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Prof. Matthew Spenko, PhD
+        affiliation: Illinois Tech, United State
+        presenterurl: https://www.iit.edu/directory/people/matthew-spenko
+      - starts: 12:00
+        ends: 12:30
+        title: Non-Gaussian State Estimation for GNSS, Ranging, and Beyond
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Tim Pfeifer
+        affiliation: Siemens AG, Germany
+        presenterurl: https://tipf.github.io/
+      - starts: 12:30
+        ends: 13:00
         title: Safety-quantifiable Joint Positioning and Control for Factor Graph
         #subtitle: "Why we want to track versions and how to go back in time to a working version: [Motivation](https://coderefinery.github.io/git-intro/motivation/), [Browsing](https://coderefinery.github.io/git-intro/browsing/), [Commiting](https://coderefinery.github.io/git-intro/commits/)"
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Dr. Weisong Wen
         affiliation: Trustworthy AI and Autonomous Systems Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
         presenterurl: https://polyu-taslab.github.io/
-      - starts: 06:00
-        ends: 06:30
-        title: Multisensor Integrity
-        #url: https://coderefinery.github.io/git-intro/
-        presenters: tbd.
-        #affiliation: University of Mustermann 
-        #presenterurl: https://tipf.github.io/
-      - starts: 06:30
-        ends: 07:00
-        title: Non-Gaussian State Estimation for GNSS, Ranging, and Beyond
-        #url: https://coderefinery.github.io/git-intro/
-        presenters: Dr. Tim Pfeifer
-        affiliation: Siemens AG, Germany
-        presenterurl: https://tipf.github.io/
-      - starts: 07:00
-        ends: 07:30
+      - starts: 13:00
+        ends: 13:30
         title: Coffee Break and Poster Session
-      - starts: 07:30
-        ends: 08:00
-        title: Highlight talks of accepted abstracts
+  - title: "Panel Discussion"
+    date: "2026-06-01"
+    sessions: 
+      - starts: 13:30
+        ends: 14:00
+        title: 'GNSS-Inspired Problems in Robotics: system, integrity, and transferability to other sensor modalities'
         #url: https://coderefinery.github.io/git-intro/
-        #presenters: Dr. Mustermann
-        #affiliation: University of Mustermann 
-        #presenterurl: https://mars.hku.hk/
-      - starts: 08:00
-        ends: 08:50
-        title: 'Panel Discussion:'
-        subtitle: 'Diffraction of Common GNSS-Inspired Problems in Robotics: system, integrity, and transferability to other ranging sources'
-        #url: https://coderefinery.github.io/git-intro/
-        #presenters: Dr. Mustermann
-        #affiliation: University of Mustermann 
-        #presenterurl: https://mars.hku.hk/
-      - starts: 08:50
-        ends: 09:00
+        presenters: Dr.-Ing. Haoming Zhang
+        affiliation: Technical University of Munich, Germany
+        presenterurl: https://probablyinconsistent.de/
+  - title: ""
+    date: "2026-06-01"
+    sessions:
+      - starts: 14:00
+        ends: 14:10
         title: Closing Remark
         #url: https://github.com/coderefinery/workshop-intro/blob/master/livestream.md
         presenters: Prof. Dr. Li-Ta Hsu
-        #affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+        affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
         presenterurl: https://www.polyu.edu.hk/aae/ipn-lab/us/index.html
-  - title: ""
-    date: "2025-10-19"
-    sessions:
-      - starts: 09:00
-        title: Dinner
         
  
