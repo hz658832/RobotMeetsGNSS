@@ -4,6 +4,8 @@
 
 {% block content %}
   {% set image = resize_image(path="header_tighter.png", width=2000, op="fit_width") %}
+  {% set image_tc_avs = resize_image(path="logos/IEEE_TSC.png", width=1000, op="fit_width") %}
+  {% set image_icra26 = resize_image(path="logos/ICRA-VIE26-logo.png", width=1000, op="fit_width") %}
 <div class="uk-flex uk-flex-bottom uk-flex-right uk-light uk-background-norepeat"
      style="background-image:url('{{ image.url }}');
             background-size: contain;
@@ -59,11 +61,13 @@
   }
 </style>
 
-<div class="uk-section uk-section-muted uk-border-rounded">
+<div class="uk-section uk-section-muted uk-border-rounded uk-padding-remove-bottom" 
+     uk-scrollspy="cls: uk-animation-fade; delay: 300">
+
+  <!-- Title / Subtitle -->
   <div class="uk-container uk-text-center" 
        uk-scrollspy="cls: uk-animation-slide-bottom-small; repeat: false">
 
-    <!-- Remove nowrap so it can wrap on small screens -->
     <h1 class="hero-title uk-text-break">
       {{ config.title }}
     </h1>
@@ -73,8 +77,36 @@
     </h3>
 
   </div>
-</div>
 
+  <!-- Logos Row -->
+  <div class="uk-container uk-margin-large-top"  
+       uk-scrollspy="cls: uk-animation-slide-bottom-small; repeat: false">
+
+    <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s uk-flex-middle" uk-grid uk-grid-match="target: > div > p">
+
+      <!-- Logo 1 -->
+      <div class="uk-text-center">
+        <p class="uk-text-medium uk-margin-remove-bottom uk-text-bold">
+          Workshop endorsed by:
+        </p>
+        <img data-src="{{ image_tc_avs.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+      </div>
+
+      <!-- Logo 2 -->
+      <div class="uk-text-center">
+        <p class="uk-text-medium uk-margin-remove-bottom uk-text-bold">
+          Workshop considered for:
+        </p>
+        <img data-src="{{ image_icra26.url }}" alt="Supporting partner logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:350px; width:100%; height:auto;">
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light uk-margin-medium-top uk-border-rounded" 
      uk-scrollspy="cls: uk-animation-fade; delay: 300">
