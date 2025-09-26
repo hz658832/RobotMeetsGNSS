@@ -10,7 +10,12 @@
 {% set img_yibin = resize_image(path="people/o_yibin.png", width=709, op="fit_width") %}
 {% set img_johannes = resize_image(path="people/o_johannes.webp", width=709, op="fit_width") %}
 {% set img_shenghai = resize_image(path="people/o_shenghai.png", width=709, op="fit_width") %}
-
+{% set logo_tum = resize_image(path="logos/tum.png", width=709, op="fit_width") %}
+{% set logo_polyu = resize_image(path="logos/polyU.png", width=709, op="fit_width") %}
+{% set logo_dlr = resize_image(path="logos/dlr.png", width=709, op="fit_width") %}
+{% set logo_bonn = resize_image(path="logos/uni_bonn.png", width=709, op="fit_width") %}
+{% set logo_ntu = resize_image(path="logos/ntu.png", width=709, op="fit_width") %}
+{% set logo_chiba = resize_image(path="logos/chiba.png", width=709, op="fit_width") %}
 <style>
   .organizer-avatar {
   width: 100px;
@@ -50,20 +55,29 @@
 
 <div class="uk-container">
 
-<div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+<div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid >
 
   <!-- Organizer 1 -->
   <div>
     <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
-      <div class="uk-grid-small uk-flex-middle" uk-grid>
+      <div class="uk-grid-small uk-flex-middle" uk-grid >
         <div class="uk-width-auto">
           <img class="uk-border-circle organizer-avatar" src="{{ img_haoming.url }}" alt="Dr.-Ing. Haoming Zhang">
         </div>
         <div class="uk-width-expand ">
           <h5 class="uk-margin-remove"><a href="https://hz658832.github.io/" target="_blank" class="organizer-name">Dr.-Ing. Haoming Zhang</a></h5>
-          <p class="uk-text-small uk-margin-remove uk-text-right">
-            Postdoctoral Researcher<br>LSY Lab<br>Technical University of Munich<br>Germany
-          </p>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="{{ logo_tum.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:200px; width:100%; height:auto;">
+            </div>
+            <div>
+              <p class="uk-text-small uk-margin-remove uk-text-right">
+                Postdoctoral Researcher<br>LSY Lab<br>Technical University of Munich<br>Germany
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -78,9 +92,18 @@
         </div>
         <div class="uk-width-expand">
           <h5 class="uk-margin-remove"><a href="https://darrenwong.github.io/" target="_blank" class="organizer-name">Dr. Feng (Darren) Huang</a></h5>
-          <p class="uk-text-small uk-margin-remove uk-text-right">
-            Postdoctoral Researcher<br>TAS Lab<br>The Hong Kong Polytechnic University<br>Hong Kong
-          </p>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="{{ logo_polyu.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
+            <p class="uk-text-small uk-margin-remove uk-text-right">
+              Postdoctoral Researcher<br>TAS Lab<br>Hong Kong Polytechnic University<br>Hong Kong
+            </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -95,9 +118,18 @@
         </div>
         <div class="uk-width-expand">
           <h5 class="uk-margin-remove"><a href="https://yibinwu.github.io/" target="_blank" class="organizer-name">Yibin Wu</a></h5>
-          <p class="uk-text-small uk-margin-remove uk-text-right">
-            PhD Student<br>Institute of Geodesy and Geoinformation<br>University of Bonn, Germany
-          </p>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="{{ logo_bonn.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:300px; width:100%; height:auto;">
+            </div>
+            <div>
+              <p class="uk-text-small uk-margin-remove uk-text-right">
+                PhD Student<br>Institute of Geodesy and Geoinformation<br>University of Bonn<br>Germany
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -112,9 +144,18 @@
         </div>
         <div class="uk-width-expand">
           <h5 class="uk-margin-remove"><a href="https://xikunliu-huskit.github.io/" target="_blank" class="organizer-name">Xikun Liu</a></h5>
-          <p class="uk-text-small uk-margin-remove uk-text-right">
-            PhD Student<br>TAS Lab<br>The Hong Kong Polytechnic University<br>Hong Kong
-          </p>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="{{ logo_polyu.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
+              <p class="uk-text-small uk-margin-remove uk-text-right">
+                PhD Student<br>TAS Lab<br>Hong Kong Polytechnic University<br>Hong Kong
+              </p>
+              </div>
+          </div>
         </div>
       </div>
     </div>
@@ -129,9 +170,18 @@
         </div>
         <div class="uk-width-expand">
           <h5 class="uk-margin-remove"><a href="https://snakehaihai.github.io//" target="_blank" class="organizer-name">Dr. Shenghai Yuan</a></h5>
-          <p class="uk-text-small uk-margin-remove uk-text-right">
-            Senior Research Fellow<br>Nanyang Technological University<br>Singabore
-          </p>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="{{ logo_ntu.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:300px; width:100%; height:auto;">
+            </div>
+            <div>
+                <p class="uk-text-small uk-margin-remove uk-text-right">
+                  Senior Research Fellow<br>Nanyang Technological University<br>Singabore
+                </p>
+              </div>
+          </div>
         </div>
       </div>
     </div>
@@ -146,9 +196,18 @@
         </div>
         <div class="uk-width-expand">
           <h5 class="uk-margin-remove"><a href="https://www.dlr.de/en/kn" target="_blank" class="organizer-name">Dr. Daniel Medina</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="{{ logo_dlr.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:300px; width:100%; height:auto;">
+            </div>
+            <div>
           <p class="uk-text-small uk-margin-remove uk-text-right">
-            R&D Engineer<br>Institute of Communications and Navigation<br>German Aerospace Center (DLR)<br>Germany
+            R&D Engineer, Group Leader<br>IKN<br>German Aerospace Center (DLR)<br>Germany
           </p>
+          </div>
+      </div>
         </div>
       </div>
     </div>
@@ -163,9 +222,18 @@
         </div>
         <div class="uk-width-expand">
           <h5 class="uk-margin-remove"><a href="http://www.taroz.net/" target="_blank" class="organizer-name">Dr. Taro Suzuki</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="{{ logo_chiba.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:300px; width:100%; height:auto;">
+            </div>
+            <div>
           <p class="uk-text-small uk-margin-remove uk-text-right">
             Principal Research Scientist<br>Chiba Institute of Technology<br>Japan
           </p>
+          </div>
+      </div>
         </div>
       </div>
     </div>
@@ -180,9 +248,18 @@
         </div>
         <div class="uk-width-expand">
           <h5 class="uk-margin-remove"><a href="https://polyu-taslab.github.io/team/" target="_blank" class="organizer-name">Prof. Dr. Weisong Wen</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="{{ logo_polyu.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
           <p class="uk-text-small uk-margin-remove uk-text-right">
-            Assistant Professor<br>TAS Lab<br>The Hong Kong Polytechnic University<br>Hong Kong
+            Assistant Professor<br>TAS Lab<br>Hong Kong Polytechnic University<br>Hong Kong
           </p>
+          </div>
+      </div>
         </div>
       </div>
     </div>
@@ -197,9 +274,18 @@
         </div>
         <div class="uk-width-expand">
           <h5 class="uk-margin-remove"><a href="https://www.professoren.tum.de/betz-johannes" target="_blank" class="organizer-name">Prof. Dr.-Ing. Johannes Betz</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="{{ logo_tum.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
           <p class="uk-text-small uk-margin-remove uk-text-right">
             Full Professor<br>AVS Lab<br>Technical University of Munich<br>Germany
           </p>
+          </div>
+      </div>
         </div>
       </div>
     </div>
@@ -214,9 +300,18 @@
         </div>
         <div class="uk-width-expand">
           <h5 class="uk-margin-remove"><a href="https://www.polyu.edu.hk/aae/ipn-lab/us/index.html" target="_blank" class="organizer-name">Prof. Dr. Li-Ta Hsu</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="{{ logo_polyu.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
           <p class="uk-text-small uk-margin-remove uk-text-right">
-            Full Professor<br>IPN Lab<br>The Hong Kong Polytechnic University<br>Hong Kong
+            Full Professor<br>IPN Lab<br>Hong Kong Polytechnic University<br>Hong Kong
           </p>
+          </div>
+      </div>
         </div>
       </div>
     </div>
