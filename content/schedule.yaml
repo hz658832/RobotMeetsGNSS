@@ -18,14 +18,14 @@ schedule:
         ends: 07:30
         title: 'Connecting GNSS and Robotics: Toward Tightly Coupled Sensor Integration'
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Taro Suzuki, PhD
+        presenters: Dr. Taro Suzuki
         affiliation: Chiba Institute of Technology, Japan
         presenterurl: http://www.taroz.net/
       - starts: 07:30
         ends: 08:00
         title: 'Connecting GNSS and Robotics - Toward Tightly Coupled Sensor Integration'
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Thien-Minh Nguyen, PhD
+        presenters: Dr. Thien-Minh Nguyen
         affiliation: Nanyang Technological University, Singapore
         presenterurl: https://brytsknguyen.github.io/
         #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
@@ -72,9 +72,9 @@ schedule:
     sessions: 
       - starts: 11:30
         ends: 12:00
-        title: Multisensor Integrity
+        title: 'Bridging navigation safety: from aviation to unmanned ground vehicles'
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Prof. Matthew Spenko, PhD
+        presenters: Prof. Dr. Matthew Spenko
         affiliation: Illinois Tech, United State
         presenterurl: https://www.iit.edu/directory/people/matthew-spenko
       - starts: 12:00
