@@ -3,10 +3,10 @@ name: Collect GitHub Traffic
 on:
   workflow_dispatch:
   schedule:
-    - cron: "22 1 * * *"
+    - cron: "22 1 * * *"   # daily at 01:22 UTC
 
 permissions:
-  contents: write
+  contents: write          # needed for commits with GITHUB_TOKEN
 
 jobs:
   fetch:
@@ -15,40 +15,38 @@ jobs:
       - name: Check out
         uses: actions/checkout@v4
 
-      - name: Set repo vars (owner/repo)
+      - name: Set owner/repo
         run: |
           echo "OWNER=${GITHUB_REPOSITORY%%/*}" >> $GITHUB_ENV
           echo "REPO=${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
 
-      - name: Fetch last 14 days of views
-        id: fetch
+      - name: Fetch last 14 days of views (Traffic API via classic PAT)
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TRAFFIC_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
         run: |
+          if [ -z "$TRAFFIC_TOKEN" ]; then
+            echo "Missing secret GH_TRAFFIC_TOKEN"; exit 1
+          fi
           mkdir -p data
-          # Capture HTTP status separately
           STATUS=$(curl -sS -w "%{http_code}" -o data/views.json \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Authorization: Bearer ${TRAFFIC_TOKEN}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             "https://api.github.com/repos/${OWNER}/${REPO}/traffic/views?per=day")
 
           echo "HTTP_STATUS=$STATUS"
           if [ "$STATUS" != "200" ]; then
             echo "API call failed with status $STATUS"
-            echo "Response:"
             cat data/views.json
             exit 1
           fi
 
-      - name: Convert to CSV (date,visitors,uniques) safely
+      - name: Convert to CSV (date,visitors,uniques)
         run: |
-          # Guard against .views being null/missing
-          if ! jq -e . >/dev/null 2>&1 < data/views.json; then
-            echo "Invalid JSON in data/views.json"; cat data/views.json; exit 1
-          fi
+          # Validate JSON
+          jq -e . >/dev/null 2>&1 < data/views.json || { echo "Invalid JSON"; cat data/views.json; exit 1; }
 
-          # If .views is null or missing, create an empty CSV with just header
+          # Build CSV; tolerate empty/missing views
           if [ "$(jq 'has(\"views\") and (.views|type==\"array\")' data/views.json)" != "true" ]; then
             echo "date,visitors,uniques" > data/visitors.latest.csv
           else
@@ -61,7 +59,7 @@ jobs:
 
       - name: Merge with existing history
         run: |
-          # If there's no data beyond header (only 1 line), still keep header
+          # Ensure header exists
           if [ ! -s data/visitors.latest.csv ]; then
             echo "date,visitors,uniques" > data/visitors.latest.csv
           fi
@@ -78,7 +76,7 @@ jobs:
             mv data/visitors.latest.csv data/visitors.csv
           fi
 
-      - name: Commit updated CSV
+      - name: Commit updated CSV (using GITHUB_TOKEN)
         run: |
           if git diff --quiet --exit-code; then
             echo "No changes."
@@ -86,6 +84,6 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add data/visitors.csv
-            git commit -m "chore: update visitors.csv from traffic API"
+            git commit -m "chore: update visitors.csv from Traffic API"
             git push
           fi
