@@ -3,10 +3,10 @@ name: Collect GitHub Traffic
 on:
   workflow_dispatch:
   schedule:
-    - cron: "22 1 * * *"   # daily at 01:22 UTC (pick any time)
+    - cron: "22 1 * * *"
 
 permissions:
-  contents: write   # to commit the CSV
+  contents: write
 
 jobs:
   fetch:
@@ -15,39 +15,65 @@ jobs:
       - name: Check out
         uses: actions/checkout@v4
 
+      - name: Set repo vars (owner/repo)
+        run: |
+          echo "OWNER=${GITHUB_REPOSITORY%%/*}" >> $GITHUB_ENV
+          echo "REPO=${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
+
       - name: Fetch last 14 days of views
         id: fetch
         env:
-          OWNER: ${{ github.repository_owner }}
-          REPO: ${{ github.event.repository.name }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p data
-          curl -sSL \
+          # Capture HTTP status separately
+          STATUS=$(curl -sS -w "%{http_code}" -o data/views.json \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${GH_TOKEN}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            "https://api.github.com/repos/${OWNER}/${REPO}/traffic/views?per=day" \
-            > data/views.json
+            "https://api.github.com/repos/${OWNER}/${REPO}/traffic/views?per=day")
 
-      - name: Convert to CSV (date,visitors,uniques)
+          echo "HTTP_STATUS=$STATUS"
+          if [ "$STATUS" != "200" ]; then
+            echo "API call failed with status $STATUS"
+            echo "Response:"
+            cat data/views.json
+            exit 1
+          fi
+
+      - name: Convert to CSV (date,visitors,uniques) safely
         run: |
-          jq -r '
-            ["date","visitors","uniques"],
-            (.views[] | [(.timestamp[0:10]), (.count|tostring), (.uniques|tostring)])
-            | @csv
-          ' data/views.json > data/visitors.latest.csv
+          # Guard against .views being null/missing
+          if ! jq -e . >/dev/null 2>&1 < data/views.json; then
+            echo "Invalid JSON in data/views.json"; cat data/views.json; exit 1
+          fi
+
+          # If .views is null or missing, create an empty CSV with just header
+          if [ "$(jq 'has(\"views\") and (.views|type==\"array\")' data/views.json)" != "true" ]; then
+            echo "date,visitors,uniques" > data/visitors.latest.csv
+          else
+            jq -r '
+              ["date","visitors","uniques"],
+              (.views[]? | [(.timestamp[0:10]), (.count|tostring), (.uniques|tostring)])
+              | @csv
+            ' data/views.json > data/visitors.latest.csv
+          fi
 
       - name: Merge with existing history
         run: |
-          # If an older CSV exists, merge by date (latest wins), then sort by date.
+          # If there's no data beyond header (only 1 line), still keep header
+          if [ ! -s data/visitors.latest.csv ]; then
+            echo "date,visitors,uniques" > data/visitors.latest.csv
+          fi
+
           if [ -f data/visitors.csv ]; then
-            # Join and keep unique by date
-            awk -F, 'NR==FNR{a[$1]=$0; next} {d=$1; if (d in a) a[d]=$0; else a[d]=$0} END{for(i in a) print a[i]}' \
-              <(tail -n +2 data/visitors.latest.csv) <(tail -n +2 data/visitors.csv) \
-              | sort -t, -k1,1 > data/visitors.merged.tmp
-            (head -n1 data/visitors.latest.csv && cat data/visitors.merged.tmp) > data/visitors.csv
-            rm -f data/visitors.merged.tmp
+            # Merge by date; latest snapshot wins; keep sorted
+            (head -n1 data/visitors.latest.csv
+             tail -n +2 data/visitors.csv
+             tail -n +2 data/visitors.latest.csv) \
+            | awk -F, 'NR==1{print;next} NR>1{a[$1]=$0} END{for (d in a) print a[d]}' \
+            | sort -t, -k1,1 > data/visitors.merged.csv
+            mv data/visitors.merged.csv data/visitors.csv
           else
             mv data/visitors.latest.csv data/visitors.csv
           fi
