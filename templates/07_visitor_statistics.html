@@ -8,14 +8,14 @@
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
   <style>
-    .chart-card { border-radius: 16px; overflow: hidden; }
-    #wrap { max-width: 920px; margin: 40px auto; }
+    .chart-card { border-radius: 16px; overflow: hidden; padding: 10px; margin: 10px 0; }
+    #wrap { max-width: 920px; margin: 20px auto; }
   </style>
 </head>
 <body>
   <div id="wrap" class="uk-container">
     <div class="uk-card uk-card-default uk-card-body chart-card">
-      <h3 class="uk-card-title uk-margin-remove">Visitors</h3>
+      <!--h3 class="uk-card-title uk-margin-remove">Visitors</h3-->
       <canvas id="visitorsChart" height="160"></canvas>
       <!--p class="uk-text-meta uk-margin-small-top">Data source: <code>/data/visitors.csv</code> with headers <code>date,visitors</code> (or <code>date,count</code>).</p-->
     </div>
@@ -79,11 +79,12 @@
         },
         options: {
           responsive: true,
-          maintainAspectRatio: false,
+          animation: false,           
+          maintainAspectRatio: true,
           plugins: { legend: { display: false } },
           scales: {
             x: { ticks: { maxRotation: 0, autoSkip: true } },
-            y: { beginAtZero: true, title: { display: true, text: 'Visitors' } }
+            y: { beginAtZero: true, title: { display: true, text: '# of Visitors' } }
           }
         }
       });
