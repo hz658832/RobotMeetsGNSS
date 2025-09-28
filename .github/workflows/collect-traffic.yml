@@ -1,0 +1,65 @@
+name: Collect GitHub Traffic
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "22 1 * * *"   # daily at 01:22 UTC (pick any time)
+
+permissions:
+  contents: write   # to commit the CSV
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Fetch last 14 days of views
+        id: fetch
+        env:
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p data
+          curl -sSL \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${OWNER}/${REPO}/traffic/views?per=day" \
+            > data/views.json
+
+      - name: Convert to CSV (date,visitors,uniques)
+        run: |
+          jq -r '
+            ["date","visitors","uniques"],
+            (.views[] | [(.timestamp[0:10]), (.count|tostring), (.uniques|tostring)])
+            | @csv
+          ' data/views.json > data/visitors.latest.csv
+
+      - name: Merge with existing history
+        run: |
+          # If an older CSV exists, merge by date (latest wins), then sort by date.
+          if [ -f data/visitors.csv ]; then
+            # Join and keep unique by date
+            awk -F, 'NR==FNR{a[$1]=$0; next} {d=$1; if (d in a) a[d]=$0; else a[d]=$0} END{for(i in a) print a[i]}' \
+              <(tail -n +2 data/visitors.latest.csv) <(tail -n +2 data/visitors.csv) \
+              | sort -t, -k1,1 > data/visitors.merged.tmp
+            (head -n1 data/visitors.latest.csv && cat data/visitors.merged.tmp) > data/visitors.csv
+            rm -f data/visitors.merged.tmp
+          else
+            mv data/visitors.latest.csv data/visitors.csv
+          fi
+
+      - name: Commit updated CSV
+        run: |
+          if git diff --quiet --exit-code; then
+            echo "No changes."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/visitors.csv
+            git commit -m "chore: update visitors.csv from traffic API"
+            git push
+          fi
