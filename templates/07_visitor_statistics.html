@@ -92,7 +92,6 @@
     (async () => {
       try {
         const items = await loadCsv('https://raw.githubusercontent.com/hz658832/RobotMeetGNSS/main/data/visitors.csv');
-        console.print(items)
         drawChart(items);
       } catch (e) {
         console.error(e);
