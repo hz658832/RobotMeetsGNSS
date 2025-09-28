@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visitors</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/css/uikit.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <style>
+    .chart-card { border-radius: 16px; overflow: hidden; }
+    #wrap { max-width: 920px; margin: 40px auto; }
+  </style>
+</head>
+<body>
+  <div id="wrap" class="uk-container">
+    <div class="uk-card uk-card-default uk-card-body chart-card">
+      <h3 class="uk-card-title uk-margin-remove">Visitors</h3>
+      <canvas id="visitorsChart" height="160"></canvas>
+      <p class="uk-text-meta uk-margin-small-top">Data source: <code>/data/visitors.csv</code> with headers <code>date,visitors</code> (or <code>date,count</code>).</p>
+    </div>
+  </div>
+
+  <script>
+    // Minimal CSV -> Chart.js (no time adapter, dates are simple labels)
+    async function loadCsv(path) {
+      const resp = await fetch(path, { cache: 'no-store' });
+      if (!resp.ok) throw new Error('CSV not found');
+      const text = (await resp.text()).trim();
+      if (!text) throw new Error('CSV empty');
+      const rows = text.split(/
+?
+/).map(r => r.split(','));
+      const headers = rows.shift().map(h => h.trim().toLowerCase());
+      const dateIdx = headers.indexOf('date');
+      let valIdx = headers.indexOf('visitors');
+      if (valIdx === -1) valIdx = headers.indexOf('count');
+      if (dateIdx === -1 || valIdx === -1) throw new Error('Missing headers');
+      const items = rows
+        .map(cols => ({ d: cols[dateIdx]?.trim(), v: Number(cols[valIdx]) }))
+        .filter(p => p.d && Number.isFinite(p.v))
+        .sort((a,b) => a.d.localeCompare(b.d));
+      return items;
+    }
+
+    function drawChart(items) {
+      const labels = items.map(p => p.d);
+      const data = items.map(p => p.v);
+      const ctx = document.getElementById('visitorsChart');
+      return new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Visitors',
+            data,
+            tension: 0,       // straight lines
+            fill: false,
+            pointRadius: 2,
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { maxRotation: 0, autoSkip: true } },
+            y: { beginAtZero: true, title: { display: true, text: 'Visitors' } }
+          }
+        }
+      });
+    }
+
+    (async () => {
+      try {
+        const items = await loadCsv('/data/visitors.csv');
+        console.print(items)
+        drawChart(items);
+      } catch (e) {
+        console.error(e);
+        const el = document.getElementById('visitorsChart').parentElement;
+        el.insertAdjacentHTML('beforeend', `<div class="uk-alert-danger" uk-alert><p>${e.message}. Make sure <code>data/visitors.csv</code> exists.</p></div>`);
+      }
+    })();
+  </script>
+</body>
+</html>
