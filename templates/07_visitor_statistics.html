@@ -24,22 +24,39 @@
   <script>
     // Minimal CSV -> Chart.js (no time adapter, dates are simple labels)
     async function loadCsv(path) {
+      const url = new URL(path, window.location.href).href;
       const resp = await fetch(path, { cache: 'no-store' });
-      if (!resp.ok) throw new Error('CSV not found');
+      if (!resp.ok) throw new Error(`HTTP ${resp.status} for ${url}`);
       const text = (await resp.text()).trim();
-      if (!text) throw new Error('CSV empty');
-      const rows = text.split(/
-?
-/).map(r => r.split(','));
-      const headers = rows.shift().map(h => h.trim().toLowerCase());
+      if (!text) throw new Error(`CSV empty at ${url}`);
+
+      // Normal case: newline-separated CSV
+      let lines = text.split(/\r?\n/).filter(Boolean);
+
+      // Fallback for a single-line input like:
+      // "date,visitors 2025-09-20,12 2025-09-21,18 ..."
+      if (lines.length === 1 && /\bdate\s*,\s*(visitors|count)\b/i.test(lines[0])) {
+        const tokens = lines[0].trim().split(/\s+/); // header then repeated "YYYY-MM-DD,NN"
+        const header = tokens.shift();
+        lines = [header, ...tokens];
+      }
+
+      const split = s => s.split(',').map(x => x.trim());
+      const headers = split(lines.shift()).map(h => h.toLowerCase());
       const dateIdx = headers.indexOf('date');
       let valIdx = headers.indexOf('visitors');
       if (valIdx === -1) valIdx = headers.indexOf('count');
-      if (dateIdx === -1 || valIdx === -1) throw new Error('Missing headers');
-      const items = rows
-        .map(cols => ({ d: cols[dateIdx]?.trim(), v: Number(cols[valIdx]) }))
+      if (dateIdx === -1 || valIdx === -1) {
+        throw new Error(`Missing required headers in ${url}. Found: ${headers.join(', ')}`);
+      }
+
+      const items = lines
+        .map(r => split(r))
+        .map(cols => ({ d: cols[dateIdx], v: Number(cols[valIdx]) }))
         .filter(p => p.d && Number.isFinite(p.v))
         .sort((a,b) => a.d.localeCompare(b.d));
+
+      if (!items.length) throw new Error(`No valid rows parsed from ${url}`);
       return items;
     }
 
