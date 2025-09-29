@@ -1,18 +1,71 @@
-
-
 <h2><b>Tentative Schedule</b></h2>
 
 <script>
   dayjs.extend(window.dayjs_plugin_utc)
 </script>
 
-<div class="uk-alert-danger" uk-alert>
+<div class="uk-alert-primary" uk-alert>
   <a class="uk-alert-close" uk-close></a>
   <p>
-    All times are displayed in the local timezone of your browser.
-    Detected timezone offset compared to UTC: {{ macros::timezone_offset(date='2026-06-01', time='16:00') }}
+    All times are displayed in the local timezone of your browser. <br>
+    Detected timezone offset compared to the conference location:
+    <strong><span id="tz-offset">…</span></strong>
   </p>
 </div>
+
+<script>
+(function () {
+  const TARGET_ZONE = "Europe/Vienna";
+  const outEl = document.getElementById("tz-offset");
+  if (!outEl) return;
+
+  // Return offset minutes with the SAME sign as Date#getTimezoneOffset():
+  // west of UTC => positive, east of UTC => negative (e.g., Berlin summer = -120).
+  function getOffsetMinutes(date, timeZone) {
+    // Snap to the start of a minute to avoid ms-induced fractional results
+    const t = new Date(Math.floor(date.getTime() / 60000) * 60000);
+
+    const dtf = new Intl.DateTimeFormat("en-US", {
+      timeZone,
+      hour12: false,
+      year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", second: "2-digit"
+    });
+
+    const parts = Object.fromEntries(dtf.formatToParts(t).map(p => [p.type, p.value]));
+    const y = +parts.year, m = +parts.month, d = +parts.day;
+    const H = +parts.hour, M = +parts.minute, S = +parts.second;
+
+    // If you take the zone's wall time parts and pretend they're UTC, this gives a UTC timestamp.
+    const localAsUTC = Date.UTC(y, m - 1, d, H, M, S);
+
+    // Match Date#getTimezoneOffset sign convention
+    // (minutes to add to local to get UTC): east-of-UTC is negative.
+    return (t.getTime() - localAsUTC) / 60000;
+  }
+
+  function formatDeltaHours(deltaHours) {
+    // Round to nearest quarter-hour for clean display
+    const h = Math.round(deltaHours * 4) / 4;
+    const sign = h > 0 ? "+" : (h < 0 ? "−" : "0");
+    if (h === 0) return "0 h (same as Vienna)";
+    const rel = h > 0 ? "ahead of" : "behind";
+    return `${sign}${Math.abs(h)} h (${Math.abs(h)} h ${rel} Vienna)`;
+  }
+
+  const now = new Date();
+  const browserOffsetMin = now.getTimezoneOffset();           // e.g., Berlin summer = -120
+  const viennaOffsetMin  = getOffsetMinutes(now, "Europe/Vienna"); // also -120 in summer
+
+  // Convert to UTC offsets in hours, east positive
+  const browserUTC = -browserOffsetMin / 60;
+  const viennaUTC  = -viennaOffsetMin / 60;
+
+  const deltaHours = browserUTC - viennaUTC; // + if browser is ahead of Vienna
+  outEl.textContent = formatDeltaHours(deltaHours);
+})();
+</script>
+
 
 <div class="uk-alert-info" uk-alert>
   <a class="uk-alert-close" uk-close></a>
