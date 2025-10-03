@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write          # needed for commits with GITHUB_TOKEN
 
+env:
+  GH_API_VERSION: "2022-11-28"
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -15,57 +18,86 @@ jobs:
       - name: Check out
         uses: actions/checkout@v4
 
+      - name: Install jq (ensure available)
+        run: sudo apt-get update && sudo apt-get install -y jq
+
       - name: Set owner/repo
         run: |
           echo "OWNER=${GITHUB_REPOSITORY%%/*}" >> $GITHUB_ENV
           echo "REPO=${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
 
-      - name: Fetch last 14 days of views (Traffic API via classic PAT)
+      - name: Verify token present
         env:
           TRAFFIC_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
         run: |
-          if [ -z "$TRAFFIC_TOKEN" ]; then
-            echo "Missing secret GH_TRAFFIC_TOKEN"; exit 1
-          fi
-          mkdir -p data
-          STATUS=$(curl -sS -w "%{http_code}" -o data/views.json \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${TRAFFIC_TOKEN}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            "https://api.github.com/repos/${OWNER}/${REPO}/traffic/views?per=day")
-
-          echo "HTTP_STATUS=$STATUS"
-          if [ "$STATUS" != "200" ]; then
-            echo "API call failed with status $STATUS"
-            cat data/views.json
+          if [ -z "${TRAFFIC_TOKEN:-}" ]; then
+            echo "::error::Missing secret GH_TRAFFIC_TOKEN (PAT with repo/public_repo or fine-grained with Administration: Read)."
             exit 1
           fi
 
-      - name: Convert to CSV (date,visitors,uniques)
+      - name: Prepare folders
         run: |
+          set -eu
+          mkdir -p data/raw/views data/raw/clones data/debug
+
+      # =========================
+      # Fetch VIEWS (per day)
+      # =========================
+      - name: Fetch last 14 days of views
+        env:
+          TRAFFIC_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
+        run: |
+          set -euo pipefail
+          TS=$(date -u +"%Y%m%dT%H%M%SZ")
+          URL="https://api.github.com/repos/${OWNER}/${REPO}/traffic/views?per=day"
+          echo "GET $URL"
+
+          HTTP_STATUS=$(curl -sS -D "data/debug/views_${TS}.headers" -w "%{http_code}" \
+            -o "data/raw/views/${TS}.json" \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${TRAFFIC_TOKEN}" \
+            -H "X-GitHub-Api-Version: ${GH_API_VERSION}" \
+            "$URL")
+
+          echo "HTTP_STATUS=$HTTP_STATUS"
+          head -n 20 "data/debug/views_${TS}.headers" || true
+          head -c 500 "data/raw/views/${TS}.json" ; echo
+
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "::error::Traffic views API call failed with status $HTTP_STATUS"
+            exit 1
+          fi
+
+      - name: Convert views JSON → CSV (date,visitors,uniques)
+        run: |
+          set -euo pipefail
+          LATEST_JSON=$(ls -1t data/raw/views/*.json | head -n1)
+          echo "Processing $LATEST_JSON"
+
           # Validate JSON
-          jq -e . >/dev/null 2>&1 < data/views.json || { echo "Invalid JSON"; cat data/views.json; exit 1; }
+          jq -e . "$LATEST_JSON" >/dev/null
 
           # Build CSV; tolerate empty/missing views
-          if [ "$(jq 'has(\"views\") and (.views|type==\"array\")' data/views.json)" != "true" ]; then
+          if [ "$(jq 'has("views") and (.views|type=="array")' "$LATEST_JSON")" != "true" ]; then
             echo "date,visitors,uniques" > data/visitors.latest.csv
           else
             jq -r '
               ["date","visitors","uniques"],
               (.views[]? | [(.timestamp[0:10]), (.count|tostring), (.uniques|tostring)])
               | @csv
-            ' data/views.json > data/visitors.latest.csv
+            ' "$LATEST_JSON" > data/visitors.latest.csv
           fi
+          cat data/visitors.latest.csv || true
 
-      - name: Merge with existing history
+      - name: Merge views CSV with history
         run: |
+          set -euo pipefail
           # Ensure header exists
           if [ ! -s data/visitors.latest.csv ]; then
             echo "date,visitors,uniques" > data/visitors.latest.csv
           fi
 
           if [ -f data/visitors.csv ]; then
-            # Merge by date; latest snapshot wins; keep sorted
             (head -n1 data/visitors.latest.csv
              tail -n +2 data/visitors.csv
              tail -n +2 data/visitors.latest.csv) \
@@ -76,14 +108,108 @@ jobs:
             mv data/visitors.latest.csv data/visitors.csv
           fi
 
-      - name: Commit updated CSV (using GITHUB_TOKEN)
+      # =========================
+      # Fetch CLONES (per day)
+      # =========================
+      - name: Fetch last 14 days of clones
+        env:
+          TRAFFIC_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
         run: |
-          if git diff --quiet --exit-code; then
+          set -euo pipefail
+          TS=$(date -u +"%Y%m%dT%H%M%SZ")
+          URL="https://api.github.com/repos/${OWNER}/${REPO}/traffic/clones?per=day"
+          echo "GET $URL"
+
+          HTTP_STATUS=$(curl -sS -D "data/debug/clones_${TS}.headers" -w "%{http_code}" \
+            -o "data/raw/clones/${TS}.json" \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${TRAFFIC_TOKEN}" \
+            -H "X-GitHub-Api-Version: ${GH_API_VERSION}" \
+            "$URL")
+
+          echo "HTTP_STATUS=$HTTP_STATUS"
+          head -n 20 "data/debug/clones_${TS}.headers" || true
+          head -c 500 "data/raw/clones/${TS}.json" ; echo
+
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "::error::Traffic clones API call failed with status $HTTP_STATUS"
+            exit 1
+          fi
+
+      - name: Convert clones JSON → CSV (date,clones,uniques)
+        run: |
+          set -euo pipefail
+          LATEST_JSON=$(ls -1t data/raw/clones/*.json | head -n1)
+          echo "Processing $LATEST_JSON"
+
+          jq -e . "$LATEST_JSON" >/dev/null
+
+          if [ "$(jq 'has("clones") and (.clones|type=="array")' "$LATEST_JSON")" != "true" ]; then
+            echo "date,clones,uniques" > data/clones.latest.csv
+          else
+            jq -r '
+              ["date","clones","uniques"],
+              (.clones[]? | [(.timestamp[0:10]), (.count|tostring), (.uniques|tostring)])
+              | @csv
+            ' "$LATEST_JSON" > data/clones.latest.csv
+          fi
+          cat data/clones.latest.csv || true
+
+      - name: Merge clones CSV with history
+        run: |
+          set -euo pipefail
+          if [ ! -s data/clones.latest.csv ]; then
+            echo "date,clones,uniques" > data/clones.latest.csv
+          fi
+
+          if [ -f data/clones.csv ]; then
+            (head -n1 data/clones.latest.csv
+             tail -n +2 data/clones.csv
+             tail -n +2 data/clones.latest.csv) \
+            | awk -F, 'NR==1{print;next} NR>1{a[$1]=$0} END{for (d in a) print a[d]}' \
+            | sort -t, -k1,1 > data/clones.merged.csv
+            mv data/clones.merged.csv data/clones.csv
+          else
+            mv data/clones.latest.csv data/clones.csv
+          fi
+
+      # =========================
+      # Optional: Popular refs/paths JSON snapshots (no CSV merge)
+      # =========================
+      - name: Snapshot popular referrers and paths (JSON)
+        if: ${{ always() }}
+        env:
+          TRAFFIC_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
+        run: |
+          set -euo pipefail
+          TS=$(date -u +"%Y%m%dT%H%M%SZ")
+          for endpoint in "popular/referrers" "popular/paths"; do
+            URL="https://api.github.com/repos/${OWNER}/${REPO}/traffic/${endpoint}"
+            OUT="data/raw/${endpoint//\//_}_${TS}.json"
+            mkdir -p "$(dirname "$OUT")"
+            echo "GET $URL"
+            curl -sS \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer ${TRAFFIC_TOKEN}" \
+              -H "X-GitHub-Api-Version: ${GH_API_VERSION}" \
+              "$URL" -o "$OUT" || true
+          done
+
+      - name: Commit updated files (using GITHUB_TOKEN)
+        run: |
+          set -euo pipefail
+
+          # Ensure Git knows who we are and this is a safe dir
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+          git add data/visitors.csv data/clones.csv \
+                  data/raw/ data/debug/ || true
+
+          if git diff --cached --quiet --exit-code; then
             echo "No changes."
           else
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add data/visitors.csv
-            git commit -m "chore: update visitors.csv from Traffic API"
+            git commit -m "chore: update traffic (views/clones) CSVs and snapshots"
             git push
           fi
