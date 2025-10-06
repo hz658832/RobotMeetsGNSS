@@ -23,7 +23,7 @@ schedule:
         presenterurl: http://www.taroz.net/
       - starts: 07:30
         ends: 08:00
-        title: 'Connecting GNSS and Robotics - Toward Tightly Coupled Sensor Integration'
+        title: 'Continuous-Time State Estimation Using Ranging-Sensors: The Trilogy'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Dr. Thien-Minh Nguyen
         affiliation: Nanyang Technological University, Singapore
