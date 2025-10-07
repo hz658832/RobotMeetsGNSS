@@ -41,7 +41,7 @@ schedule:
         title: Coffee Break and Poster Session
       - starts: 09:00
         ends: 09:30
-        title: 'Keynote (tbd)'
+        title: 'Keynote: No GPS, No Problem: Exploiting Signals of Opportunity for Resilient and Accurate Autonomous Vehicle Navigation in GPS-Denied Environments'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Dr. Zak Kassas
         affiliation: Ohio State University
