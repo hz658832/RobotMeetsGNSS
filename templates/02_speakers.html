@@ -7,6 +7,7 @@
 {% set img_matthew = resize_image(path="people/s_matthew.png", width=709, op="fit_width") %}
 {% set img_nguyen = resize_image(path="people/s_nguyen.jpg", width=709, op="fit_width") %}
 {% set img_stephan = resize_image(path="people/s_stephan.jpeg", width=709, op="fit_width") %}
+{% set img_kassas = resize_image(path="people/s_kassas.jpg", width=709, op="fit_width") %}
 <style>
   /* Fancy numbering — auto-increment across all speaker cards */
   .speaker-list { counter-reset: speaker; }
@@ -43,7 +44,7 @@
   .speaker-card h4 { margin: 0; }
   .speaker-meta { margin-top: 4px; }
   .speaker-card {
-	  min-height: 230px;   /* all cards at least 280px tall */
+	  min-height: 250px;   /* all cards at least 280px tall */
 	  display: flex;       /* ensures content aligns properly */
 	  flex-direction: column;
 	  justify-content: space-between; /* keeps spacing nice */
@@ -69,11 +70,12 @@
           <div class="uk-width-expand">
             <h4>Dr. Taro Suzuki</h4>
             <div class="uk-width-auto uk-text-meta uk-text-right">
-		      <p class="uk-margin-remove uk-text-default">Principal Research Scientist<br>Chiba Institute of Technology<br>Japan</p>
-		      <p class="uk-margin-remove-top uk-text-default">
-		        <a href="http://www.taroz.net/" target="_blank" rel="noopener">Personal site</a>
-		      </p>
-		    </div>
+              <br>
+    		      <p class="uk-margin-remove uk-text-default">Principal Research Scientist<br>Chiba Institute of Technology<br>Japan</p>
+    		      <p class="uk-margin-remove-top uk-text-default">
+    		        <a href="http://www.taroz.net/" target="_blank" rel="noopener">Personal site</a>
+    		      </p>
+    		    </div>
           </div>
         </div>
       </div>
@@ -89,33 +91,40 @@
             </div>
           </div>
           <div class="uk-width-expand">
-            <h4>Dr. Thien-Minh Nguyen</h4>
+            <h4>Dr. Thien-Minh Nguyen</h4><br>
             <div class="uk-width-auto uk-text-meta uk-text-right">
-		      <p class="uk-margin-remove uk-text-default">Research Assistant Professor<br>Nanyang Technological University<br>Singapore</p>
-		      <p class="uk-margin-remove-top uk-text-default">
-		        <a href="https://brytsknguyen.github.io/" target="_blank" rel="noopener">Personal site</a>
-		      </p>
-		    </div>
+    		      <p class="uk-margin-remove uk-text-default">Research Assistant Professor<br>Nanyang Technological University<br>Singapore</p>
+    		      <p class="uk-margin-remove-top uk-text-default">
+  		          <a href="https://brytsknguyen.github.io/" target="_blank" rel="noopener">Personal site</a>
+  		        </p>
+		        </div>
           </div>
         </div>
        </div>
       </div>
 
     <!-- Lorem -->
-    <!--div>
+    <div>
       <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
         <div class="uk-grid-small uk-flex-middle" uk-grid>
           <div class="uk-width-auto">
             <div class="uk-inline-clip">
-              <img class="uk-border-circle speaker-avatar" src="{{ image1.url }}" alt="Speaker">
+              <img class="uk-border-circle speaker-avatar" src="{{ img_kassas.url }}" alt="Prof. Dr. Zak Kassas">
             </div>
           </div>
           <div class="uk-width-expand">
-            <h4>Lorem ipsum.</h4>
+            <h4>Prof. Dr. Zak Kassas</h4>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+              <p class="uk-margin-remove uk-text-default">IEEE Fellow and ION Fellow</p>
+              <p class="uk-margin-remove uk-text-default">Professor<br>Ohio State University<br>United State</p>
+              <p class="uk-margin-remove-top uk-text-default">
+                <a href="https://ece.osu.edu/people/kassas.2" target="_blank" rel="noopener">Personal site</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div-->
+    </div>
 
     <!-- Stephan Weiss -->
     <div>
@@ -127,9 +136,9 @@
             </div>
           </div>
           <div class="uk-width-expand">
-            <h4>Prof. Dr. Stephan Weiss</h4>
+            <h4>Prof. Dr. Stephan Weiss</h4><br>
             <div class="uk-width-auto uk-text-meta uk-text-right">
-		      <p class="uk-margin-remove uk-text-default">Full Professor<br>University of Klagenfurt<br>Austria</p>
+		      <p class="uk-margin-remove uk-text-default">Professor<br>University of Klagenfurt<br>Austria</p>
 		      <p class="uk-margin-remove-top uk-text-default">
 		        <a href="https://www.aau.at/en/team/weiss-stephan-michael/" target="_blank" rel="noopener">Personal site</a>
 		      </p>
@@ -156,7 +165,7 @@
             </div>
           </div>
           <div class="uk-width-expand">
-            <h4>Prof. Dr. Matthew Spenko</h4>
+            <h4>Prof. Dr. Matthew Spenko</h4><br>
             <div class="uk-width-auto uk-text-meta uk-text-right">
 		      <p class="uk-margin-remove uk-text-default">Professor<br>Illinois Tech<br>United States</p>
 		      <p class="uk-margin-remove-top uk-text-default">
@@ -178,7 +187,7 @@
             </div>
           </div>
           <div class="uk-width-expand">
-            <h4>Dr. Tim Pfeifer</h4>
+            <h4>Dr. Tim Pfeifer</h4><br>
             <div class="uk-width-auto uk-text-meta uk-text-right">
 		      <p class="uk-margin-remove uk-text-default">Siemens AG<br>Germany</p>
 		      <p class="uk-margin-remove-top uk-text-default">
@@ -200,7 +209,7 @@
             </div>
           </div>
           <div class="uk-width-expand">
-            <h4>Prof. Dr. Weisong Wen</h4>
+            <h4>Prof. Dr. Weisong Wen</h4><br>
             <div class="uk-width-auto uk-text-meta uk-text-right">
 		      <p class="uk-margin-remove uk-text-default">Assistant Professor<br>Hong Kong Polytechnic University<br>Hong Kong</p>
 		      <p class="uk-margin-remove-top uk-text-default">

@@ -41,11 +41,11 @@ schedule:
         title: Coffee Break and Poster Session
       - starts: 09:00
         ends: 09:30
-        title: 'Keynote Presentation'
+        title: 'Keynote (tbd)'
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Keynote Speaker (tbd.)
-        affiliation: (tbd.)
-        #presenterurl: https://profiles.imperial.ac.uk/s.feng/about
+        presenters: Prof. Dr. Zak Kassas
+        affiliation: Ohio State University
+        presenterurl: https://ece.osu.edu/people/kassas.2
       - starts: 09:30
         ends: 10:00
         title: 'Equivariant Estimators: Using Symmetries to Cope with Challenging Ranging Observations'
