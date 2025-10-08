@@ -49,6 +49,36 @@
 	  flex-direction: column;
 	  justify-content: space-between; /* keeps spacing nice */
 	}
+
+  /* Popover card sizing */
+  .bio-popover-card { max-width: 340px; position: relative; }
+  .bio-popover-card::after{
+    content:""; position:absolute; width:10px; height:10px; background:#fff; transform:rotate(45deg);
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  /* Arrow when the drop is at the right of the card */
+  .uk-drop.uk-position-right-center .bio-popover-card::after{
+    left:-5px; top:50%; transform:translateY(-50%) rotate(45deg);
+  }
+  /* When the drop flips below on small screens */
+  .uk-drop.uk-position-bottom-center .bio-popover-card::after{
+    top:-5px; left:32px;
+  }
+
+  /* Wider on monitors / large screens */
+  @media (min-width: 1024px) {
+    .bio-popover-card {
+      max-width: 480px;  /* or 520px, adjust to taste */
+    }
+  }
+
+  /* Optional: add a smoother text layout for large screens */
+  @media (min-width: 1280px) {
+    .bio-popover-card {
+      max-width: 560px;
+      line-height: 1.5;
+    }
+  }
 </style>
 
 <div class="uk-container uk-margin-medium speaker-list">
@@ -79,7 +109,22 @@
           </div>
         </div>
       </div>
+
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Taro Suzuki">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Suzuki</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom">
+            Dr. Suzuki is a chief researcher at Chiba Institute of Technology, Japan. He received his B.S., M.S., and Ph.D. in Engineering from Waseda University in 2007, 2009, and 2012 respectively. From 2012 to 2014, he worked as a postdoctoral researcher at Tokyo University of Marine Science and Technology. From 2015 to 2019, he worked as an assistant professor at Waseda University.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="http://www.taroz.net/" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
     </div>
+
 
     <!-- Nguyen -->
     <div>
@@ -101,9 +146,23 @@
           </div>
         </div>
        </div>
-      </div>
 
-    <!-- Lorem -->
+       <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Nguyen">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Nguyen</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom">
+            Dr. Nguyen is a Research Fellow at the Center for Advanced Robotics Innovation Technology (CARTIN). His research focuses on robust and intelligent perception for autonomous systems in complex environments by integrating multiple sensing modalities and prior knowledge. He has extensive experience with UAVs as testbeds for his perception systems.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://brytsknguyen.github.io/" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dr. Zak Kassas -->
     <div>
       <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
         <div class="uk-grid-small uk-flex-middle" uk-grid>
@@ -122,6 +181,19 @@
               </p>
             </div>
           </div>
+        </div>
+      </div>
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Kassas">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Kassas</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom">
+            Prof. Kassas is the TRC Endowed Chair in Intelligent Transportation Systems and Professor of Electrical and Computer Engineering at The Ohio State University. He directs the ASPIN Laboratory and the U.S. Department of Transportation’s CARMEN Center. His research focuses on resilient positioning, navigation, and timing (PNT) using signals of opportunity in GNSS-challenged environments. He is an IEEE and ION Fellow and recipient of the NSF CAREER, ONR, AFOSR YIP, and PECASE awards.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://ece.osu.edu/people/kassas.2" target="_blank" rel="noopener">More details →</a>
+          </p>
         </div>
       </div>
     </div>
@@ -146,8 +218,20 @@
           </div>
         </div>
       </div>
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Weiss">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Weiss</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom">
+            Prof. Weiss is Full Professor of Robotics and Deputy Head of the Institute of Smart Systems Technologies at Alpen-Adria University Klagenfurt. He earned his Ph.D. at ETH Zurich and previously worked at NASA’s Jet Propulsion Laboratory. His research focuses on vision-based state estimation and autonomous navigation for aerial and mobile robots.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://www.aau.at/en/team/weiss-stephan-michael/" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
     </div>
-
   </div>
 
   <!-- Session 2 -->
@@ -175,6 +259,19 @@
           </div>
         </div>
       </div>
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Spenko">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Spenko</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom">
+            Prof. Spenko is a Professor of Mechanical and Aerospace Engineering at Illinois Institute of Technology and serves as Interim Department Chair. He earned his B.S. from Northwestern University and his M.S. and Ph.D. in Mechanical Engineering from MIT. His research spans robotics, with emphasis on mobility in challenging environments using gecko-inspired adhesives, perching mechanisms, and navigation integrity.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://www.iit.edu/directory/people/matthew-spenko" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- Pfeifer -->
@@ -197,7 +294,20 @@
           </div>
           </div>
         </div>
+        <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Spenko">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Pfeifer</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom">
+            Dr. Pfeifer develops robust sensor fusion and localization methods for autonomous systems. After earning his Ph.D. at Chemnitz University of Technology, he joined Siemens. He emphasizes that assuming Gaussian measurement errors is problematic—non-Gaussian errors are common in navigation and perception and can cause autonomous systems to fail dramatically.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://tipf.github.io/" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
       </div>
+    </div>
 
     <!-- Weisong (single centered) -->
     <div>
@@ -219,7 +329,32 @@
           </div>
         </div>
       </div>
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Spenko">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Wen</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom">
+            Dr. Wen is Assistant Professor in the Department of Aeronautical & Aviation Engineering at The Hong Kong Polytechnic University. He holds a Ph.D. in Mechanical Engineering from PolyU (2020) and his research focuses on multi-sensor integrated positioning, SLAM, GNSS, navigation in urban and challenging environments, and safety-assured autonomous systems.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://polyu-taslab.github.io/team/" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
     </div>
 
   </div>
 </div>
+
+
+<script>
+  UIkit.util.on(document, 'shown', '.uk-drop', e => {
+    const card = e.target.previousElementSibling;
+    if (card?.classList.contains('speaker-card')) card.setAttribute('aria-expanded','true');
+  });
+  UIkit.util.on(document, 'hidden', '.uk-drop', e => {
+    const card = e.target.previousElementSibling;
+    if (card?.classList.contains('speaker-card')) card.setAttribute('aria-expanded','false');
+  });
+</script>
