@@ -10,12 +10,15 @@
 {% set img_yibin = resize_image(path="people/o_yibin.png", width=709, op="fit_width") %}
 {% set img_johannes = resize_image(path="people/o_johannes.webp", width=709, op="fit_width") %}
 {% set img_shenghai = resize_image(path="people/o_shenghai.png", width=709, op="fit_width") %}
+{% set img_angela = resize_image(path="people/angela_schoellig_sq.png", width=709, op="fit_width") %}
+{% set img_siqi = resize_image(path="people/o_siqi.png", width=709, op="fit_width") %}
 {% set logo_tum = resize_image(path="logos/tum.png", width=709, op="fit_width") %}
 {% set logo_polyu = resize_image(path="logos/polyU.png", width=709, op="fit_width") %}
 {% set logo_dlr = resize_image(path="logos/dlr.png", width=709, op="fit_width") %}
 {% set logo_bonn = resize_image(path="logos/uni_bonn.png", width=709, op="fit_width") %}
 {% set logo_ntu = resize_image(path="logos/ntu.png", width=709, op="fit_width") %}
 {% set logo_chiba = resize_image(path="logos/chiba.png", width=709, op="fit_width") %}
+{% set logo_sf = resize_image(path="logos/sf.png", width=709, op="fit_width") %}
 <style>
   .organizer-avatar {
   width: 100px;
@@ -296,6 +299,58 @@
     <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
       <div class="uk-grid-small uk-flex-middle" uk-grid>
         <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="{{ img_siqi.url }}" alt="Prof. SiQi Zhou, PhD">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://siqizhou.com/" target="_blank" class="organizer-name">Prof. SiQi Zhou, PhD</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="{{ logo_sf.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Assistant Professor<br>Simon Faser University<br>Canada
+          </p>
+          </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizer 11 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="{{ img_angela.url }}" alt="Prof. Dr.sc. Angela Schoellig">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://www.ce.cit.tum.de/lsy/prof-angela-schoellig/" target="_blank" class="organizer-name">Prof. Dr.sc. Angela Schoellig</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="{{ logo_tum.url }}" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Full Professor<br>LSY Lab<br>Technical University of Munich<br>Germany
+          </p>
+          </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Organizer 12 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
           <img class="uk-border-circle organizer-avatar" src="{{ img_lita.url }}" alt="Prof. Dr. Li-Ta Hsu">
         </div>
         <div class="uk-width-expand">
@@ -316,6 +371,7 @@
       </div>
     </div>
   </div>
+
 
 </div>
 </div>
