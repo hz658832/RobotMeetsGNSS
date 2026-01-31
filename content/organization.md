@@ -35,7 +35,7 @@ work and receive valuable feedback from experts across academia and industry.
 
 <hr class="uk-divider-icon">
 
-### 📘 Workshop Proceedings
+## 📘 Workshop Proceedings
 <div style="text-align:justify; font-size:1.05em;">
  
 The workshop proceedings will be published as a PDF file on the workshop website.  
