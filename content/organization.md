@@ -20,18 +20,21 @@ work and receive valuable feedback from experts across academia and industry.
 - 🤖 Robotic applications leveraging ranging sensors (e.g., GNSS, LEO, UWB, etc.),
 - 📡 State estimation and multisensor fusion methods,
 - 📊 Uncertainty quantification, integrity monitoring, and safety,
-- 📝 Algorithmic studies and real-world experimental or field reports.  
-- ➕ **Other related topics**
+- 📝 Algorithmic studies and real-world experimental or field reports,  
+- ➕ **Other related topics**.
 
 ### 📄 Formate:
-- **2 + n pages**, using the **IEEE ICRA template**
+- **2 + n pages**, using the [**IEEE ICRA template**](https://ras.papercept.net/conferences/support/support.php).
+- Accepted papers are invited for a **3-minute oral presentation** and **poster session**.
 
 ### 📤 Submission
-- **TBD**
+- Paper submissions are handled via [Microsoft CMT](https://cmt3.research.microsoft.com/RobotMeetsRanging2026/Submission/index),
+- Submission opens: **February 1, 2026**,
+- Submission closes: **April 1, 2026**.
 
 ### 🏆 Awards
-- 🖼️ **Best Poster Award** (one recipient)
-- 🎤 **Best Presentation Award** (one recipient)
+- 🖼️ **Best Poster Award** (one recipient),
+- 🎤 **Best Presentation Award** (one recipient).
 
 <hr class="uk-divider-icon">
 
@@ -53,4 +56,10 @@ We encourage all participants to engage with our speakers and fellow colleagues 
 ## 🎥 Online Attendance
 For researchers unable to attend the workshop in person, remote participation will be available via **Zoom** *(link to be announced)*.
 
----
+<hr class="uk-divider-icon">
+
+## ℹ️ Questions and More Information?
+Feel free to reach out to us if you have any questions:
+- **Haoming Zhang** – [haoming.zhang at tum.de](mailto:haoming.zhang@tum.de)
+- **Darren Huang** – [darren-f.huang at connect.polyu.hk](mailto:darren-f.huang@connect.polyu.hk)
+- **Xikun Liu** – [xi-kun.liu at connect.polyu.hk](mailto:xi-kun.liu@connect.polyu.hk)

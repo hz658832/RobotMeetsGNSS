@@ -5,7 +5,7 @@
 base_url = "https://robotmeetsranging.tech"
 
 # When adapting the title, do not forget to also adjust base_url above
-title = "Workshop on Robot Meets GNSS and Ranging for Seamless Autonomy" 
+title = "1st Workshop on <br> Robot Meets GNSS and Ranging for Seamless Autonomy" 
 description = "Exploring Synergies and Challenges of Radio-based Ranging Technologies in Robotics"
 
 # Whether to automatically compile all Sass files in the sass directory
