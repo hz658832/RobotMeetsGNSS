@@ -22,84 +22,90 @@
   </div>
 
   <script>
-    // Minimal CSV -> Chart.js (no time adapter, dates are simple labels)
-    async function loadCsv(path) {
-      const url = new URL(path, window.location.href).href;
-      const resp = await fetch(path, { cache: 'no-store' });
-      if (!resp.ok) throw new Error(`HTTP ${resp.status} for ${url}`);
-      const text = (await resp.text()).trim();
-      if (!text) throw new Error(`CSV empty at ${url}`);
+  async function loadCsv(path) {
+    const url = new URL(path, window.location.href).href;
+    const resp = await fetch(url, { cache: 'no-store' });
+    if (!resp.ok) throw new Error(`HTTP ${resp.status} for ${url}`);
 
-      // Normal case: newline-separated CSV
-      let lines = text.split(/\r?\n/).filter(Boolean);
+    const text = (await resp.text()).trim();
+    if (!text) throw new Error(`CSV/TSV empty at ${url}`);
 
-      // Fallback for a single-line input like:
-      // "date,visitors 2025-09-20,12 2025-09-21,18 ..."
-      if (lines.length === 1 && /\bdate\s*,\s*(visitors|count)\b/i.test(lines[0])) {
-        const tokens = lines[0].trim().split(/\s+/); // header then repeated "YYYY-MM-DD,NN"
-        const header = tokens.shift();
-        lines = [header, ...tokens];
-      }
+    let lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
 
-      const split = s => s.split(',').map(x => x.trim());
-      const headers = split(lines.shift()).map(h => h.toLowerCase());
-      const dateIdx = headers.indexOf('date');
-      let valIdx = headers.indexOf('visitors');
-      if (valIdx === -1) valIdx = headers.indexOf('count');
-      if (dateIdx === -1 || valIdx === -1) {
-        throw new Error(`Missing required headers in ${url}. Found: ${headers.join(', ')}`);
-      }
+    // Split by tab OR comma (your file is TSV)
+    const split = (s) => s.split(/[\t,]/).map(x => x.trim());
 
-      const items = lines
-        .map(r => split(r))
-        .map(cols => ({ d: cols[dateIdx], v: Number(cols[valIdx]) }))
-        .filter(p => p.d && Number.isFinite(p.v))
-        .sort((a,b) => a.d.localeCompare(b.d));
+    // Remove any header lines that appear anywhere (you have them at the bottom, twice)
+    const isHeaderRow = (cols) => {
+      const c = cols.map(x => x.toLowerCase());
+      return c[0] === 'date' && (c[1] === 'visitors' || c[1] === 'count') && c[2] === 'uniques';
+    };
 
-      if (!items.length) throw new Error(`No valid rows parsed from ${url}`);
-      return items;
-    }
+    // Parse rows; keep only valid data rows (YYYY-MM-DD ...)
+    const rows = lines
+      .map(split)
+      .filter(cols => cols.length >= 2)
+      .filter(cols => !isHeaderRow(cols))
+      .filter(cols => /^\d{4}-\d{2}-\d{2}$/.test(cols[0])); // date in first column
 
-    function drawChart(items) {
-      const labels = items.map(p => p.d);
-      const data = items.map(p => p.v);
-      const ctx = document.getElementById('visitorsChart');
-      return new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels,
-          datasets: [{
-            label: 'Visitors',
-            data,
-            tension: 0,       // straight lines
-            fill: false,
-            pointRadius: 2,
-            borderWidth: 2
-          }]
-        },
-        options: {
-          responsive: true,
-          animation: false,           
-          maintainAspectRatio: true,
-          plugins: { legend: { display: false } },
-          scales: {
-            x: { ticks: { maxRotation: 0, autoSkip: true } },
-            y: { beginAtZero: true, title: { display: true, text: '# of Visitors' } }
-          }
+    if (!rows.length) throw new Error(`No valid data rows parsed from ${url}`);
+
+    // Map columns: date, visitors, uniques
+    const items = rows
+      .map(cols => ({
+        d: cols[0],
+        visitors: Number(cols[1]),
+        uniques: cols.length >= 3 ? Number(cols[2]) : NaN
+      }))
+      .filter(p => p.d && Number.isFinite(p.visitors))
+      .sort((a, b) => a.d.localeCompare(b.d));
+
+    return items;
+  }
+
+  function drawChart(items) {
+    const labels = items.map(p => p.d);
+    const data = items.map(p => p.visitors); // <- switch to p.uniques if you want uniques
+
+    const ctx = document.getElementById('visitorsChart');
+    return new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          label: 'Visitors',
+          data,
+          tension: 0,
+          fill: false,
+          pointRadius: 2,
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: false,
+        maintainAspectRatio: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { ticks: { maxRotation: 0, autoSkip: true } },
+          y: { beginAtZero: true, title: { display: true, text: '# of Visitors' } }
         }
-      });
-    }
-
-    (async () => {
-      try {
-        const items = await loadCsv('https://raw.githubusercontent.com/hz658832/RobotMeetGNSS/main/data/visitors.csv');
-        drawChart(items);
-      } catch (e) {
-        console.error(e);
-        const el = document.getElementById('visitorsChart').parentElement;
-        el.insertAdjacentHTML('beforeend', `<div class="uk-alert-danger" uk-alert><p>${e.message}. Make sure <code>data/visitors.csv</code> exists.</p></div>`);
       }
-    })();
-  </script>
+    });
+  }
+
+  (async () => {
+    try {
+      const items = await loadCsv('https://raw.githubusercontent.com/hz658832/RobotMeetsGNSS/main/data/visitors.csv');
+      drawChart(items);
+    } catch (e) {
+      console.error(e);
+      const el = document.getElementById('visitorsChart').parentElement;
+      el.insertAdjacentHTML('beforeend',
+        `<div class="uk-alert-danger" uk-alert><p>${e.message}</p></div>`);
+    }
+  })();
+</script>
+
 </body>
 </html>

@@ -5,7 +5,7 @@
 base_url = "https://robotmeetsranging.tech"
 
 # When adapting the title, do not forget to also adjust base_url above
-title = "1st Workshop on <br> Robot Meets GNSS and Ranging for Seamless Autonomy" 
+title = "1st Workshop on Robot Meets GNSS and Ranging for Seamless Autonomy" 
 description = "Exploring Synergies and Challenges of Radio-based Ranging Technologies in Robotics"
 
 # Whether to automatically compile all Sass files in the sass directory
@@ -37,7 +37,7 @@ navigation = [
     #{ name = "Contact", target = "communication/" }
 ]
 
-twitter_image = "https://github.com/hz658832/RobotMeetGNSS/blob/main/content/header_tighter.png"
+twitter_image = "https://github.com/hz658832/RobotMeetsGNSS/blob/main/content/header_tighter.png"
 
 # plausible.io analytics
 plausible = { src = "https://plausible.cs.aalto.fi/js/script.js", domain = "coderefinery.github.io", github_ref = "refs/heads/main" }
@@ -52,7 +52,7 @@ logos = [
 
 # adapt this
 registration_link = "https://example.org"
-source_repo = "https://github.com/hz658832/RobotMeetGNSS"
+source_repo = "https://github.com/hz658832/RobotMeetsGNSS"
 how_to_join_video = "https://youtu.be/QUAZELOioUY"
 
 # uncomment as soon as registration opens
