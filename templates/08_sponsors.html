@@ -1,6 +1,7 @@
 {% set image1 = resize_image(path="people/person-dummy.jpg", width=1200, op="fit_width") %}
 {% set logo_nokov = resize_image(path="logos/nokov.png", width=709, op="fit_width") %}
 {% set logo_nooploop = resize_image(path="logos/nooploop.png", width=709, op="fit_width") %}
+{% set logo_linxai = resize_image(path="logos/linxai.png", width=709, op="fit_width") %}
 <div class="uk-container">
 
   <h2 class="uk-heading-line"><span><b>Sponsors</b></span></h2>
@@ -11,7 +12,7 @@
 
   <!-- Sponsor logos -->
 <div class="uk-margin-medium-top">
-  <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-2@m uk-flex-middle uk-text-center" uk-grid>
+  <div class="uk-grid uk-child-width-1-3@s uk-child-width-1-3@m uk-flex-middle uk-text-center" uk-grid>
 
     <div>
       <a href="https://en.nokov.com/" target="_blank" rel="noopener">
@@ -31,6 +32,17 @@
           alt="NoopLoop"
           class="uk-responsive-width"
           style="max-width: 320px; width: 70%; height: auto;"
+        >
+      </a>
+    </div>
+
+    <div>
+      <a href="http://www.gdlinxai.com/en/" target="_blank" rel="noopener">
+        <img
+          src="{{ logo_linxai.url }}"
+          alt="LINXAI"
+          class="uk-responsive-width"
+          style="max-width: 320px; width: 50%; height: auto;"
         >
       </a>
     </div>
