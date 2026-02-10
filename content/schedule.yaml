@@ -101,7 +101,7 @@ schedule:
     sessions: 
       - starts: 13:45
         ends: 14:15
-        title: 'GNSS-Inspired Problems in Robotics: system, integrity, and transferability to other sensor modalities'
+        title: 'Ranging-Inspired Problems in Robotics: system, integrity, and transferability to other sensor modalities'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Dr.-Ing. Haoming Zhang
         affiliation: Technical University of Munich, Germany
