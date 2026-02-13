@@ -49,7 +49,7 @@ The workshop proceedings will be published as a PDF file on the workshop website
 
 ## 💬 Online Q&A and Polling
 We encourage all participants to engage with our speakers and fellow colleagues throughout the workshop via  
-👉 [**Slido workspace**](https://app.sli.do/event/sTVeNYpp7CqickgaXXMGp6)
+👉 [**Slido workspace**](https://app.sli.do/event/qNkgtepLHX28Y9pC35BZBx)
 
 <hr class="uk-divider-icon">
 
