@@ -1,0 +1,2483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>1st Workshop on Robot Meets GNSS and Ranging for Seamless Autonomy</title>
+    <link rel="shortcut icon" href="https:&#x2F;&#x2F;robotmeetsranging.tech/img/robotmeetsgnss.ico">
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- uikit -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
+
+    <!-- time zone localization -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js" integrity="sha256-EfJOqCcshFS/2TxhArURu3Wn8b/XDA4fbPWKSwZ+1B8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/utc.js" integrity="sha256-qDfIIxqpRhYWa543p6AHZ323xT3B8O6iLZFUAWtEQJw=" crossorigin="anonymous"></script>
+
+    
+      <link rel="alternate" type="application/atom+xml" title="CodeRefinery" href="https://robotmeetsranging.tech/atom.xml" />
+    
+
+        
+      <title>CodeRefinery</title>
+      <meta name="twitter:title" content="1st Workshop on Robot Meets GNSS and Ranging for Seamless Autonomy" />
+      <meta property="og:title" content="1st Workshop on Robot Meets GNSS and Ranging for Seamless Autonomy" />
+    
+
+    
+      <meta name="description" content="Exploring Synergies and Challenges of Radio-based Ranging Technologies in Robotics" />
+      <meta name="twitter:description" content="Exploring Synergies and Challenges of Radio-based Ranging Technologies in Robotics" />
+      <meta property="og:description" content="Exploring Synergies and Challenges of Radio-based Ranging Technologies in Robotics" />
+    
+
+    
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="https://github.com/hz658832/RobotMeetsGNSS/blob/main/content/header_tighter.png" />
+      <meta property="og:image" content="https://github.com/hz658832/RobotMeetsGNSS/blob/main/content/header_tighter.png" />
+    
+
+
+    
+
+    <link href="https://robotmeetsranging.tech/style.css" rel="stylesheet">
+
+    
+    <script defer data-domain="coderefinery.github.io" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    
+
+
+  </head>
+
+  <body>
+    <div class="uk-container uk-margin-large-bottom">
+
+      <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav uk-visible@s">
+      
+      
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;robotmeetsranging.tech">
+      Home
+      
+    </a>
+
+    
+
+  </li>
+
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;objective">
+      Motivation and Goal
+      
+    </a>
+
+    
+
+  </li>
+
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;workshop_content">
+      Workshop Content
+      
+    </a>
+
+    
+
+  </li>
+
+
+    </ul>
+    <a href="#" class="uk-navbar-toggle uk-hidden@s" uk-navbar-toggle-icon uk-toggle="target: #sidenav"></a>
+  </div>
+</nav>
+
+<div id="sidenav" uk-offcanvas="flip: true" class="uk-offcanvas">
+  <div class="uk-offcanvas-bar">
+    <ul class="uk-nav">
+      
+      
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;robotmeetsranging.tech">
+      Home
+      
+    </a>
+
+    
+
+  </li>
+
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;objective">
+      Motivation and Goal
+      
+    </a>
+
+    
+
+  </li>
+
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;workshop_content">
+      Workshop Content
+      
+    </a>
+
+    
+
+  </li>
+
+
+    </ul>
+  </div>
+</div>
+
+
+
+      <div class="markdown">
+        
+  
+  
+  
+<div class="uk-flex uk-flex-bottom uk-flex-right uk-light uk-background-norepeat"
+     style="background-image:url('https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;header_tighter.eda93dfbf14411eb.png');
+            background-size: contain;
+            background-position: center;
+            aspect-ratio: 14 / 5;" uk-scrollspy="cls: uk-animation-fade; delay: 300">
+  
+  <div class="uk-width-auto@m uk-padding-small">
+    <div class="uk-grid-small uk-child-width-auto uk-margin" uk-grid
+         uk-countdown="date: 2026-06-06T08:45:00+02:00">
+
+      <div>
+        <div class="uk-countdown-number uk-countdown-days uk-text-xlarge"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
+      </div>
+      <div class="uk-countdown-separator">:</div>
+      <div>
+        <div class="uk-countdown-number uk-countdown-hours"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
+      </div>
+      <div class="uk-countdown-separator">:</div>
+      <div>
+        <div class="uk-countdown-number uk-countdown-minutes"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
+      </div>
+      <div class="uk-countdown-separator">:</div>
+      <div>
+        <div class="uk-countdown-number uk-countdown-seconds"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <p></p>
+ 
+<!-- Make sure this is in your <head> -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  /* Fluid, responsive typography */
+  .hero-title {
+    font-weight: 800;
+    font-size: clamp(28px, 6vw, 56px); /* scales from phones to desktops */
+    line-height: 1.1;
+    margin: 0;
+  }
+  .hero-subtitle {
+    font-weight: 400;
+    font-size: clamp(16px, 3.2vw, 22px);
+    line-height: 1.35;
+    margin-top: .5rem;
+  }
+</style>
+
+<div class="uk-section uk-section-muted uk-border-rounded uk-padding-remove-bottom uk-padding-small" 
+     uk-scrollspy="cls: uk-animation-fade; delay: 300">
+
+  <!-- Title / Subtitle -->
+  <div class="uk-container uk-text-center" 
+       uk-scrollspy="cls: uk-animation-slide-bottom-small; repeat: false">
+
+    <h1 class="hero-title uk-text-break">
+      1st Workshop on <br> Robot Meets GNSS and Ranging for Seamless Autonomy
+    </h1>
+
+    <h3 class="hero-subtitle uk-text-lead uk-text-muted uk-text-break">
+      Exploring Synergies and Challenges of Radio-based Ranging Technologies in Robotics
+    </h3>
+
+    <h4 class="hero-subtitle uk-text-lead uk-text-break custom-subtitle">
+      June 5, 2026 at IEEE ICRA in Vienna
+    </h4>
+
+  </div>
+
+  <!-- Logos Row -->
+  <div class="uk-container uk-margin-medium-top"  
+       uk-scrollspy="cls: uk-animation-slide-bottom-small; repeat: false">
+
+    <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s uk-flex-middle" uk-grid uk-grid-match="target: > div > p">
+
+      <!-- Logo 1 -->
+      <div class="uk-text-center">
+        <p class="uk-text-medium uk-margin-remove-bottom uk-text-bold">
+          Workshop endorsed by:
+        </p>
+        <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;IEEE_TSC.42a70470cbd096e7.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+      </div>
+
+      <!-- Logo 2 -->
+      <div class="uk-text-center">
+        <p class="uk-text-medium uk-margin-remove-bottom uk-text-bold">
+          Workshop accepted by:
+        </p>
+        <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;ICRA-VIE26-logo.b55048ff70700774.png" alt="Supporting partner logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:350px; width:100%; height:auto;">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light uk-margin-small-top uk-border-rounded" 
+     uk-scrollspy="cls: uk-animation-fade; delay: 300">
+  <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid uk-height-match="target: > div">
+
+    <div>
+      
+<h3 id="news"><b>News</h3>
+<div style="margin-bottom: 20px;"></div>
+<ul>
+<li><strong>February 10 2026:</strong> Paper acceptance notification rescheduled on April 15.</li>
+<li><strong>February 10 2026:</strong> New speaker <strong>Dr. Goudar</strong> confirmed.</li>
+<li><strong>February 10, 2026:</strong> Three sponsors confirmed.</li>
+<li><strong>February 1, 2026:</strong> Paper submission opens.</li>
+<li><strong>January 10, 2026:</strong> Workshop accepted by <strong>IEEE ICRA 2026</strong> (Vienna).</li>
+<li><strong>September 25, 2025:</strong> All scheduled speakers confirmed.</li>
+</ul>
+
+
+    </div>
+
+    <div>
+      
+<h3 id="important-dates"><b> Important Dates</h3>
+<div style="margin-bottom: 20px;"></div>
+<ul>
+<li><strong>Submission deadline:</strong> April 1, 2026, 11:59 PM (PST)</li>
+<li><strong>Acceptance notification:</strong> April 15, 2026</li>
+<li><strong>Camera-ready submission:</strong> May 15, 2026</li>
+<li><strong>Workshop &amp; award notifications:</strong> June 5, 2026</li>
+</ul>
+
+
+    </div>
+
+  </div>
+</div>
+
+<hr class="uk-divider-icon uk-margin-small-top">
+
+<div class="uk-width-1-1@s" uk-scrollspy="cls: uk-animation-fade; delay: 300">
+    
+  <div class="uk-container">
+
+    <h2 class="uk-heading-line"><span><b>Scope</span></h2>
+
+    <p class="uk-text-custom uk-text-justify">
+      Robot navigation in large-scale environments requires globally consistent state estimation for planning and coordination. 
+      Ranging technologies, most prominently the Global Navigation Satellite System (GNSS), offer an effective and low-cost complementary sensing modality. 
+      Yet, robotics research has typically utilized ranging sensors only at the solution level, overlooking raw measurements that offer rich observability and valuable constraints.
+    </p>
+
+    <p class="uk-text-custom uk-text-justify">
+      Although recent studies demonstrate a growing interest in raw range observations to improve robustness, significant gaps remain across research communities, as key advances are not effectively exchanged. 
+      This disconnect is particularly evident in robotic applications, where ranging systems (e.g., GNSS) are frequently degraded by multipath, non-line-of-sight effects, and other signal interference in complex environments.
+    </p>
+
+    <p class="uk-text-custom uk-text-justify">
+      Recognizing the shared challenges in sensor integration, error modeling, integrity monitoring, and certifiable optimization of ranging observations from diverse ranging systems (e.g., GNSS, Ultra-Wide-Band), this event emphasizes the critical role of ranging technologies in resilient robot navigation. 
+      It seeks to identify open challenges and promising directions for future research across domains, while bringing together researchers from diverse communities to exchange knowledge and foster collaboration.
+    </p>
+
+    <p class="uk-margin-small-top">
+	  <span class="uk-label keyword-label">Keywords</span>
+	  <span class="keyword">State estimation</span>
+	  <span class="keyword">Sensor fusion</span>
+	  <span class="keyword">Raw range observation</span>
+	  <span class="keyword">GNSS</span>
+	  <span class="keyword">UWB</span>
+	  <span class="keyword">Error modeling</span>
+	  <span class="keyword">Multipath/NLOS</span>
+	  <span class="keyword">Robustness</span>
+	  <span class="keyword">Integrity</span>
+	  <span class="keyword">Safety</span>
+	</p>
+
+	<style>
+	  .keyword {
+	    display: inline-block;
+	    margin: 3px 4px;
+	    padding: 3px 10px;
+	    border-radius: 9999px;
+	    background: rgba(30,135,240,.08);
+	    font-size: 0.9rem;
+	  }
+	  .keyword-label {
+		  background-color: #5F92B6; /* custom background */
+		  color: #fff;              /* text color */
+		}
+	</style>
+
+  </div>
+
+</div>
+<hr class="uk-divider-icon">
+<div class="uk-width-1-1@s" uk-scrollspy="cls: uk-animation-fade; delay: 300">
+  <h2 class="uk-heading-line"><span><b>Invited Speakers</span></h2>
+<p>Speakers are listed in the order of their scheduled presentations.</p>
+
+
+
+
+
+
+
+
+
+<style>
+  /* Fancy numbering — auto-increment across all speaker cards */
+  .speaker-list { counter-reset: speaker; }
+  .speaker-card { position: relative; counter-increment: speaker; overflow: hidden; }
+
+  /* Card chrome: gradient hairline + soft shadow */
+  .speaker-card {
+    border-radius: 14px;
+    background:
+      linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(135deg, rgba(30,135,240,.5), rgba(111,66,193,.5)) border-box;
+    border: 1px solid transparent;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  }
+
+  /* Avatar sizing */
+  .speaker-avatar {
+    width: 120px; height: 120px; object-fit: cover;
+  }
+
+  /* Chips for affiliation lines (optional) */
+  .chip {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    background: rgba(30,135,240,.08);
+    border: 1px solid rgba(30,135,240,.15);
+    margin-right: 6px; margin-top: 6px;
+    white-space: nowrap;
+  }
+
+  /* Tighten headings */
+  .speaker-card h4 { margin: 0; }
+  .speaker-meta { margin-top: 4px; }
+  .speaker-card {
+	  min-height: 250px;   /* all cards at least 280px tall */
+	  display: flex;       /* ensures content aligns properly */
+	  flex-direction: column;
+	  justify-content: space-between; /* keeps spacing nice */
+	}
+
+  /* Popover card sizing */
+  .bio-popover-card { max-width: 340px; position: relative; }
+  .bio-popover-card::after{
+    content:""; position:absolute; width:10px; height:10px; background:#fff; transform:rotate(45deg);
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+  }
+  /* Arrow when the drop is at the right of the card */
+  .uk-drop.uk-position-right-center .bio-popover-card::after{
+    left:-5px; top:50%; transform:translateY(-50%) rotate(45deg);
+  }
+  /* When the drop flips below on small screens */
+  .uk-drop.uk-position-bottom-center .bio-popover-card::after{
+    top:-5px; left:32px;
+  }
+
+  /* Wider on monitors / large screens */
+  @media (min-width: 1024px) {
+    .bio-popover-card {
+      max-width: 480px;  /* or 520px, adjust to taste */
+    }
+  }
+
+  /* Optional: add a smoother text layout for large screens */
+  @media (min-width: 1280px) {
+    .bio-popover-card {
+      max-width: 560px;
+      line-height: 1.5;
+    }
+  }
+</style>
+
+<div class="uk-container uk-margin-medium speaker-list">
+
+  <!-- Session 1 -->
+  <h3 class="uk-heading-line"><span>Session 1: Ranging-Enabled Robotic Research</span></h3>
+  <div class="uk-grid-medium uk-child-width-1-1 uk-child-width-1-2@s" uk-grid
+       uk-scrollspy="cls: uk-animation-slide-bottom-small; target: .speaker-card; delay: 80">
+
+    <!-- Taro -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;taro_new.1381a2c9bd1a4053.png" alt="Taro Suzuki, PhD">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Dr. Taro Suzuki</h4>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+              <br>
+    		      <p class="uk-margin-remove uk-text-default">Principal Research Scientist<br>Chiba Institute of Technology<br>Japan</p>
+    		      <p class="uk-margin-remove-top uk-text-default">
+    		        <a href="http://www.taroz.net/" target="_blank" rel="noopener">Personal site</a>
+    		      </p>
+    		    </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Taro Suzuki">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Suzuki</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
+            Dr. Suzuki is a chief researcher at Chiba Institute of Technology, Japan. He received his B.S., M.S., and Ph.D. in Engineering from Waseda University in 2007, 2009, and 2012 respectively. From 2012 to 2014, he worked as a postdoctoral researcher at Tokyo University of Marine Science and Technology. From 2015 to 2019, he worked as an assistant professor at Waseda University.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="http://www.taroz.net/" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Nguyen -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;s_nguyen.a0d3df9905191f07.png" alt="Thien-Minh Nguyen">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Dr. Thien-Minh Nguyen</h4><br>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+    		      <p class="uk-margin-remove uk-text-default">Lecturer<br>The University of Queensland<br>Australia</p>
+    		      <p class="uk-margin-remove-top uk-text-default">
+  		          <a href="https://brytsknguyen.github.io/" target="_blank" rel="noopener">Personal site</a>
+  		        </p>
+		        </div>
+          </div>
+        </div>
+       </div>
+
+       <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Nguyen">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Nguyen</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
+            Dr. Nguyen is currently a Lecturer in Robotics at the School of Mechanical and Mining Engineering at The University of Queensland. He was a Research Fellow at the Center for Advanced Robotics Innovation Technology (CARTIN). His research focuses on robust and intelligent perception for autonomous systems in complex environments by integrating multiple sensing modalities and prior knowledge. He has extensive experience with UAVs as testbeds for his perception systems.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://brytsknguyen.github.io/" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dr. Zak Kassas -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;s_kassas.ab843496e789757e.jpg" alt="Prof. Dr. Zak Kassas">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Prof. Dr. Zak Kassas</h4>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+              <p class="uk-margin-remove uk-text-default">IEEE Fellow and ION Fellow</p>
+              <p class="uk-margin-remove uk-text-default">Professor<br>Ohio State University<br>United States</p>
+              <p class="uk-margin-remove-top uk-text-default">
+                <a href="https://ece.osu.edu/people/kassas.2" target="_blank" rel="noopener">Personal site</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Kassas">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Kassas</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
+            Prof. Kassas is the TRC Endowed Chair in Intelligent Transportation Systems and Professor of Electrical and Computer Engineering at The Ohio State University. He directs the ASPIN Laboratory and the U.S. Department of Transportation’s CARMEN Center. His research focuses on resilient positioning, navigation, and timing (PNT) using signals of opportunity in GNSS-challenged environments. He is an IEEE and ION Fellow and recipient of the NSF CAREER, ONR, AFOSR YIP, and PECASE awards.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://ece.osu.edu/people/kassas.2" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stephan Weiss -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;s_stephan.08f339a94a9dbae8.jpg" alt="Prof. Dr. Stephan Weiss">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Prof. Dr. Stephan Weiss</h4><br>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+		      <p class="uk-margin-remove uk-text-default">Professor<br>University of Klagenfurt<br>Austria</p>
+		      <p class="uk-margin-remove-top uk-text-default">
+		        <a href="https://www.aau.at/en/team/weiss-stephan-michael/" target="_blank" rel="noopener">Personal site</a>
+		      </p>
+		    </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Weiss">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Weiss</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
+            Prof. Weiss is Full Professor of Robotics and Deputy Head of the Institute of Smart Systems Technologies at Alpen-Adria University Klagenfurt. He earned his Ph.D. at ETH Zurich and previously worked at NASA’s Jet Propulsion Laboratory. His research focuses on vision-based state estimation and autonomous navigation for aerial and mobile robots.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://www.aau.at/en/team/weiss-stephan-michael/" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Session 2 -->
+  <h3 class="uk-heading-line uk-margin-large-top"><span>Session 2: Robustness, Integrity, and Safety</span></h3>
+  <div class="uk-grid-medium uk-child-width-1-1 uk-child-width-1-2@s" uk-grid
+       uk-scrollspy="cls: uk-animation-slide-bottom-small; target: .speaker-card; delay: 80">
+
+    <!-- Spenko -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;s_matthew.6ef0161eb02f145f.png" alt="Prof. Matthew Spenko">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Prof. Dr. Matthew Spenko</h4><br>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+		      <p class="uk-margin-remove uk-text-default">Professor<br>Illinois Tech<br>United States</p>
+		      <p class="uk-margin-remove-top uk-text-default">
+		        <a href="https://www.iit.edu/directory/people/matthew-spenko" target="_blank" rel="noopener">Personal site</a>
+		      </p>
+		    </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Spenko">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Spenko</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
+            Prof. Spenko is a Professor of Mechanical and Aerospace Engineering at Illinois Institute of Technology and serves as Interim Department Chair. He earned his B.S. from Northwestern University and his M.S. and Ph.D. in Mechanical Engineering from MIT. His research spans robotics, with emphasis on mobility in challenging environments using gecko-inspired adhesives, perching mechanisms, and navigation integrity.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://www.iit.edu/directory/people/matthew-spenko" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pfeifer -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;s_tim.00d65b90b3d372be.png" alt="Dr. Tim Pfeifer">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Dr. Tim Pfeifer</h4><br>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+		      <p class="uk-margin-remove uk-text-default">Siemens AG<br>Germany</p>
+		      <p class="uk-margin-remove-top uk-text-default">
+		        <a href="https://tipf.github.io/" target="_blank" rel="noopener">Personal site</a>
+		      </p>
+		    </div>
+          </div>
+          </div>
+        </div>
+        <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Pfeifer">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Pfeifer</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
+            Dr. Pfeifer develops robust sensor fusion and localization methods for autonomous systems. After earning his Ph.D. at Chemnitz University of Technology, he joined Siemens. He emphasizes that assuming Gaussian measurement errors is problematic—non-Gaussian errors are common in navigation and perception and can cause autonomous systems to fail dramatically.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://tipf.github.io/" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weisong -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;weisong.67bc5f792bdb7ed6.png" alt="Prof. Dr. Weisong Wen">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Prof. Dr. Weisong Wen</h4><br>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+		      <p class="uk-margin-remove uk-text-default">Assistant Professor<br>Hong Kong Polytechnic University<br>Hong Kong</p>
+		      <p class="uk-margin-remove-top uk-text-default">
+		        <a href="https://polyu-taslab.github.io/team/" target="_blank" rel="noopener">Personal site</a>
+		      </p>
+		    </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Wen">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Wen</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
+            Dr. Wen is Assistant Professor in the Department of Aeronautical & Aviation Engineering at The Hong Kong Polytechnic University. He holds a Ph.D. in Mechanical Engineering from PolyU (2020) and his research focuses on multi-sensor integrated positioning, SLAM, GNSS, navigation in urban and challenging environments, and safety-assured autonomous systems.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://polyu-taslab.github.io/team/" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Abhi -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;abhishek.017dbf9a1283d59c.jpg" alt="Dr. Abhishek Goudar">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Dr. Abhishek Goudar</h4><br>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+          <p class="uk-margin-remove uk-text-default">Postdoctoral Fellow<br>University of Toronto<br>Canada</p>
+          <p class="uk-margin-remove-top uk-text-default">
+            <a href="http://asrl.utias.utoronto.ca/" target="_blank" rel="noopener">Personal site</a>
+          </p>
+        </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Goudar">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Goudar</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
+            Dr. Abhishek Goudar is a Postdoctoral Fellow at the University of Toronto’s Autonomous Space Robotics Lab (ASRL). He received his Ph.D. in Robotics from the University of Toronto under the supervision of Prof. Angela P. Schoellig, where his research focused on improving the accuracy and reliability of range-based localization using low-cost sensors, with a particular emphasis on ultra-wideband (UWB) systems. His work spans continuous-time trajectory estimation, optimal initialization strategies, uncertainty-aware inference, and online spatio-temporal calibration. He has published in leading robotics venues and his methods have been deployed on aerial and ground robotic platforms, bridging theoretical estimation techniques with real-world embedded systems and multi-robot autonomy.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="http://asrl.utias.utoronto.ca/" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  UIkit.util.on(document, 'shown', '.uk-drop', e => {
+    const card = e.target.previousElementSibling;
+    if (card?.classList.contains('speaker-card')) card.setAttribute('aria-expanded','true');
+  });
+  UIkit.util.on(document, 'hidden', '.uk-drop', e => {
+    const card = e.target.previousElementSibling;
+    if (card?.classList.contains('speaker-card')) card.setAttribute('aria-expanded','false');
+  });
+</script>
+
+</div>
+
+
+<hr class="uk-divider-icon">
+<!--div class="uk-width-1-1@m">
+    <h2><b>Registration</h2>
+
+
+
+
+
+
+  <button class="uk-button uk-button-primary uk-button-large">
+    Registration will open soon
+  </button>
+
+
+
+<p><strong>Some organizations offer their own registration form</strong>. In this case please
+register with them and then you do not have to register here centrally as well.
+We will then make sure that everybody gets all necessary information.</p>
+
+
+</div-->
+
+<div class="uk-grid-divider uk-child-width-expand@s" uk-grid uk-scrollspy="cls: uk-animation-fade; delay: 300">
+  <div class="uk-width-3-5@m">
+    <h2><b>Tentative Schedule</b></h2>
+
+<script>
+  dayjs.extend(window.dayjs_plugin_utc)
+</script>
+
+<div class="uk-alert-primary" uk-alert>
+  <a class="uk-alert-close" uk-close></a>
+  <p>
+    All times are displayed in the local timezone of your browser. <br>
+    Detected timezone offset compared to the conference location:
+    <strong><span id="tz-offset">…</span></strong>
+  </p>
+</div>
+
+<script>
+(function () {
+  const TARGET_ZONE = "Europe/Vienna";
+  const outEl = document.getElementById("tz-offset");
+  if (!outEl) return;
+
+  // Return offset minutes with the SAME sign as Date#getTimezoneOffset():
+  // west of UTC => positive, east of UTC => negative (e.g., Berlin summer = -120).
+  function getOffsetMinutes(date, timeZone) {
+    // Snap to the start of a minute to avoid ms-induced fractional results
+    const t = new Date(Math.floor(date.getTime() / 60000) * 60000);
+
+    const dtf = new Intl.DateTimeFormat("en-US", {
+      timeZone,
+      hour12: false,
+      year: "numeric", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", second: "2-digit"
+    });
+
+    const parts = Object.fromEntries(dtf.formatToParts(t).map(p => [p.type, p.value]));
+    const y = +parts.year, m = +parts.month, d = +parts.day;
+    const H = +parts.hour, M = +parts.minute, S = +parts.second;
+
+    // If you take the zone's wall time parts and pretend they're UTC, this gives a UTC timestamp.
+    const localAsUTC = Date.UTC(y, m - 1, d, H, M, S);
+
+    // Match Date#getTimezoneOffset sign convention
+    // (minutes to add to local to get UTC): east-of-UTC is negative.
+    return (t.getTime() - localAsUTC) / 60000;
+  }
+
+  function formatDeltaHours(deltaHours) {
+    // Round to nearest quarter-hour for clean display
+    const h = Math.round(deltaHours * 4) / 4;
+    const sign = h > 0 ? "+" : (h < 0 ? "−" : "0");
+    if (h === 0) return "0 h (same as Vienna)";
+    const rel = h > 0 ? "ahead of" : "behind";
+    return `${sign}${Math.abs(h)} h (${Math.abs(h)} h ${rel} Vienna)`;
+  }
+
+  const now = new Date();
+  const browserOffsetMin = now.getTimezoneOffset();           // e.g., Berlin summer = -120
+  const viennaOffsetMin  = getOffsetMinutes(now, "Europe/Vienna"); // also -120 in summer
+
+  // Convert to UTC offsets in hours, east positive
+  const browserUTC = -browserOffsetMin / 60;
+  const viennaUTC  = -viennaOffsetMin / 60;
+
+  const deltaHours = browserUTC - viennaUTC; // + if browser is ahead of Vienna
+  outEl.textContent = formatDeltaHours(deltaHours);
+})();
+</script>
+
+
+<div class="uk-alert-info" uk-alert>
+  <a class="uk-alert-close" uk-close></a>
+  <p>
+    <b>Slides</b> of all keynotes will be made avilable after the workshop.
+  </p>
+</div>
+
+<table class="uk-table uk-table-small uk-table-striped">
+  <tbody>
+    
+    
+      <tr>
+        <td>
+        </td>
+        <td>
+          &nbsp;
+          <br>
+          <b></b>
+        </td>
+      </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '06:45';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '06:45';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '07:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Welcome and Opening Remarks
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;www.polyu.edu.hk&#x2F;aae&#x2F;ipn-lab&#x2F;us&#x2F;index.html" target="_blank">Prof. Dr. Li-Ta Hsu</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+              </div>
+            
+          </td>
+        </tr>
+      
+    
+      <tr>
+        <td>
+        </td>
+        <td>
+          &nbsp;
+          <br>
+          <b>Session I: Ranging-Enabled Robotic Research</b>
+        </td>
+      </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '07:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '07:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '07:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Connecting GNSS and Robotics: Toward Tightly Coupled Sensor Integration
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="http:&#x2F;&#x2F;www.taroz.net&#x2F;" target="_blank">Dr. Taro Suzuki</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Chiba Institute of Technology, Japan
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '07:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '07:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '08:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Continuous-Time State Estimation Using Ranging-Sensors: The Trilogy
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;brytsknguyen.github.io&#x2F;" target="_blank">Prof. Dr. Thien-Minh Nguyen</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                The University of Queensland, Australia
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '08:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '08:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '08:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Spotlight Talks (3min&#x2F;pers)
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <div class="uk-text-small">
+                    Emerging authors
+                  </div>
+                
+              </div>
+            
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '08:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '08:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '09:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Coffee Break and Poster Session
+            
+            <br>
+            
+            
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '09:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '09:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '10:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Keynote - No GPS, No Problem: Exploiting Signals of Opportunity for Resilient and Accurate Autonomous Vehicle Navigation in GPS-Denied Environments
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;ece.osu.edu&#x2F;people&#x2F;kassas.2" target="_blank">Prof. Dr. Zak Kassas</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Ohio State University
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '10:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '10:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '10:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Equivariant Estimators: Using Symmetries to Cope with Challenging Ranging Observations
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;www.aau.at&#x2F;en&#x2F;team&#x2F;weiss-stephan-michael&#x2F;" target="_blank">Prof. Dr. Stephan Weiss</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                University of Klagenfurt, Austria
+              </div>
+            
+          </td>
+        </tr>
+      
+    
+      <tr>
+        <td>
+        </td>
+        <td>
+          &nbsp;
+          <br>
+          <b></b>
+        </td>
+      </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '10:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '10:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '11:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Lunch
+            
+            <br>
+            
+            
+            
+          </td>
+        </tr>
+      
+    
+      <tr>
+        <td>
+        </td>
+        <td>
+          &nbsp;
+          <br>
+          <b>Session II: Robustness, Integrity, and Safety</b>
+        </td>
+      </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '11:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '11:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '12:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Keynote - Bridging navigation safety: from aviation to unmanned ground vehicles
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;www.iit.edu&#x2F;directory&#x2F;people&#x2F;matthew-spenko" target="_blank">Prof. Dr. Matthew Spenko</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Illinois Tech, United State
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '12:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '12:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '12:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Non-Gaussian State Estimation for GNSS, Ranging, and Beyond
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;tipf.github.io&#x2F;" target="_blank">Dr. Tim Pfeifer</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Siemens AG, Germany
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '12:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '12:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '12:45';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Short coffee Break
+            
+            <br>
+            
+            
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '12:45';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '12:45';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '13:15';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Safety-quantifiable Joint Positioning and Control for Factor Graph
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;polyu-taslab.github.io&#x2F;" target="_blank">Prof. Dr. Weisong Wen</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Trustworthy AI and Autonomous Systems Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '13:15';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '13:15';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '13:45';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Initialization, Uncertainty, and Accuracy in Range-Based Trajectory Estimation
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="http:&#x2F;&#x2F;asrl.utias.utoronto.ca&#x2F;" target="_blank">Dr. Abhishek Goudar</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Autonomous Space Robotics Laboratory<br>University of Toronto, Canada
+              </div>
+            
+          </td>
+        </tr>
+      
+    
+      <tr>
+        <td>
+        </td>
+        <td>
+          &nbsp;
+          <br>
+          <b>Panel Discussion</b>
+        </td>
+      </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '13:45';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '13:45';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '14:15';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Ranging-Inspired Problems in Robotics: system, integrity, and transferability to other sensor modalities
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;probablyinconsistent.de&#x2F;" target="_blank">Dr.-Ing. Haoming Zhang</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Technical University of Munich, Germany
+              </div>
+            
+          </td>
+        </tr>
+      
+    
+      <tr>
+        <td>
+        </td>
+        <td>
+          &nbsp;
+          <br>
+          <b></b>
+        </td>
+      </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '14:15';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '14:15';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '14:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Closing Remark
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;www.polyu.edu.hk&#x2F;aae&#x2F;ipn-lab&#x2F;us&#x2F;index.html" target="_blank">Prof. Dr. Li-Ta Hsu</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '14:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2026-06-05';
+    var time = '14:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2026-06-05';
+    var time = '15:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Poster and Networking Session
+            
+            <br>
+            
+            
+            
+          </td>
+        </tr>
+      
+    
+  </tbody>
+</table>
+
+<br>
+  </div>
+  <div class="uk-width-2-5@m" >
+    <h2><b>Organization</h2>
+
+
+<h2 id="workshop-format">🛠️ Workshop Format</h2>
+<ul>
+<li>📅 Full-day workshop</li>
+<li>🌐 Hybrid event</li>
+</ul>
+<hr class="uk-divider-icon">
+<h2 id="loudspeaker-call-for-papers">📢 Call for Papers</h2>
+<div style="text-align:justify; font-size:1.05em;">
+<p>To further advance this vision, we encourage contributions (paper submissions) from students and
+researchers actively working in these domains. Selected submissions will have the opportunity to present their
+work and receive valuable feedback from experts across academia and industry. </p>
+</div>
+<h3 id="topics">🧭 Topics</h3>
+<ul>
+<li>🤖 Robotic applications leveraging ranging sensors (e.g., GNSS, LEO, UWB, etc.),</li>
+<li>📡 State estimation and multisensor fusion methods,</li>
+<li>📊 Uncertainty quantification, integrity monitoring, and safety,</li>
+<li>📝 Algorithmic studies and real-world experimental or field reports,</li>
+<li>➕ <strong>Other related topics</strong>.</li>
+</ul>
+<h3 id="page-facing-up-formate">📄 Formate:</h3>
+<ul>
+<li><strong>2 + n pages</strong>, using the <a rel="noopener" target="_blank" href="https://ras.papercept.net/conferences/support/support.php"><strong>IEEE ICRA template</strong></a>.</li>
+<li>Accepted papers are invited for a <strong>3-minute oral presentation</strong> and <strong>poster session</strong>.</li>
+</ul>
+<h3 id="outbox-tray-submission">📤 Submission</h3>
+<ul>
+<li>Paper submissions are handled via <a rel="noopener" target="_blank" href="https://cmt3.research.microsoft.com/RobotMeetsRanging2026/Submission/index">Microsoft CMT</a>,</li>
+<li>Submission opens: <strong>February 1, 2026</strong>,</li>
+<li>Submission closes: <strong>April 1, 2026</strong>.</li>
+</ul>
+<h3 id="trophy-awards">🏆 Awards</h3>
+<ul>
+<li>🖼️ <strong>Best Poster Award</strong> (one recipient),</li>
+<li>🎤 <strong>Best Presentation Award</strong> (one recipient).</li>
+</ul>
+<hr class="uk-divider-icon">
+<h2 id="blue-book-workshop-proceedings">📘 Workshop Proceedings</h2>
+<div style="text-align:justify; font-size:1.05em;">
+<p>The workshop proceedings will be published as a PDF file on the workshop website.</p>
+</div>
+<hr class="uk-divider-icon">
+<h2 id="speech-balloon-online-q-a-and-polling">💬 Online Q&amp;A and Polling</h2>
+<p>We encourage all participants to engage with our speakers and fellow colleagues throughout the workshop via<br />
+👉 <a rel="noopener" target="_blank" href="https://app.sli.do/event/qNkgtepLHX28Y9pC35BZBx"><strong>Slido workspace</strong></a></p>
+<hr class="uk-divider-icon">
+<h2 id="movie-camera-online-attendance">🎥 Online Attendance</h2>
+<p>For researchers unable to attend the workshop in person, remote participation will be available via <strong>Zoom</strong> <em>(link to be announced)</em>.</p>
+<hr class="uk-divider-icon">
+<h2 id="information-source-questions-and-more-information">ℹ️ Questions and More Information?</h2>
+<p>Feel free to reach out to us if you have any questions:</p>
+<ul>
+<li><strong>Haoming Zhang</strong> – <a href="mailto:haoming.zhang@tum.de">haoming.zhang at tum.de</a></li>
+<li><strong>Darren Huang</strong> – <a href="mailto:darren-f.huang@connect.polyu.hk">darren-f.huang at connect.polyu.hk</a></li>
+<li><strong>Xikun Liu</strong> – <a href="mailto:xi-kun.liu@connect.polyu.hk">xi-kun.liu at connect.polyu.hk</a></li>
+</ul>
+
+
+
+  </div>
+</div>
+
+<hr class="uk-divider-icon">
+
+<div class="uk-width-1-1@m" uk-scrollspy="cls: uk-animation-fade; delay: 300">
+    
+
+
+
+<div class="uk-container">
+
+  <h2 class="uk-heading-line"><span><b>Sponsors</b></span></h2>
+
+  <p class="uk-text-custom uk-text-justify">
+    We gratefully acknowledge the generous support of our sponsors for the award sessions.
+  </p>
+
+  <!-- Sponsor logos -->
+<div class="uk-margin-medium-top">
+  <div class="uk-grid uk-child-width-1-3@s uk-child-width-1-3@m uk-flex-middle uk-text-center" uk-grid>
+
+    <div>
+      <a href="http://www.gdlinxai.com/en/" target="_blank" rel="noopener">
+        <img
+          src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;linxai.7d921f702f460daa.png"
+          alt="LINXAI"
+          class="uk-responsive-width"
+          style="max-width: 320px; width: 50%; height: auto;"
+        >
+      </a>
+    </div>
+
+    <div>
+      <a href="https://en.nokov.com/" target="_blank" rel="noopener">
+        <img
+          src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;nokov.08d7405b5f47e623.png"
+          alt="NOKOV"
+          class="uk-responsive-width"
+          style="max-width: 320px; width: 70%; height: auto;"
+        >
+      </a>
+    </div>
+
+    <div>
+      <a href="https://www.nooploop.com/" target="_blank" rel="noopener">
+        <img
+          src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;nooploop.d1d159e29899102f.png"
+          alt="NoopLoop"
+          class="uk-responsive-width"
+          style="max-width: 320px; width: 70%; height: auto;"
+        >
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+</div>
+
+<hr class="uk-divider-icon">
+
+<div class="uk-width-1-1@m" uk-scrollspy="cls: uk-animation-fade; delay: 300">
+    
+<h2 class="uk-heading-line"><span><b>Organizers</span></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  .organizer-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.organizer-card {
+  border-radius: 10px;
+  background:
+      linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(135deg, rgba(30,135,240,.5), rgba(111,66,193,.5)) border-box;
+	border: 1px solid transparent;
+	box-shadow: 0 10px 10px rgba(0,0,0,.06);
+}
+.organizer-card img {
+  transition: transform 0.25s ease;
+}
+.organizer-card:hover img {
+  transform: scale(1.05);
+}
+.organizer-card {
+	  min-height: 150px;   /* all cards at least 280px tall */
+	  display: flex;       /* ensures content aligns properly */
+	  flex-direction: column;
+	  justify-content: space-between; /* keeps spacing nice */
+	}
+.organizer-name {
+  font-weight: 700;   /* bold */
+  color: #1e87f0;     /* keep default text color */
+  text-decoration: none;
+}
+.organizer-name:hover {
+  color: #1e87f0;     /* UIKit blue on hover */
+}
+</style>
+
+<div class="uk-container">
+
+<div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid >
+
+  <!-- Organizer 1 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid >
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;o_haoming.ac717d9c23d03122.png" alt="Dr.-Ing. Haoming Zhang">
+        </div>
+        <div class="uk-width-expand ">
+          <h5 class="uk-margin-remove"><a href="https://hz658832.github.io/" target="_blank" class="organizer-name">Dr.-Ing. Haoming Zhang</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;tum.b2638175bf3e85d6.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:200px; width:100%; height:auto;">
+            </div>
+            <div>
+              <p class="uk-text-small uk-margin-remove uk-text-right">
+                Postdoctoral Researcher<br>LSY Lab<br>Technical University of Munich<br>Germany
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizer 2 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;o_darren.e235f7f81a82469b.png" alt="Dr. Feng (Darren) Huang">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://darrenwong.github.io/" target="_blank" class="organizer-name">Dr. Feng (Darren) Huang</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;polyU.16f5e32ddf043c9d.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
+            <p class="uk-text-small uk-margin-remove uk-text-right">
+              Postdoctoral Researcher<br>TAS Lab<br>Hong Kong Polytechnic University<br>Hong Kong
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizer 3 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;o_yibin.f763b1a05a2deb5f.png" alt="Yibin Wu">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://yibinwu.github.io/" target="_blank" class="organizer-name">Yibin Wu</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;uni_bonn.29adfacb367c67fb.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:200px; width:100%; height:auto;">
+            </div>
+            <div>
+              <p class="uk-text-small uk-margin-remove uk-text-right">
+                PhD Student<br>IGG<br>University of Bonn<br>Germany
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizer 4 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;o_xikun.a2c0969b6b644cec.png" alt="Xikun Liu">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://xikunliu-huskit.github.io/" target="_blank" class="organizer-name">Xikun Liu</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;polyU.16f5e32ddf043c9d.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
+              <p class="uk-text-small uk-margin-remove uk-text-right">
+                PhD Student<br>TAS Lab<br>Hong Kong Polytechnic University<br>Hong Kong
+              </p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizer 5 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;o_shenghai.6ff40350c2a20111.png" alt="Dr. Shenghai Yuan">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://snakehaihai.github.io//" target="_blank" class="organizer-name">Dr. Shenghai Yuan</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;ntu.25168e0964c96144.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:300px; width:100%; height:auto;">
+            </div>
+            <div>
+                <p class="uk-text-small uk-margin-remove uk-text-right">
+                  Senior Research Fellow<br>Nanyang Technological University<br>Singapore
+                </p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizer 6 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;o_daniel.044bcffb6eb3eabf.png" alt="Dr. Daniel Medina">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://www.dlr.de/en/kn" target="_blank" class="organizer-name">Dr. Daniel Medina</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;dlr.ec6579b6142c6745.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:300px; width:100%; height:auto;">
+            </div>
+            <div>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            R&D Engineer, Group Leader<br>IKN<br>German Aerospace Center (DLR)<br>Germany
+          </p>
+          </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+		<!-- Organizer 7 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;taro_new.1381a2c9bd1a4053.png" alt="Dr. Taro Suzuki">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="http://www.taroz.net/" target="_blank" class="organizer-name">Dr. Taro Suzuki</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;chiba.6e1232802c6afd7f.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:300px; width:100%; height:auto;">
+            </div>
+            <div>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Principal Research Scientist<br>Chiba Institute of Technology<br>Japan
+          </p>
+          </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizer 8 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;weisong.67bc5f792bdb7ed6.png" alt="Prof. Dr. Weisong Wen">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://polyu-taslab.github.io/team/" target="_blank" class="organizer-name">Prof. Dr. Weisong Wen</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;polyU.16f5e32ddf043c9d.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Assistant Professor<br>TAS Lab<br>Hong Kong Polytechnic University<br>Hong Kong
+          </p>
+          </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	  <!-- Organizer 9 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;o_johannes.db4e8de5e790c261.jpg" alt="Prof. Dr.-Ing. Johannes Betz">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://www.professoren.tum.de/betz-johannes" target="_blank" class="organizer-name">Prof. Dr.-Ing. Johannes Betz</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;tum.b2638175bf3e85d6.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Full Professor<br>AVS Lab<br>Technical University of Munich<br>Germany
+          </p>
+          </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Organizer 10 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;o_siqi.af4ec540f2208d0b.png" alt="Prof. SiQi Zhou, PhD">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://siqizhou.com/" target="_blank" class="organizer-name">Prof. SiQi Zhou, PhD</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;sf.c27887cc06cd5edb.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Assistant Professor<br>Simon Faser University<br>Canada
+          </p>
+          </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizer 11 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;angela_schoellig_sq.5f0dbc3237e7b6eb.png" alt="Prof. Dr.sc. Angela Schoellig">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://www.ce.cit.tum.de/lsy/prof-angela-schoellig/" target="_blank" class="organizer-name">Prof. Dr.sc. Angela Schoellig</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;tum.b2638175bf3e85d6.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Full Professor<br>LSY Lab<br>Technical University of Munich<br>Germany
+          </p>
+          </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Organizer 12 -->
+  <div>
+    <div class="uk-card uk-card-default uk-card-body uk-card-small organizer-card">
+      <div class="uk-grid-small uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+          <img class="uk-border-circle organizer-avatar" src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;o_lita.fee768b7c6b00906.png" alt="Prof. Dr. Li-Ta Hsu">
+        </div>
+        <div class="uk-width-expand">
+          <h5 class="uk-margin-remove"><a href="https://www.polyu.edu.hk/aae/ipn-lab/us/index.html" target="_blank" class="organizer-name">Prof. Dr. Li-Ta Hsu</a></h5>
+          <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img data-src="https:&#x2F;&#x2F;robotmeetsranging.tech&#x2F;processed_images&#x2F;polyU.16f5e32ddf043c9d.png" alt="Endorsing organization logo" 
+             class="uk-border-rounded uk-margin-small-top" uk-img
+             style="max-width:500px; width:100%; height:auto;">
+            </div>
+            <div>
+          <p class="uk-text-small uk-margin-remove uk-text-right">
+            Associate Professor<br>IPN Lab<br>Hong Kong Polytechnic University<br>Hong Kong
+          </p>
+          </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</div>
+
+</div>
+
+
+
+      </div>
+
+      <div class="uk-margin-large-top">
+        <hr>
+        <footer class="uk-section uk-section-muted uk-padding-small">
+  <div class="uk-container">
+
+    <!-- Row 1 -->
+    <div class="uk-grid uk-child-width-1-3@s uk-text-small" uk-grid>
+
+      <!-- Source -->
+      <div>
+        <h5 class="uk-text-uppercase uk-margin-small-bottom">Source</h5>
+        <ul class="uk-iconnav uk-margin-remove">
+          <li>
+            <a href="https://github.com/hz658832/RobotMeetGNSS"
+               target="_blank"
+               uk-icon="icon: github"
+               aria-label="GitHub repository">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h5 class="uk-text-uppercase uk-margin-small-bottom">Contact</h5>
+        <ul class="uk-list uk-list-collapse">
+          <li><a href="mailto:haoming.zhang@tum.de">Haoming Zhang</a></li>
+          <li><a href="mailto:darren-f.huang@connect.polyu.hk">Feng Huang</a></li>
+          <li><a href="mailto:lt.hsu@polyu.edu.hk">Li-Ta Hsu</a></li>
+        </ul>
+      </div>
+
+      <!-- Acknowledgement (short) -->
+      <div>
+        <h5 class="uk-text-uppercase uk-margin-small-bottom">Acknowledgement</h5>
+        <p class="uk-margin-remove">
+          Designed by <a href="mailto:haoming.zhang@tum.de">Haoming Zhang</a><br>
+          Template from <a href="https://coderefinery.org/" target="_blank">CodeRefinery</a>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Row 2: Microsoft CMT -->
+    <div class="uk-margin-top">
+      <p class="uk-text-muted uk-text-small uk-margin-remove">
+        The Microsoft CMT service was used for managing the peer-reviewing
+        process for this conference. This service was provided for free by
+        Microsoft, who bore all associated expenses, including Azure cloud
+        services as well as software development and support.
+      </p>
+    </div>
+
+    <hr class="uk-margin-small">
+
+    <p class="uk-text-center uk-text-muted uk-text-small uk-margin-remove">
+      © 2026 Robot Meets GNSS and Ranging
+    </p>
+
+  </div>
+</footer>
+
+      </div>
+
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+  <script>
+    anchors.add();
+  </script>
+</html>
