@@ -90,12 +90,12 @@ schedule:
         presenterurl: https://polyu-taslab.github.io/
       - starts: 13:15
         ends: 13:45
-        title: tbd.
+        title: Initialization, Uncertainty, and Accuracy in Range-Based Trajectory Estimation
         #subtitle: "Why we want to track versions and how to go back in time to a working version: [Motivation](https://coderefinery.github.io/git-intro/motivation/), [Browsing](https://coderefinery.github.io/git-intro/browsing/), [Commiting](https://coderefinery.github.io/git-intro/commits/)"
         #url: https://coderefinery.github.io/git-intro/
-        presenters: tbd.
-        #affiliation: Trustworthy AI and Autonomous Systems Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
-        #presenterurl: https://polyu-taslab.github.io/
+        presenters: Dr. Abhishek Goudar 
+        affiliation: Autonomous Space Robotics Laboratory<br>University of Toronto, Canada
+        presenterurl: http://asrl.utias.utoronto.ca/
   - title: "Panel Discussion"
     date: "2026-06-05"
     sessions: 

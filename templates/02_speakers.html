@@ -8,6 +8,7 @@
 {% set img_nguyen = resize_image(path="people/s_nguyen.png", width=709, op="fit_width") %}
 {% set img_stephan = resize_image(path="people/s_stephan.jpeg", width=709, op="fit_width") %}
 {% set img_kassas = resize_image(path="people/s_kassas.jpg", width=709, op="fit_width") %}
+{% set img_abhi = resize_image(path="people/abhishek.jpeg", width=709, op="fit_width") %}
 <style>
   /* Fancy numbering — auto-increment across all speaker cards */
   .speaker-list { counter-reset: speaker; }
@@ -115,7 +116,7 @@
            role="dialog" aria-label="Bio: Dr. Taro Suzuki">
         <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
           <strong>Short-Bio Dr. Suzuki</strong>
-          <p class="uk-margin-small-top uk-margin-remove-bottom">
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
             Dr. Suzuki is a chief researcher at Chiba Institute of Technology, Japan. He received his B.S., M.S., and Ph.D. in Engineering from Waseda University in 2007, 2009, and 2012 respectively. From 2012 to 2014, he worked as a postdoctoral researcher at Tokyo University of Marine Science and Technology. From 2015 to 2019, he worked as an assistant professor at Waseda University.
           </p>
           <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
@@ -152,7 +153,7 @@
            role="dialog" aria-label="Bio: Dr. Nguyen">
         <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
           <strong>Short-Bio Dr. Nguyen</strong>
-          <p class="uk-margin-small-top uk-margin-remove-bottom">
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
             Dr. Nguyen is currently a Lecturer in Robotics at the School of Mechanical and Mining Engineering at The University of Queensland. He was a Research Fellow at the Center for Advanced Robotics Innovation Technology (CARTIN). His research focuses on robust and intelligent perception for autonomous systems in complex environments by integrating multiple sensing modalities and prior knowledge. He has extensive experience with UAVs as testbeds for his perception systems.
           </p>
           <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
@@ -188,7 +189,7 @@
            role="dialog" aria-label="Bio: Dr. Kassas">
         <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
           <strong>Short-Bio Dr. Kassas</strong>
-          <p class="uk-margin-small-top uk-margin-remove-bottom">
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
             Prof. Kassas is the TRC Endowed Chair in Intelligent Transportation Systems and Professor of Electrical and Computer Engineering at The Ohio State University. He directs the ASPIN Laboratory and the U.S. Department of Transportation’s CARMEN Center. His research focuses on resilient positioning, navigation, and timing (PNT) using signals of opportunity in GNSS-challenged environments. He is an IEEE and ION Fellow and recipient of the NSF CAREER, ONR, AFOSR YIP, and PECASE awards.
           </p>
           <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
@@ -223,7 +224,7 @@
            role="dialog" aria-label="Bio: Dr. Weiss">
         <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
           <strong>Short-Bio Dr. Weiss</strong>
-          <p class="uk-margin-small-top uk-margin-remove-bottom">
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
             Prof. Weiss is Full Professor of Robotics and Deputy Head of the Institute of Smart Systems Technologies at Alpen-Adria University Klagenfurt. He earned his Ph.D. at ETH Zurich and previously worked at NASA’s Jet Propulsion Laboratory. His research focuses on vision-based state estimation and autonomous navigation for aerial and mobile robots.
           </p>
           <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
@@ -264,7 +265,7 @@
            role="dialog" aria-label="Bio: Dr. Spenko">
         <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
           <strong>Short-Bio Dr. Spenko</strong>
-          <p class="uk-margin-small-top uk-margin-remove-bottom">
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
             Prof. Spenko is a Professor of Mechanical and Aerospace Engineering at Illinois Institute of Technology and serves as Interim Department Chair. He earned his B.S. from Northwestern University and his M.S. and Ph.D. in Mechanical Engineering from MIT. His research spans robotics, with emphasis on mobility in challenging environments using gecko-inspired adhesives, perching mechanisms, and navigation integrity.
           </p>
           <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
@@ -296,10 +297,10 @@
         </div>
         <!-- Pop-out bio (attached to the card above) -->
       <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
-           role="dialog" aria-label="Bio: Dr. Spenko">
+           role="dialog" aria-label="Bio: Dr. Pfeifer">
         <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
           <strong>Short-Bio Dr. Pfeifer</strong>
-          <p class="uk-margin-small-top uk-margin-remove-bottom">
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
             Dr. Pfeifer develops robust sensor fusion and localization methods for autonomous systems. After earning his Ph.D. at Chemnitz University of Technology, he joined Siemens. He emphasizes that assuming Gaussian measurement errors is problematic—non-Gaussian errors are common in navigation and perception and can cause autonomous systems to fail dramatically.
           </p>
           <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
@@ -309,7 +310,7 @@
       </div>
     </div>
 
-    <!-- Weisong (single centered) -->
+    <!-- Weisong -->
     <div>
       <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
         <div class="uk-grid-small uk-flex-middle" uk-grid>
@@ -331,14 +332,49 @@
       </div>
       <!-- Pop-out bio (attached to the card above) -->
       <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
-           role="dialog" aria-label="Bio: Dr. Spenko">
+           role="dialog" aria-label="Bio: Dr. Wen">
         <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
           <strong>Short-Bio Dr. Wen</strong>
-          <p class="uk-margin-small-top uk-margin-remove-bottom">
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
             Dr. Wen is Assistant Professor in the Department of Aeronautical & Aviation Engineering at The Hong Kong Polytechnic University. He holds a Ph.D. in Mechanical Engineering from PolyU (2020) and his research focuses on multi-sensor integrated positioning, SLAM, GNSS, navigation in urban and challenging environments, and safety-assured autonomous systems.
           </p>
           <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
             <a href="https://polyu-taslab.github.io/team/" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Abhi -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="{{ img_abhi.url }}" alt="Dr. Abhishek Goudar">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Dr. Abhishek Goudar</h4><br>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+          <p class="uk-margin-remove uk-text-default">Postdoctoral Fellow<br>University of Toronto<br>Canada</p>
+          <p class="uk-margin-remove-top uk-text-default">
+            <a href="http://asrl.utias.utoronto.ca/" target="_blank" rel="noopener">Personal site</a>
+          </p>
+        </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Goudar">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Goudar</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
+            Dr. Abhishek Goudar is a Postdoctoral Fellow at the University of Toronto’s Autonomous Space Robotics Lab (ASRL). He received his Ph.D. in Robotics from the University of Toronto under the supervision of Prof. Angela P. Schoellig, where his research focused on improving the accuracy and reliability of range-based localization using low-cost sensors, with a particular emphasis on ultra-wideband (UWB) systems. His work spans continuous-time trajectory estimation, optimal initialization strategies, uncertainty-aware inference, and online spatio-temporal calibration. He has published in leading robotics venues and his methods have been deployed on aerial and ground robotic platforms, bridging theoretical estimation techniques with real-world embedded systems and multi-robot autonomy.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="http://asrl.utias.utoronto.ca/" target="_blank" rel="noopener">More details →</a>
           </p>
         </div>
       </div>
