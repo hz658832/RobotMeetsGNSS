@@ -30,11 +30,11 @@ work and receive valuable feedback from experts across academia and industry.
 ### 📤 Submission
 - Paper submissions are handled via [Microsoft CMT](https://cmt3.research.microsoft.com/RobotMeetsRanging2026/Submission/index),
 - Submission opens: **February 1, 2026**,
-- Submission closes: **April 1, 2026**.
+- Submission closes: ~~**April 1, 2026**~~ -> **April 30, 2026**.
 
 ### 🏆 Awards
-- 🖼️ **Best Poster Award** (one recipient),
-- 🎤 **Best Presentation Award** (one recipient).
+- 🖼️ **Best Poster Award** — one recipient; includes a certificate, €350 cash prize, and a gift bag,
+- 🎤 **Best Presentation Award** — one recipient; includes a certificate, €350 cash prize, and a gift bag.
 
 <hr class="uk-divider-icon">
 
@@ -62,4 +62,3 @@ For researchers unable to attend the workshop in person, remote participation wi
 Feel free to reach out to us if you have any questions:
 - **Haoming Zhang** – [haoming.zhang at tum.de](mailto:haoming.zhang@tum.de)
 - **Darren Huang** – [darren-f.huang at connect.polyu.hk](mailto:darren-f.huang@connect.polyu.hk)
-- **Xikun Liu** – [xi-kun.liu at connect.polyu.hk](mailto:xi-kun.liu@connect.polyu.hk)
