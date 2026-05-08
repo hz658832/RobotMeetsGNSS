@@ -4,7 +4,9 @@
 ### <b>News
 <div style="margin-bottom: 20px;"></div>
 
-- **March 30 2026:** Paper submission deadline extended to April 30, 2026.
+- **May 07, 2026:** Author notifications sent. Thank you for your contribution.
+
+<!---- **March 30 2026:** Paper submission deadline extended to April 30, 2026.-->
 <!--- **February 10 2026:** New speaker **Dr. Goudar** confirmed. -->
 <!--- **February 10, 2026:** Three sponsors confirmed. -->
 <!--- **February 1, 2026:** Paper submission opens. -->

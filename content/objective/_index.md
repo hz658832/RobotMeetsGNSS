@@ -2,7 +2,6 @@
 title = "Motivation and Goal"
 +++
 
-
 # Motivation
 
 <p class="uk-text-custom uk-text-justify">
