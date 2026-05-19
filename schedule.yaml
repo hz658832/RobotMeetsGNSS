@@ -1,0 +1,138 @@
+---
+# all times must be input in UTC, be careful about daylight saving
+schedule:
+  - title: ""
+    date: "2026-06-05"
+    sessions:
+      - starts: 06:45
+        ends: 07:00
+        title: Welcome and Opening Remarks
+        #url: https://github.com/coderefinery/workshop-intro/blob/master/livestream.md
+        presenters: Prof. Dr. Li-Ta Hsu
+        affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+        presenterurl: https://www.polyu.edu.hk/aae/ipn-lab/us/index.html
+  - title: "Research Session I (Moderator: Dr. Haoming Zhang)"
+    date: "2026-06-05"
+    sessions:   
+      - starts: 07:00
+        ends: 07:30
+        title: 'Connecting GNSS and Robotics: Toward Tightly Coupled Sensor Integration'
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Taro Suzuki
+        affiliation: Chiba Institute of Technology, Japan
+        presenterurl: http://www.taroz.net/
+      - starts: 07:30
+        ends: 08:00
+        title: 'Ranging-Aided Localization: on the Ground, among the Drones, and into a Neural Network'
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Prof. Dr. Thien-Minh Nguyen
+        affiliation: The University of Queensland, Australia 
+        presenterurl: https://brytsknguyen.github.io/
+        #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
+      - starts: 08:00
+        ends: 08:30
+        title: 'Equivariant Estimators: Using Symmetries to Cope with Challenging Ranging Observations'
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Prof. Dr. Stephan Weiss
+        affiliation: University of Klagenfurt, Austria
+        presenterurl: https://www.aau.at/en/team/weiss-stephan-michael/
+        #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
+      - starts: 08:30
+        ends: 08:45
+        title: Short coffee Break
+      - starts: 08:45
+        ends: 10:00
+        title: '20 Spotlight Talks (3min/pers)'
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Emerging authors
+        #affiliation: '-'
+        #presenterurl: https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm
+  - title: ""
+    date: "2026-06-05"
+    sessions:
+      - starts: 10:00
+        ends: 11:30
+        title: Poster Session and Lunch Break
+  - title: "Industry Session (Moderator: Dr. Shenghai Yuan)"
+    date: "2026-06-05"
+    sessions: 
+      - starts: 11:30
+        ends: 11:45
+        title: Sponsor Pitch Presentation
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Sponsors
+        #affiliation: Siemens AG, Germany
+        #presenterurl: https://tipf.github.io/
+      - starts: 11:45
+        ends: 12:00
+        title: "Start-Up Presentation: Neuraloc"
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr.-Ing. Fabian Ruwisch
+        affiliation: NeuraLoc LDA
+        presenterurl: https://www.neuraloc.ai/
+  - title: "Research Session II (Moderator: Dr. Taro Suzuki)"
+    date: "2026-06-05"
+    sessions: 
+      - starts: 12:00
+        ends: 12:30
+        title: 'Keynote - Bridging navigation safety: from aviation to unmanned ground vehicles'
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Prof. Dr. Matthew Spenko
+        affiliation: Illinois Tech, United State
+        presenterurl: https://www.iit.edu/directory/people/matthew-spenko
+      - starts: 12:30
+        ends: 13:00
+        title: Industrial Indoor  Localization - Challenges and Trends
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Tim Pfeifer
+        affiliation: Siemens AG, Germany
+        presenterurl: https://tipf.github.io/
+      - starts: 13:00
+        ends: 13:15
+        title: Short coffee Break
+      - starts: 13:15
+        ends: 13:45
+        title: Safety-quantifiable Joint Positioning and Control for Factor Graph
+        #subtitle: "Why we want to track versions and how to go back in time to a working version: [Motivation](https://coderefinery.github.io/git-intro/motivation/), [Browsing](https://coderefinery.github.io/git-intro/browsing/), [Commiting](https://coderefinery.github.io/git-intro/commits/)"
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Prof. Dr. Weisong Wen
+        affiliation: Trustworthy AI and Autonomous Systems Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+        presenterurl: https://polyu-taslab.github.io/
+      - starts: 13:45
+        ends: 14:15
+        title: Initialization, Uncertainty, and Accuracy in Range-Based Trajectory Estimation
+        #subtitle: "Why we want to track versions and how to go back in time to a working version: [Motivation](https://coderefinery.github.io/git-intro/motivation/), [Browsing](https://coderefinery.github.io/git-intro/browsing/), [Commiting](https://coderefinery.github.io/git-intro/commits/)"
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Abhishek Goudar 
+        affiliation: Autonomous Space Robotics Laboratory<br>University of Toronto, Canada
+        presenterurl: http://asrl.utias.utoronto.ca/
+      - starts: 14:15
+        ends: 14:45
+        title: 'Keynote - No GPS, No Problem: Exploiting Signals of Opportunity for Resilient and Accurate Autonomous Vehicle Navigation in GPS-Denied Environments'
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Prof. Dr. Zak Kassas
+        affiliation: Ohio State University
+        presenterurl: https://ece.osu.edu/people/kassas.2
+  - title: "Panel Discussion (Moderator: Dr. Daniel Medina)"
+    date: "2026-06-05"
+    sessions: 
+      - starts: 14:45
+        ends: 15:30
+        title: 'Ranging-Inspired Problems in Robotics: system, integrity, and transferability to other sensor modalities'
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Dr. Daniel Medina
+        affiliation: German Aerospace Center (DLR), Germany
+        presenterurl: https://www.dlr.de/en/kn
+  - title: ""
+    date: "2026-06-05"
+    sessions:
+      - starts: 15:30
+        ends: 16:00
+        title: Award Session and Closing Remark
+        #url: https://github.com/coderefinery/workshop-intro/blob/master/livestream.md
+        presenters: Prof. Dr. Li-Ta Hsu
+        affiliation: Intelligent Positioning and Navigation Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+        presenterurl: https://www.polyu.edu.hk/aae/ipn-lab/us/index.html
+      
+        
+ 
