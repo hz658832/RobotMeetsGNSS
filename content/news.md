@@ -7,11 +7,10 @@
 - **May 19, 2026:** Workshop schedule finalized!
 - **May 19, 2026:** Start-Up collaboration with NEURALOC.ai confirmed!
 - **May 07, 2026:** Author notifications sent. Thank you for your contribution.
-
 <!---- **March 30 2026:** Paper submission deadline extended to April 30, 2026.-->
 <!--- **February 10 2026:** New speaker **Dr. Goudar** confirmed. -->
 <!--- **February 10, 2026:** Three sponsors confirmed. -->
 <!--- **February 1, 2026:** Paper submission opens. -->
 <!--- **January 10, 2026:** Workshop accepted by **IEEE ICRA 2026** (Vienna). -->
-- **September 25, 2025:** All scheduled speakers confirmed.
+<!--- - **September 25, 2025:** All scheduled speakers confirmed.-->
 
