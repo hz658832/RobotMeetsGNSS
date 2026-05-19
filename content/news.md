@@ -4,6 +4,8 @@
 ### <b>News
 <div style="margin-bottom: 20px;"></div>
 
+- **May 19, 2026:** Workshop schedule finalized!
+- **May 19, 2026:** Start-Up collaboration with NEURALOC.ai confirmed!
 - **May 07, 2026:** Author notifications sent. Thank you for your contribution.
 
 <!---- **March 30 2026:** Paper submission deadline extended to April 30, 2026.-->
