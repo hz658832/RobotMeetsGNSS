@@ -85,7 +85,7 @@
 <div class="uk-container uk-margin-medium speaker-list">
 
   <!-- Session 1 -->
-  <h3 class="uk-heading-line"><span>Session 1: Ranging-Enabled Robotic Research</span></h3>
+  <!--h3 class="uk-heading-line"><span>Session 1: Ranging-Enabled Robotic Research</span></h3-->
   <div class="uk-grid-medium uk-child-width-1-1 uk-child-width-1-2@s" uk-grid
        uk-scrollspy="cls: uk-animation-slide-bottom-small; target: .speaker-card; delay: 80">
 
@@ -163,42 +163,6 @@
       </div>
     </div>
 
-    <!-- Dr. Zak Kassas -->
-    <div>
-      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
-        <div class="uk-grid-small uk-flex-middle" uk-grid>
-          <div class="uk-width-auto">
-            <div class="uk-inline-clip">
-              <img class="uk-border-circle speaker-avatar" src="{{ img_kassas.url }}" alt="Prof. Dr. Zak Kassas">
-            </div>
-          </div>
-          <div class="uk-width-expand">
-            <h4>Prof. Dr. Zak Kassas</h4>
-            <div class="uk-width-auto uk-text-meta uk-text-right">
-              <p class="uk-margin-remove uk-text-default">IEEE Fellow and ION Fellow</p>
-              <p class="uk-margin-remove uk-text-default">Professor<br>Ohio State University<br>United States</p>
-              <p class="uk-margin-remove-top uk-text-default">
-                <a href="https://ece.osu.edu/people/kassas.2" target="_blank" rel="noopener">Personal site</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Pop-out bio (attached to the card above) -->
-      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
-           role="dialog" aria-label="Bio: Dr. Kassas">
-        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
-          <strong>Short-Bio Dr. Kassas</strong>
-          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
-            Prof. Kassas is the TRC Endowed Chair in Intelligent Transportation Systems and Professor of Electrical and Computer Engineering at The Ohio State University. He directs the ASPIN Laboratory and the U.S. Department of Transportation’s CARMEN Center. His research focuses on resilient positioning, navigation, and timing (PNT) using signals of opportunity in GNSS-challenged environments. He is an IEEE and ION Fellow and recipient of the NSF CAREER, ONR, AFOSR YIP, and PECASE awards.
-          </p>
-          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
-            <a href="https://ece.osu.edu/people/kassas.2" target="_blank" rel="noopener">More details →</a>
-          </p>
-        </div>
-      </div>
-    </div>
-
     <!-- Stephan Weiss -->
     <div>
       <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
@@ -211,11 +175,11 @@
           <div class="uk-width-expand">
             <h4>Prof. Dr. Stephan Weiss</h4><br>
             <div class="uk-width-auto uk-text-meta uk-text-right">
-		      <p class="uk-margin-remove uk-text-default">Professor<br>University of Klagenfurt<br>Austria</p>
-		      <p class="uk-margin-remove-top uk-text-default">
-		        <a href="https://www.aau.at/en/team/weiss-stephan-michael/" target="_blank" rel="noopener">Personal site</a>
-		      </p>
-		    </div>
+          <p class="uk-margin-remove uk-text-default">Professor<br>University of Klagenfurt<br>Austria</p>
+          <p class="uk-margin-remove-top uk-text-default">
+            <a href="https://www.aau.at/en/team/weiss-stephan-michael/" target="_blank" rel="noopener">Personal site</a>
+          </p>
+        </div>
           </div>
         </div>
       </div>
@@ -233,12 +197,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Session 2 -->
-  <h3 class="uk-heading-line uk-margin-large-top"><span>Session 2: Robustness, Integrity, and Safety</span></h3>
-  <div class="uk-grid-medium uk-child-width-1-1 uk-child-width-1-2@s" uk-grid
-       uk-scrollspy="cls: uk-animation-slide-bottom-small; target: .speaker-card; delay: 80">
 
     <!-- Spenko -->
     <div>
@@ -380,8 +338,49 @@
       </div>
     </div>
 
+    <!-- Dr. Zak Kassas -->
+    <div>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body speaker-card">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <div class="uk-inline-clip">
+              <img class="uk-border-circle speaker-avatar" src="{{ img_kassas.url }}" alt="Prof. Dr. Zak Kassas">
+            </div>
+          </div>
+          <div class="uk-width-expand">
+            <h4>Prof. Dr. Zak Kassas</h4>
+            <div class="uk-width-auto uk-text-meta uk-text-right">
+              <p class="uk-margin-remove uk-text-default">IEEE Fellow and ION Fellow</p>
+              <p class="uk-margin-remove uk-text-default">Professor<br>Ohio State University<br>United States</p>
+              <p class="uk-margin-remove-top uk-text-default">
+                <a href="https://ece.osu.edu/people/kassas.2" target="_blank" rel="noopener">Personal site</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pop-out bio (attached to the card above) -->
+      <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
+           role="dialog" aria-label="Bio: Dr. Kassas">
+        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
+          <strong>Short-Bio Dr. Kassas</strong>
+          <p class="uk-margin-small-top uk-margin-remove-bottom" style="text-align: justify;">
+            Prof. Kassas is the TRC Endowed Chair in Intelligent Transportation Systems and Professor of Electrical and Computer Engineering at The Ohio State University. He directs the ASPIN Laboratory and the U.S. Department of Transportation’s CARMEN Center. His research focuses on resilient positioning, navigation, and timing (PNT) using signals of opportunity in GNSS-challenged environments. He is an IEEE and ION Fellow and recipient of the NSF CAREER, ONR, AFOSR YIP, and PECASE awards.
+          </p>
+          <p class="uk-margin-small-top uk-text-meta uk-margin-remove-bottom">
+            <a href="https://ece.osu.edu/people/kassas.2" target="_blank" rel="noopener">More details →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+
 </div>
+
+
+
 
 
 <script>
