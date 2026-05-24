@@ -2,7 +2,7 @@
 +++
 
 ### <b> Important Dates             
-<div style="margin-bottom: 20px;"></div>
+<div style="margin-bottom: 10px;"></div>
 
 - ~~**Submission deadline:** April 30, 2026, 11:59 PM (PST)~~
 - ~~**Acceptance notification:** May 7, 2026~~

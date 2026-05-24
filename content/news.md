@@ -2,7 +2,7 @@
 +++
 
 ### <b>News
-<div style="margin-bottom: 20px;"></div>
+<div style="margin-bottom: 10px;"></div>
 
 - **May 19, 2026:** Workshop schedule finalized!
 - **May 19, 2026:** Start-Up collaboration with NEURALOC.ai confirmed!
