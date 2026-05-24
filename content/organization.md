@@ -2,9 +2,9 @@
 title = "Organization"
 +++
 
-## 🛠️ Workshop Format
-- 📅 Full-day workshop  
-- 🌐 Hybrid event  
+## 🌐 [**Zoom Webinar**](https://polyu.zoom.us/j/89262547431?pwd=j4nVaFTIVzhrAZe6Ntcy5qi7nYIett.1)
+- 🆔 Webinar ID: 892 6254 7431
+- 🎫 Passcode: 539750 
 
 <hr class="uk-divider-icon">
 
@@ -16,7 +16,6 @@ title = "Organization"
 - UWB Multi Way Ranging by Relative Clock Rate Estimation and Decentralized Time Division Multiple Access (MWR-RCRE-DTDMA)
 - Loosely Coupled Factor Graph Optimization for Pseudolite-Augmented Navigation
 - Enhancing Graph-Based SLAM in GNSS-Denied environments by leveraging leg odometry
-- SignalSkymask: Skymask Reconstruction Using Only GNSS Information via Deep Learning in Urban Canyons
 - LSTM-Based Quantile Regression for Dynamic Zenith Wet Delay Overbounding
 - Towards Absolute Accuracy Evaluation of RTK-SLAM in GNSS-Degraded Environments
 - You Only Train Once: Deep Metric Learning Framework for Fingerprint-based Indoor Position Recognition
