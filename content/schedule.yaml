@@ -23,7 +23,7 @@ schedule:
         presenterurl: http://www.taroz.net/
       - starts: 07:30
         ends: 08:00
-        title: 'Ranging-Aided Localization: on the Ground, among the Drones, and into a Neural Network'
+        title: '[Remote] Ranging-Aided Localization: on the Ground, among the Drones, and into a Neural Network'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Dr. Thien-Minh Nguyen
         affiliation: The University of Queensland, Australia 
@@ -89,7 +89,7 @@ schedule:
     sessions: 
       - starts: 12:15
         ends: 12:45
-        title: 'Keynote - Bridging navigation safety: from aviation to unmanned ground vehicles'
+        title: '[Remote] Keynote - Bridging navigation safety: from aviation to unmanned ground vehicles'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Dr. Matthew Spenko
         affiliation: Illinois Tech, United State
@@ -122,7 +122,7 @@ schedule:
         presenterurl: http://asrl.utias.utoronto.ca/
       - starts: 14:30
         ends: 15:00
-        title: 'Keynote - No GPS, No Problem: Exploiting Signals of Opportunity for Resilient and Accurate Autonomous Vehicle Navigation in GPS-Denied Environments'
+        title: '[Remote] Keynote - No GPS, No Problem: Exploiting Signals of Opportunity for Resilient and Accurate Autonomous Vehicle Navigation in GPS-Denied Environments'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Dr. Zak Kassas
         affiliation: Ohio State University
