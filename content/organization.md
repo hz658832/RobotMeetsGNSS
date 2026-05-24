@@ -5,6 +5,7 @@ title = "Organization"
 ## 🌐 [**Zoom Webinar**](https://polyu.zoom.us/j/89262547431?pwd=j4nVaFTIVzhrAZe6Ntcy5qi7nYIett.1)
 - 🆔 Webinar ID: 892 6254 7431
 - 🎫 Passcode: 539750 
+- 📣 **Everyone is welcome!**
 
 <hr class="uk-divider-icon">
 
