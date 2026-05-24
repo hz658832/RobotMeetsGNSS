@@ -6,5 +6,5 @@
 
 - ~~**Submission deadline:** April 30, 2026, 11:59 PM (PST)~~
 - ~~**Acceptance notification:** May 7, 2026~~
-- **Camera-ready submission:** May 22, 2026
-- **Workshop & award notifications:** June 5, 2026
+- ~~**Camera-ready submission:** May 22, 2026~~
+- **Workshop & Award notifications:** June 5, 2026
