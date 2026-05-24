@@ -57,14 +57,28 @@ schedule:
     date: "2026-06-05"
     sessions: 
       - starts: 11:30
-        ends: 11:45
-        title: Sponsor Pitch Presentation
+        ends: 11:40
+        title: "LINXAI: Topic tbd."
         #url: https://coderefinery.github.io/git-intro/
-        presenters: Sponsors
-        #affiliation: Siemens AG, Germany
-        #presenterurl: https://tipf.github.io/
-      - starts: 11:45
+        presenters: Mr. Kai Xiao 
+        affiliation: Guangdong Lingsi Intelligent Technology Co., Ltd
+        presenterurl: https://www.gdlinxai.com/en/h-col-101.html
+      - starts: 11:40
+        ends: 11:50
+        title: "NOVKOV: Topic tbd."
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Ms. Trudy Liu 
+        affiliation: NOKOV MoCap
+        presenterurl: https://en.nokov.com/
+      - starts: 11:50
         ends: 12:00
+        title: "NoopLoop: Topic tbd."
+        #url: https://coderefinery.github.io/git-intro/
+        presenters: Ms. Hong 
+        affiliation: SZ Nooploop Technology Co.,Ltd.
+        presenterurl: https://www.nooploop.com/
+      - starts: 12:00
+        ends: 12:15
         title: "Start-Up Presentation: Neuraloc"
         #url: https://coderefinery.github.io/git-intro/
         presenters: Dr.-Ing. Fabian Ruwisch
@@ -73,41 +87,41 @@ schedule:
   - title: "Research Session II (Moderator: Dr. Taro Suzuki)"
     date: "2026-06-05"
     sessions: 
-      - starts: 12:00
-        ends: 12:30
+      - starts: 12:15
+        ends: 12:45
         title: 'Keynote - Bridging navigation safety: from aviation to unmanned ground vehicles'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Dr. Matthew Spenko
         affiliation: Illinois Tech, United State
         presenterurl: https://www.iit.edu/directory/people/matthew-spenko
-      - starts: 12:30
-        ends: 13:00
+      - starts: 12:45
+        ends: 13:15
         title: Industrial Indoor  Localization - Challenges and Trends
         #url: https://coderefinery.github.io/git-intro/
         presenters: Dr. Tim Pfeifer
         affiliation: Siemens AG, Germany
         presenterurl: https://tipf.github.io/
-      - starts: 13:00
-        ends: 13:15
-        title: Short coffee Break
       - starts: 13:15
-        ends: 13:45
+        ends: 13:30
+        title: Short coffee Break
+      - starts: 13:30
+        ends: 14:00
         title: Safety-quantifiable Joint Positioning and Control for Factor Graph
         #subtitle: "Why we want to track versions and how to go back in time to a working version: [Motivation](https://coderefinery.github.io/git-intro/motivation/), [Browsing](https://coderefinery.github.io/git-intro/browsing/), [Commiting](https://coderefinery.github.io/git-intro/commits/)"
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Dr. Weisong Wen
         affiliation: Trustworthy AI and Autonomous Systems Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
         presenterurl: https://polyu-taslab.github.io/
-      - starts: 13:45
-        ends: 14:15
+      - starts: 14:00
+        ends: 14:30
         title: Initialization, Uncertainty, and Accuracy in Range-Based Trajectory Estimation
         #subtitle: "Why we want to track versions and how to go back in time to a working version: [Motivation](https://coderefinery.github.io/git-intro/motivation/), [Browsing](https://coderefinery.github.io/git-intro/browsing/), [Commiting](https://coderefinery.github.io/git-intro/commits/)"
         #url: https://coderefinery.github.io/git-intro/
         presenters: Dr. Abhishek Goudar 
         affiliation: Autonomous Space Robotics Laboratory<br>University of Toronto, Canada
         presenterurl: http://asrl.utias.utoronto.ca/
-      - starts: 14:15
-        ends: 14:45
+      - starts: 14:30
+        ends: 15:00
         title: 'Keynote - No GPS, No Problem: Exploiting Signals of Opportunity for Resilient and Accurate Autonomous Vehicle Navigation in GPS-Denied Environments'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Dr. Zak Kassas
@@ -116,8 +130,8 @@ schedule:
   - title: "Panel Discussion (Moderator: Dr. Daniel Medina)"
     date: "2026-06-05"
     sessions: 
-      - starts: 14:45
-        ends: 15:30
+      - starts: 15:00
+        ends: 15:45
         title: 'Ranging-Inspired Problems in Robotics: system, integrity, and transferability to other sensor modalities'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Dr. Daniel Medina
@@ -126,7 +140,7 @@ schedule:
   - title: ""
     date: "2026-06-05"
     sessions:
-      - starts: 15:30
+      - starts: 15:45
         ends: 16:00
         title: Award Session and Closing Remark
         #url: https://github.com/coderefinery/workshop-intro/blob/master/livestream.md
