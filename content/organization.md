@@ -75,7 +75,7 @@ title = "Contributions"
     <div class="paper-author">Alexis Marino et al.</div>
   </li>
   <li class="paper-item">
-    <a class="paper-link" href="https://drive.google.com/file/d/12cfRbDz_QWg702vSGe_WXtlEbSmpC38L/view?usp=sharing" target="_blank">WB Multi Way Ranging by Relative Clock Rate Estimation and Decentralized Time Division Multiple Access (MWR-RCRE-DTDMA)</a>
+    <a class="paper-link" href="https://drive.google.com/file/d/12cfRbDz_QWg702vSGe_WXtlEbSmpC38L/view?usp=sharing" target="_blank">UWB Multi Way Ranging by Relative Clock Rate Estimation and Decentralized Time Division Multiple Access (MWR-RCRE-DTDMA)</a>
     <div class="paper-author">Martin Zoula et al.</div>
   </li>
   <li class="paper-item">
