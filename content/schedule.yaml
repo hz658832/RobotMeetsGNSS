@@ -31,7 +31,7 @@ schedule:
         #subtitle: "[Merging](https://coderefinery.github.io/git-intro/merging/)"
       - starts: 08:00
         ends: 08:30
-        title: 'Equivariant Estimators: Using Symmetries to Cope with Challenging Ranging Observations'
+        title: 'Keynote - Equivariant Estimators: Using Symmetries to Cope with Challenging Ranging Observations'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Prof. Dr. Stephan Weiss
         affiliation: University of Klagenfurt, Austria
@@ -65,7 +65,7 @@ schedule:
         presenterurl: https://www.gdlinxai.com/en/h-col-101.html
       - starts: 11:40
         ends: 11:50
-        title: "NOVKOV: Topic tbd."
+        title: "NOVKOV: Motion Capture as the Ground Truth Engine for mobile robot research"
         #url: https://coderefinery.github.io/git-intro/
         presenters: Ms. Trudy Liu 
         affiliation: NOKOV MoCap

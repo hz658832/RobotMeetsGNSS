@@ -58,11 +58,11 @@ title = "Contributions"
 <div class="sidebar-card" style="border-left-color: #daac10; background-color: #fdfaf2;">
   <div style="margin-bottom: 12px;">
     <span class="award-badge">🖼️ Best Poster Award</span>
-    <div style="font-size: 0.85rem; color: #555; margin-top: 2px; padding-left: 24px;">One recipient; includes a certificate, €350 cash prize, and a gift bag.</div>
+    <div style="font-size: 0.85rem; color: #555; margin-top: 2px; padding-left: 24px;">One recipient; includes a certificate, €300 cash prize, and a gift bag.</div>
   </div>
   <div>
     <span class="award-badge">🎤 Best Presentation Award</span>
-    <div style="font-size: 0.85rem; color: #555; margin-top: 2px; padding-left: 24px;">One recipient; includes a certificate, €350 cash prize, and a gift bag.</div>
+    <div style="font-size: 0.85rem; color: #555; margin-top: 2px; padding-left: 24px;">One recipient; includes a certificate, €300 cash prize, and a gift bag.</div>
   </div>
 </div>
 
