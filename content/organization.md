@@ -2,85 +2,158 @@
 title = "Contributions"
 +++
 
-<!-- ## 🌐 [**Zoom Webinar**](https://polyu.zoom.us/j/89262547431?pwd=j4nVaFTIVzhrAZe6Ntcy5qi7nYIett.1)
-- 🆔 Webinar ID: 892 6254 7431
-- 🎫 Passcode: 539750 
-- 📣 **Everyone is welcome!**
+<style>
+  /* Sidebar typography matching the elegant schedule */
+  .contributions-header {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: #222;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  
+  /* Paper List styling */
+  .paper-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    list-style-type: none !important;
+  }
+  .paper-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1e87f0;
+    text-decoration: none;
+    line-height: 1.4;
+    display: inline-block;
+  }
+  .paper-link:hover {
+    text-decoration: underline;
+  }
+  .paper-author {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 
-<hr class="uk-divider-icon">
+  /* Compact Award Card styling */
+  .sidebar-card {
+    background: transparent; 
+    border: 1px solid #f0f0f0; 
+    border-left: 4px solid #1e87f0; 
+    padding: 15px; 
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .award-badge {
+    font-weight: 600; 
+    color: #daac10;
+    font-size: 0.9rem;
+  }
+</style>
 
-## 📘 Workshop Proceedings -->
-
-## 📝 Accepted Papers
-
-- [Simultaneous Localization and Calibration (SLAC) for Cooperative Radio Navigation: When Is It Possible?](https://drive.google.com/file/d/1mumVUfnOurrcEUAHuZu2XE_pApNPnbR9/view?usp=sharing) 
-  <br>Author: Alexis Marino et al.
-- [WB Multi Way Ranging by Relative Clock Rate Estimation and Decentralized Time Division Multiple Access (MWR-RCRE-DTDMA)](https://drive.google.com/file/d/12cfRbDz_QWg702vSGe_WXtlEbSmpC38L/view?usp=sharing)
-  <br>Author: Martin Zoula et al.
-- [Loosely Coupled Factor Graph Optimization for Pseudolite-Augmented Navigation](https://drive.google.com/file/d/1PJ5ZebVcp7u5pRY9CIKroiTB0AZsdX6K/view?usp=sharing)<br>Author: Chih-Chun Chen et al.
-- [Enhancing Graph-Based SLAM in GNSS-Denied environments by leveraging leg odometry](https://drive.google.com/file/d/1_8fu4EGISCPLPl55Z19mXq5Qfy0au0BU/view?usp=sharing)<br>Author: Léon PERRUCHOT-TRIBOULET, Luc JAULIN et al.
-- [CNN-LSTM Quantile Regression for Dynamic Residual Tropospheric Delay Overbounding with Meteorological Observations](https://drive.google.com/file/d/1dPqvtXGxSu8mgXFJOzrHnHps4w7SJ0Wl/view?usp=sharing)<br>Author: Xuejie Hou and Yiping Jiang
-- [Towards Absolute Accuracy Evaluation of RTK-SLAM in GNSS-Degraded Environments](https://drive.google.com/file/d/15gx__XpgHieVTp-cMvUgzW84yKbFawYJ/view?usp=sharing)<br>Author: Wei Zhang et al.
-- [You Only Train Once: Deep Metric Learning Framework for Fingerprint-based Indoor Position Recognition](https://drive.google.com/file/d/1Z3_x7ITHbHQY5KWyUU-GpDSn9sz5D4Q4/view?usp=sharing)<br>Author: Zhang Liqiang et al.
-- [SHT-V2X: A Real-World Dataset and Benchmark for V2X-Assisted Vehicle Localisation in GNSS-Denied Tunnels](https://drive.google.com/file/d/1tZQuXAEUmIDLsfVjYBZ38NsmrZ2_xFfj/view?usp=sharing)<br>Author: J. Stephany Berrio Perez. et al.
-- [Route-Constrained Robust Fusion Estimation for MEMS/GNSS Integrated Navigation of Unmanned Ground Vehicles in GNSS Degraded Environments](https://drive.google.com/file/d/11WxdRykktd1IW4R0C1BQpXsUa2kHUF6S/view?usp=sharing)<br>Author: Jingzhi Cui et al.
-- [Towards Networked One Search Agent Systems: Multilateration of WiFi Fine Time Measurement Responders Using GNSS References](https://drive.google.com/file/d/1gmH2nulwEBso050tfL7Ay2KAAgXYmjNN/view?usp=sharing)<br>Author: Juan Bravo-Arrabal et al.
-- [A Decentralized LiDAR-SLAM System with Certifiably Optimal Pose Graph Optimization](https://drive.google.com/file/d/1OtFj5G7JnB4i4irmlFqJzcvWWx_Ehhrx/view?usp=sharing) <br>Author: Baoshan Song et al.
-- [GNSS-ROS-Standardization: An Open-Source Universal Bridge for GNSS Raw Observations in ROS2](https://drive.google.com/file/d/1YUjsFOpXms6WYcp2jsaGLw80ug3iONKc/view?usp=sharing)<br>Author: Daiki Niimi et al.
-- [Bridging the Indoor-Outdoor Gap: Cross-Technology Ranging for Seamless Robot Navigation](https://drive.google.com/file/d/1zCHqHgbzzaIXEKujfQf4ues6xYKm-9cG/view?usp=sharing)<br>Author: Paul Schwarzbach
-- [UWBPX4Sim: Ultra-Wideband simulator for multi-robot applications](https://drive.google.com/file/d/1woddwQ1yRkJ0zq1UtzLRlSu-hVoHqmIQ/view?usp=sharing)<br>Author: Andrés Martínez-Silva et al.
-- [Feature-Level Geometric LiDAR--Visual--Inertial Odometry for Seamless Autonomy](https://drive.google.com/file/d/1ZaqVXL8KAq1YrxjvhuWAoWbiMjXUA0MW/view?usp=sharing)<br>Author: Xinye Dai et al.
-- [Trajectory Alignment for Robust Global Localization in GNSS-Degraded Forest Environments](https://drive.google.com/file/d/1qxHI5HqAFPSGF30uMDqlf2KNeN0Bs7T1/view?usp=sharing)<br>Author: Hans-Peter Wipfler et al.
-- [Interpreting RTK-Fixed Reliability via Sampling-Based Posterior Distribution of Integer Ambiguities](https://drive.google.com/file/d/1D8GjQ_n5rGpPvNf3wN-5iYDgSrJ9tgmO/view?usp=sharing)<br>Author: Aoki Takanose et al.
-- [UWB Meets Crazyflow: Simulating Degraded Feedback at Scale for Aerial Robotics](https://drive.google.com/file/d/1lQFSfvOocjIogosn7qeN9hiUFISp3K2S/view?usp=sharing)<br>Author: Martin Schuck, Marcel P. Rath et al.
-- [Outdoor Ground Truth Estimation via GNSS Carrier Phase and Factor Graph Optimization](https://drive.google.com/file/d/12gJQm18FRnzV9t4c2x2VVnEfDhCHMix5/view?usp=sharing)<br>Author: Hakan Uyanik et al.
-
-
-### 🏆 Awards
-- 🖼️ **Best Poster Award** — one recipient; includes a certificate, €350 cash prize, and a gift bag,
-- 🎤 **Best Presentation Award** — one recipient; includes a certificate, €350 cash prize, and a gift bag.
-
-<hr class="uk-divider-icon">
-
-## 💬 Online Q&A and Polling
-We encourage all participants to engage with our speakers and fellow colleagues throughout the workshop via  
-👉 [**Slido workspace**](https://app.sli.do/event/qNkgtepLHX28Y9pC35BZBx)
-
-<hr class="uk-divider-icon">
-
-## ℹ️ Questions and More Information?
-Feel free to reach out to us if you have any questions:
-- **Haoming Zhang** – [haoming.zhang at tum.de](mailto:haoming.zhang@tum.de)
-- **Darren Huang** – [darren-f.huang at connect.polyu.hk](mailto:darren-f.huang@connect.polyu.hk)
-
-
-<!--hr>
-
-## 🎥 Online Attendance
-For researchers unable to attend the workshop in person, remote participation will be available via **Zoom** *(link to be announced)*.
-
-<hr class="uk-divider-icon">
-## 📢 Call for Papers
-<div style="text-align:justify; font-size:1.05em;">
-
-To further advance this vision, we encourage contributions (paper submissions) from students and
-researchers actively working in these domains. Selected submissions will have the opportunity to present their
-work and receive valuable feedback from experts across academia and industry. 
+<h2 class="contributions-header" style="margin-top: 0;">🏆 Awards</h2>
+<div class="sidebar-card" style="border-left-color: #daac10; background-color: #fdfaf2;">
+  <div style="margin-bottom: 12px;">
+    <span class="award-badge">🖼️ Best Poster Award</span>
+    <div style="font-size: 0.85rem; color: #555; margin-top: 2px; padding-left: 24px;">One recipient; includes a certificate, €350 cash prize, and a gift bag.</div>
+  </div>
+  <div>
+    <span class="award-badge">🎤 Best Presentation Award</span>
+    <div style="font-size: 0.85rem; color: #555; margin-top: 2px; padding-left: 24px;">One recipient; includes a certificate, €350 cash prize, and a gift bag.</div>
+  </div>
 </div>
 
-### 🧭 Topics
-- 🤖 Robotic applications leveraging ranging sensors (e.g., GNSS, LEO, UWB, etc.),
-- 📡 State estimation and multisensor fusion methods,
-- 📊 Uncertainty quantification, integrity monitoring, and safety,
-- 📝 Algorithmic studies and real-world experimental or field reports,  
-- ➕ **Other related topics**.
+<hr class="uk-divider-icon" style="margin: 25px 0;">
 
-### 📄 Formate:
-- **2 + n pages**, using the [**IEEE ICRA template**](https://ras.papercept.net/conferences/support/support.php).
-- Accepted papers are invited for a **3-minute oral presentation** and **poster session**.
+<h2 class="contributions-header">📝 Accepted Papers</h2>
+<ul style="padding-left: 0; margin-top: 0;">
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1mumVUfnOurrcEUAHuZu2XE_pApNPnbR9/view?usp=sharing" target="_blank">Simultaneous Localization and Calibration (SLAC) for Cooperative Radio Navigation: When Is It Possible?</a>
+    <div class="paper-author">Alexis Marino et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/12cfRbDz_QWg702vSGe_WXtlEbSmpC38L/view?usp=sharing" target="_blank">WB Multi Way Ranging by Relative Clock Rate Estimation and Decentralized Time Division Multiple Access (MWR-RCRE-DTDMA)</a>
+    <div class="paper-author">Martin Zoula et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1PJ5ZebVcp7u5pRY9CIKroiTB0AZsdX6K/view?usp=sharing" target="_blank">Loosely Coupled Factor Graph Optimization for Pseudolite-Augmented Navigation</a>
+    <div class="paper-author">Chih-Chun Chen et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1_8fu4EGISCPLPl55Z19mXq5Qfy0au0BU/view?usp=sharing" target="_blank">Enhancing Graph-Based SLAM in GNSS-Denied environments by leveraging leg odometry</a>
+    <div class="paper-author">Léon PERRUCHOT-TRIBOULET, Luc JAULIN et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1dPqvtXGxSu8mgXFJOzrHnHps4w7SJ0Wl/view?usp=sharing" target="_blank">CNN-LSTM Quantile Regression for Dynamic Residual Tropospheric Delay Overbounding with Meteorological Observations</a>
+    <div class="paper-author">Xuejie Hou and Yiping Jiang</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/15gx__XpgHieVTp-cMvUgzW84yKbFawYJ/view?usp=sharing" target="_blank">Towards Absolute Accuracy Evaluation of RTK-SLAM in GNSS-Degraded Environments</a>
+    <div class="paper-author">Wei Zhang et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1Z3_x7ITHbHQY5KWyUU-GpDSn9sz5D4Q4/view?usp=sharing" target="_blank">You Only Train Once: Deep Metric Learning Framework for Fingerprint-based Indoor Position Recognition</a>
+    <div class="paper-author">Zhang Liqiang et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1tZQuXAEUmIDLsfVjYBZ38NsmrZ2_xFfj/view?usp=sharing" target="_blank">SHT-V2X: A Real-World Dataset and Benchmark for V2X-Assisted Vehicle Localisation in GNSS-Denied Tunnels</a>
+    <div class="paper-author">J. Stephany Berrio Perez. et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/11WxdRykktd1IW4R0C1BQpXsUa2kHUF6S/view?usp=sharing" target="_blank">Route-Constrained Robust Fusion Estimation for MEMS/GNSS Integrated Navigation of Unmanned Ground Vehicles in GNSS Degraded Environments</a>
+    <div class="paper-author">Jingzhi Cui et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1gmH2nulwEBso050tfL7Ay2KAAgXYmjNN/view?usp=sharing" target="_blank">Towards Networked One Search Agent Systems: Multilateration of WiFi Fine Time Measurement Responders Using GNSS References</a>
+    <div class="paper-author">Juan Bravo-Arrabal et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1OtFj5G7JnB4i4irmlFqJzcvWWx_Ehhrx/view?usp=sharing" target="_blank">A Decentralized LiDAR-SLAM System with Certifiably Optimal Pose Graph Optimization</a>
+    <div class="paper-author">Baoshan Song et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1YUjsFOpXms6WYcp2jsaGLw80ug3iONKc/view?usp=sharing" target="_blank">GNSS-ROS-Standardization: An Open-Source Universal Bridge for GNSS Raw Observations in ROS2</a>
+    <div class="paper-author">Daiki Niimi et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1zCHqHgbzzaIXEKujfQf4ues6xYKm-9cG/view?usp=sharing" target="_blank">Bridging the Indoor-Outdoor Gap: Cross-Technology Ranging for Seamless Robot Navigation</a>
+    <div class="paper-author">Paul Schwarzbach</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1woddwQ1yRkJ0zq1UtzLRlSu-hVoHqmIQ/view?usp=sharing" target="_blank">UWBPX4Sim: Ultra-Wideband simulator for multi-robot applications</a>
+    <div class="paper-author">Andrés Martínez-Silva et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1ZaqVXL8KAq1YrxjvhuWAoWbiMjXUA0MW/view?usp=sharing" target="_blank">Feature-Level Geometric LiDAR--Visual--Inertial Odometry for Seamless Autonomy</a>
+    <div class="paper-author">Xinye Dai et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1qxHI5HqAFPSGF30uMDqlf2KNeN0Bs7T1/view?usp=sharing" target="_blank">Trajectory Alignment for Robust Global Localization in GNSS-Degraded Forest Environments</a>
+    <div class="paper-author">Hans-Peter Wipfler et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1D8GjQ_n5rGpPvNf3wN-5iYDgSrJ9tgmO/view?usp=sharing" target="_blank">Interpreting RTK-Fixed Reliability via Sampling-Based Posterior Distribution of Integer Ambiguities</a>
+    <div class="paper-author">Aoki Takanose et al.</div>
+  </li>
+  <li class="paper-item">
+    <a class="paper-link" href="https://drive.google.com/file/d/1lQFSfvOocjIogosn7qeN9hiUFISp3K2S/view?usp=sharing" target="_blank">UWB Meets Crazyflow: Simulating Degraded Feedback at Scale for Aerial Robotics</a>
+    <div class="paper-author">Martin Schuck, Marcel P. Rath et al.</div>
+  </li>
+  <li class="paper-item" style="border-bottom: none;">
+    <a class="paper-link" href="https://drive.google.com/file/d/12gJQm18FRnzV9t4c2x2VVnEfDhCHMix5/view?usp=sharing" target="_blank">Outdoor Ground Truth Estimation via GNSS Carrier Phase and Factor Graph Optimization</a>
+    <div class="paper-author">Hakan Uyanik et al.</div>
+  </li>
+</ul>
 
-### 📤 Submission
-- Paper submissions are handled via [Microsoft CMT](https://cmt3.research.microsoft.com/RobotMeetsRanging2026/Submission/index),
-- Submission opens: **February 1, 2026**,
-- Submission closes: ~~**April 1, 2026**~~ -> **April 30, 2026**.
-!-->
+<!--hr class="uk-divider-icon" style="margin: 25px 0;">
+
+<h2 class="contributions-header">💬 Online Q&A and Polling</h2>
+<div class="sidebar-card" style="border-left-color: #32d296; background-color: #f6fdf9;">
+  <p style="margin: 0; font-size: 0.9rem; color: #444; line-height: 1.5;">
+    We encourage all participants to engage with our speakers and fellow colleagues throughout the workshop via our interactive 
+    👉 <a href="https://app.sli.do/event/qNkgtepLHX28Y9pC35BZBx" target="_blank" style="font-weight: 600; color: #32d296; text-decoration: underline;">Slido Workspace</a>.
+  </p>
+</div-->
