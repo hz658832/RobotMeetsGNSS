@@ -79,7 +79,7 @@ schedule:
         presenterurl: https://www.nooploop.com/
       - starts: 12:00
         ends: 12:15
-        title: "Start-Up Presentation: Neuraloc"
+        title: "Start-Up Presentation: Real-time Integrity Monitoring of GNSS RTK Corrections: A Cloud-native Approach for Safety-critical Navigation of Robots"
         #url: https://coderefinery.github.io/git-intro/
         presenters: Dr.-Ing. Fabian Ruwisch
         affiliation: NeuraLoc LDA
