@@ -58,7 +58,7 @@ schedule:
     sessions: 
       - starts: 11:30
         ends: 11:40
-        title: "LINXAI: Topic tbd."
+        title: "LINXAI: Embodied Intelligence for Field Autonomy-Rugged Robot Platforms for GNSS-Degraded Environments"
         #url: https://coderefinery.github.io/git-intro/
         presenters: Mr. Kai Xiao 
         affiliation: Guangdong Lingsi Intelligent Technology Co., Ltd
