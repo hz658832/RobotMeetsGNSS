@@ -4,10 +4,12 @@
 ### <b>News
 <div style="margin-bottom: 10px;"></div>
 
+- **June 03, 2026:** Expert talk of Dr. Daniel Medina from DLR confirmed! 
+- **June 03, 2026:** Unfortunately, Dr. Tim Pfeifer cannot join us. 
 - **May 24, 2026:** Accepted papers can be viewed!
 - **May 19, 2026:** Workshop schedule finalized!
-- **May 19, 2026:** Start-Up collaboration with NEURALOC.ai confirmed!
-- **May 07, 2026:** Author notifications sent. Thank you for your contribution.
+<!----- **May 19, 2026:** Start-Up collaboration with NEURALOC.ai confirmed!-->
+<!----- **May 07, 2026:** Author notifications sent. Thank you for your contribution.-->
 <!---- **March 30 2026:** Paper submission deadline extended to April 30, 2026.-->
 <!--- **February 10 2026:** New speaker **Dr. Goudar** confirmed. -->
 <!--- **February 10, 2026:** Three sponsors confirmed. -->
