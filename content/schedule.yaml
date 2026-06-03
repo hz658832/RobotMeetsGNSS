@@ -96,7 +96,7 @@ schedule:
         presenterurl: https://www.iit.edu/directory/people/matthew-spenko
       - starts: 12:45
         ends: 13:15
-        title: Beyond Gaussian: Robust Methods for State Estimation
+        title: 'Beyond Gaussian: Robust Methods for State Estimation'
         #url: https://coderefinery.github.io/git-intro/
         presenters: Dr. Daniel Medina
         affiliation: German Aerospace Center (DLR)
