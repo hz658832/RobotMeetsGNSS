@@ -9,6 +9,7 @@
 {% set img_stephan = resize_image(path="people/s_stephan.jpeg", width=709, op="fit_width") %}
 {% set img_kassas = resize_image(path="people/s_kassas.jpg", width=709, op="fit_width") %}
 {% set img_abhi = resize_image(path="people/abhishek.jpeg", width=709, op="fit_width") %}
+{% set img_daniel = resize_image(path="people/o_daniel.png", width=709, op="fit_width") %}
 <style>
   /* Fancy numbering — auto-increment across all speaker cards */
   .speaker-list { counter-reset: speaker; }
@@ -239,21 +240,21 @@
         <div class="uk-grid-small uk-flex-middle" uk-grid>
           <div class="uk-width-auto">
             <div class="uk-inline-clip">
-              <img class="uk-border-circle speaker-avatar" src="{{ img_tim.url }}" alt="Dr. Tim Pfeifer">
+              <img class="uk-border-circle speaker-avatar" src="{{ img_daniel.url }}" alt="Dr. Daniel Medina">
             </div>
           </div>
           <div class="uk-width-expand">
-            <h4>Dr. Tim Pfeifer</h4><br>
+            <h4>Dr. Daniel Medina</h4><br>
             <div class="uk-width-auto uk-text-meta uk-text-right">
-		      <p class="uk-margin-remove uk-text-default">Siemens AG<br>Germany</p>
+		      <p class="uk-margin-remove uk-text-default">Germany Aerospace Center (DLR)<br>Germany</p>
 		      <p class="uk-margin-remove-top uk-text-default">
-		        <a href="https://tipf.github.io/" target="_blank" rel="noopener">Personal site</a>
+		        <a href="https://www.researchgate.net/profile/Daniel-Medina-11" target="_blank" rel="noopener">Personal site</a>
 		      </p>
 		    </div>
           </div>
           </div>
         </div>
-        <!-- Pop-out bio (attached to the card above) -->
+        <!-- Pop-out bio (attached to the card above)
       <div uk-drop="mode: hover, click; pos: right-center; offset: 12; delay-show: 60; delay-hide: 120; animation: uk-animation-scale-up; flip: true; boundary: window; container: true"
            role="dialog" aria-label="Bio: Dr. Pfeifer">
         <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-medium uk-border-rounded bio-popover-card">
@@ -266,7 +267,7 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Weisong -->
     <div>
